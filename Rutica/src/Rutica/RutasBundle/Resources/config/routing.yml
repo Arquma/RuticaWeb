@@ -1,0 +1,3 @@
+rutas_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: RutasBundle:Default:index }

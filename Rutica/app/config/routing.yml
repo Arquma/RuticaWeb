@@ -1,0 +1,15 @@
+rutas:
+    resource: "@RutasBundle/Resources/config/routing.yml"
+    prefix:   /
+
+data_base:
+    resource: "@DataBaseBundle/Resources/config/routing.yml"
+    prefix:   /
+
+administrador:
+    resource: "@AdministradorBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: @AppBundle/Controller/
+    type:     annotation
