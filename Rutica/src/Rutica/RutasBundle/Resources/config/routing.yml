@@ -1,3 +1,7 @@
-rutas_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: RutasBundle:Default:index }
+rutas_sugeridas:
+    path:     /rutas_sugeridas
+    defaults: { _controller: RutasBundle:RutasSugeridas:mostrar }
+
+crea_tus_rutas:
+    path:     /crea_tus_rutas
+    defaults: { _controller: RutasBundle:CreaTusRutas:mostrar }
