@@ -1,0 +1,78 @@
+{# Se extiende de la plantilla base que tiene Symfony2 #}
+{% extends '::base.html.twig' %}
+
+{# Se edita el bloque del título de la plantilla base #}
+{% block title %}
+	Rutica
+{% endblock %}
+
+{# Se edita el bloque de estilos de la plantilla base y se le agregar el CSS ubicado en la direccion /web/bundles/templateboostrap #}
+{% block stylesheets %}
+
+	{# Bootstrap Core CSS #}
+    <link rel="stylesheet" href="{{ asset('bundles/templateboostrap/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/templateboostrap/css/bootstrap.min.css') }}">    
+    <link rel="stylesheet" href="{{ asset('bundles/templateboostrap/css/bootstrap-table.css') }}">
+
+    {# Custom CSS #}
+	<link rel="stylesheet" href="{{ asset('bundles/templateboostrap/css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/templateboostrap/css/custom.css') }}" >
+
+    <script src="//use.edgefonts.net/bebas-neue.js"></script>
+
+    {# Custom Fonts & Icons #}
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="{{ asset('bundles/templateboostrap/css/icomoon-social.css') }}">
+	<link rel="stylesheet" href="{{ asset('bundles/templateboostrap/css/font-awesome.min.css') }}">
+	
+	<script src="{{ asset('bundles/templateboostrap/js/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
+    
+{% endblock %}
+
+{# Se edita el cuerpo de la página #}  
+{% block body %}
+
+{# menú principal #}
+    <header class="navbar navbar-inverse navbar-fixed-top" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>                
+
+                <a class="navbar-brand" href=""><img src="{{ asset('bundles/templateboostrap/img/logo.png') }}" alt="Logo"></a>
+
+            </div>
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Quienes somos</a></li>
+                    <li><a href="">Sitios turísticos</a></li>
+                    <li><a href="{{ path('rutas_sugeridas') }}">Rutas sugeridas</a></li>
+                    <li><a href="{{ path('crea_tus_rutas') }}">Crea tus rutas</a></li>                   
+                    <li><a href="">Contáctenos</a></li>                    
+                </ul>
+            </div>
+        </div>
+    </header>
+{# fin del menú principal #}
+
+{% endblock %} 
+
+{# se agregan los javascripts que se van a usar #}
+{% block javascripts %}
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{ asset('bundles/templateboostrap/js/jquery-1.9.1.min.js') }}"><\/script>')</script>
+    <script src="{{ asset('bundles/templateboostrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('bundles/templateboostrap/js/bootstrap-table.js') }}"></script>
+
+    <script src="{{ asset('bundles/templateboostrap/js/jquery.easing.min.js') }}"></script>
+    <script src="{{ asset('bundles/templateboostrap/js/scrolling-nav.js') }}"></script> 
+
+{% endblock %}
