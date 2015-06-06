@@ -1,1 +1,211 @@
-SIRVE!!! Crea Tus Rutas
+{# Se extiende de la plantilla base de nuestra aplicacion ubicada en el bundle Rutas #}
+{% extends 'RutasBundle:Base:header.html.twig' %}
+
+{# Se edita el bloque del título de la plantilla base #}
+{% block title %}
+	Rutica - Crea tus rutas
+{% endblock %}
+
+{# Se edita el body manteniendo la estructura heredada #}
+{% block body %}
+
+  {{ parent() }}{# conserva lo que se heredó #}
+
+	{# Título de página #} 
+		<div class="section section-breadcrumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1>Crea tus rutas</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	{# Título de página #}
+
+	<div class="section">
+	    <div class="container">
+			<div class="row">
+
+				<div class="col-md-8">
+
+                	<div class="section-title" >
+                        <h2>Elije las preferencias de su ruta</h2>
+                        <br>
+                    </div>
+
+                    {# Formulario de las preferencias de la ruta #}
+                	<form class="form-horizontal">
+
+                		{# Select de Provincia #}
+     					<div class="form-group">
+        					<label for="provincia" class="col-sm-2 control-label">Provincia</label>
+         					<div class="col-sm-6">
+            					<select id="provincia" class="form-control">
+            						<option></option>
+            						<option>San José</option>
+  									<option>Alajuela</option>
+  									<option>Heredia</option>
+  									<option>Cartago</option>
+  									<option>Puntarenas</option>
+  									<option>Guanacaste</option>
+  									<option>Limón</option>                       					
+                    			</select>
+         					</div>
+     					</div>
+     					{# Select de Provincia #}
+
+     					{# Select de Actividad #}
+     					<div class="form-group">
+     						<label for="actividad" class="col-sm-2 control-label">Actividad</label>
+         					<div class="col-sm-6">
+            					<select id="actividad" class="form-control">
+            						<option></option>
+            						<option>Montaña</option>
+  									<option>Playa</option>
+  									<option>Extremo</option>
+  									<option>Ciudad</option>
+  									<option>Rural</option>						                       					
+                    			</select>
+         					</div>         						
+     					</div>
+     					{# Select de Actividad #}
+
+     					{# Select de Precio #}
+     					<div class="form-group">
+     						<label for="precio" class="col-sm-2 control-label">Precio</label>
+         					<div class="col-sm-6">
+            					<select id="precio" class="form-control">
+            						<option></option>
+            						<option>Económico</option>
+  									<option>Medio</option>
+  									<option>Pura Vida</option>					                       					
+                    			</select>
+         					</div>         						
+     					</div>
+     					{# Select de Precio #} 
+
+     					{# Botón de Buscar #}
+     					<div class="form-group">
+     						<label for="buscar" class="col-sm-1 control-label"></label>
+     						<div class"col-sm-6">     						
+   								<button id="buscar" type="button" class="btn btn-primary" data-toggle="modal">Buscar</button>
+   							</div>
+   						</div>   						
+   						{# Botón de Buscar #}
+   							 
+					</form>
+					{# Formulario de las preferencias de la ruta #}
+
+                </div>				
+
+                <div class="col-md-4">
+
+                	<div class="section-title">
+                   		<h2><i class="glyphicon glyphicon-map-marker"></i>  Pasos para crear tu ruta</h2>
+                    	<br>
+                	</div>
+
+                	<ul>
+                		<li>Completa el formulario de la derecha con los detalles de los lugares que deseas incorporar para crear tu ruta personalizada</li>
+                		<li> Elije un punto de inicio y fin para tu ruta </li>
+                		<li> Selecciona los lugares intermedios de tu ruta que deseas conocer </li>
+                		<li> Dale click a botón de generar ruta </li>
+                		<li> Verifica los detalles de tu ruta en el mapa de la izquiera </li>
+                		<li> Listo tienes tu ruta, ya puedes empezar a turistear </li>
+                	</ul>
+
+                </div>           
+
+            </div>
+
+            <hr>{# Separador #}
+
+            <div class="row">
+
+            	<div class="col-md-8">            		
+            		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2014000.0863537437!2d-84.25418434999999!3d9.630189200000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f92e56221acc925%3A0x6254f72535819a2b!2sCosta+Rica!5e0!3m2!1ses!2scr!4v1433606713902" width="700" height="400" frameborder="0" style="border:0"></iframe>
+            	</div>
+
+            	<div class = "col-md-4">
+
+            		<div class="section-title">
+                   		<h3>  Selecciona los sitios de tu ruta</h3>
+                    	<br>
+                	</div>
+
+                	{# Formulario de los sitios de la ruta #}
+            		<form class="form-horizontal" >
+
+            			{# Select del Punto de Inicio #}
+     					<div class="form-group">
+        					<label for="inicio" class="col-sm-2 control-label">Inicio</label>
+         					<div class="col-sm-8">
+            					<select id="inicio" class="form-control">            						
+            						<option>Teatro Nacional</option>
+  									<option>Museo de los niños</option>
+  									<option>Antigua Aduana</option>
+  									<option>Museo Nacional</option>				                       					
+                    			</select>
+         					</div>
+     					</div>
+     					{# Select del Punto de Inicio #}
+
+     					{# Select del Punto Final #}
+     					<div class="form-group">
+        					<label for="final" class="col-sm-2 control-label">Final</label>
+         					<div class="col-sm-8">
+            					<select id="final" class="form-control">            						
+            						<option>Parque metropolitano la sabana</option>
+  									<option>Museo de Arte Costarricense</option>
+  									<option>Parque de diversiones</option>
+  									<option>Multiplaza, Escazú</option>				                       					
+                    			</select>
+         					</div>
+     					</div>
+     					{# Select del Punto Final #}
+
+     					{# Select de los Puntos Intermedios #}
+     					<div class="form-group">
+        					<label for="medio" class="col-sm-2 control-label">Camino</label>
+         					<div class="col-sm-8">
+            					<select multiple id="medio" class="form-control">            						
+            						<option>Teatro Nacional</option>
+  									<option>Museo de los niños</option>
+  									<option>Antigua Aduana</option>
+  									<option>Museo Nacional</option>
+  									<option>Parque metropolitano la sabana</option>
+  									<option>Museo de Arte Costarricense</option>
+  									<option>Parque de diversiones</option>
+  									<option>Multiplaza, Escazú</option>				                       					
+                    			</select>
+                    			<h6>"Ctrl + click" para una selección múltiple</h6>
+         					</div>
+     					</div>
+     					{# Select de los Puntos Intermedios #}
+
+     					{# Botón de generar ruta #}
+     					<div class="form-group">
+     						<label for="generar" class="col-sm-1 control-label"></label>
+     						<div class"col-sm-8">     						
+   								<button id="generar" type="button" class="btn btn-primary" data-toggle="modal">Generar Ruta</button>
+   							</div>
+   						</div>   						
+   						{# Botón de generar ruta #}
+
+            		</form>
+            		{# Formulario de los sitios de la ruta #}
+
+            	</div>    	
+
+            </div>
+
+        </div>
+    </div>
+
+	{# Footer #}
+		{# se hace un include del archivo donde se encuentra el footer #}	
+		{% include 'RutasBundle:Base:footer.html.twig' %} 	
+	{# Footer #} 
+
+{% endblock %}
