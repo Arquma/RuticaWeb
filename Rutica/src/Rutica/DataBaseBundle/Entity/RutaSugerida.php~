@@ -1,0 +1,63 @@
+<?php
+
+namespace Rutica\DataBaseBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * RutaSugerida
+ *
+ * @ORM\Table(name="ruta_sugerida", indexes={@ORM\Index(name="Ruta_Sugerida_Sitio_Ruta_Sugerida_idx", columns={"id_provincia"})})
+ * @ORM\Entity
+ */
+class RutaSugerida
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=45, nullable=false)
+     */
+    private $nombre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="distancia", type="decimal", precision=10, scale=0, nullable=true)
+     */
+    private $distancia;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="precio_total", type="decimal", precision=10, scale=0, nullable=true)
+     */
+    private $precioTotal;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="tiempo", type="time", nullable=true)
+     */
+    private $tiempo;
+
+    /**
+     * @var \Provincia
+     *
+     * @ORM\ManyToOne(targetEntity="Provincia")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_provincia", referencedColumnName="id")
+     * })
+     */
+    private $idProvincia;
+
+
+}

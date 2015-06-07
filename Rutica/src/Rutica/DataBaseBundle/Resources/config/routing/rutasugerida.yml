@@ -1,0 +1,30 @@
+rutasugerida:
+    path:     /
+    defaults: { _controller: "DataBaseBundle:RutaSugerida:index" }
+
+rutasugerida_show:
+    path:     /{id}/show
+    defaults: { _controller: "DataBaseBundle:RutaSugerida:show" }
+
+rutasugerida_new:
+    path:     /new
+    defaults: { _controller: "DataBaseBundle:RutaSugerida:new" }
+
+rutasugerida_create:
+    path:     /create
+    defaults: { _controller: "DataBaseBundle:RutaSugerida:create" }
+    requirements: { _method: post }
+
+rutasugerida_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "DataBaseBundle:RutaSugerida:edit" }
+
+rutasugerida_update:
+    path:     /{id}/update
+    defaults: { _controller: "DataBaseBundle:RutaSugerida:update" }
+    requirements: { _method: post|put }
+
+rutasugerida_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "DataBaseBundle:RutaSugerida:delete" }
+    requirements: { _method: post|delete }

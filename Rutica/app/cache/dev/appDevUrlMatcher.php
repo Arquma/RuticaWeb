@@ -137,6 +137,126 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Rutica\\RutasBundle\\Controller\\CreaTusRutasController::mostrarAction',  '_route' => 'crea_tus_rutas',);
         }
 
+        if (0 === strpos($pathinfo, '/rutasugerida')) {
+            // rutasugerida
+            if (rtrim($pathinfo, '/') === '/rutasugerida') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'rutasugerida');
+                }
+
+                return array (  '_controller' => 'Rutica\\DataBaseBundle\\Controller\\RutaSugeridaController::indexAction',  '_route' => 'rutasugerida',);
+            }
+
+            // rutasugerida_show
+            if (preg_match('#^/rutasugerida/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'rutasugerida_show')), array (  '_controller' => 'Rutica\\DataBaseBundle\\Controller\\RutaSugeridaController::showAction',));
+            }
+
+            // rutasugerida_new
+            if ($pathinfo === '/rutasugerida/new') {
+                return array (  '_controller' => 'Rutica\\DataBaseBundle\\Controller\\RutaSugeridaController::newAction',  '_route' => 'rutasugerida_new',);
+            }
+
+            // rutasugerida_create
+            if ($pathinfo === '/rutasugerida/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_rutasugerida_create;
+                }
+
+                return array (  '_controller' => 'Rutica\\DataBaseBundle\\Controller\\RutaSugeridaController::createAction',  '_route' => 'rutasugerida_create',);
+            }
+            not_rutasugerida_create:
+
+            // rutasugerida_edit
+            if (preg_match('#^/rutasugerida/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'rutasugerida_edit')), array (  '_controller' => 'Rutica\\DataBaseBundle\\Controller\\RutaSugeridaController::editAction',));
+            }
+
+            // rutasugerida_update
+            if (preg_match('#^/rutasugerida/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_rutasugerida_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'rutasugerida_update')), array (  '_controller' => 'Rutica\\DataBaseBundle\\Controller\\RutaSugeridaController::updateAction',));
+            }
+            not_rutasugerida_update:
+
+            // rutasugerida_delete
+            if (preg_match('#^/rutasugerida/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_rutasugerida_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'rutasugerida_delete')), array (  '_controller' => 'Rutica\\DataBaseBundle\\Controller\\RutaSugeridaController::deleteAction',));
+            }
+            not_rutasugerida_delete:
+
+        }
+
+        if (0 === strpos($pathinfo, '/sitio')) {
+            // sitio
+            if (rtrim($pathinfo, '/') === '/sitio') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'sitio');
+                }
+
+                return array (  '_controller' => 'Rutica\\DataBaseBundle\\Controller\\SitioController::indexAction',  '_route' => 'sitio',);
+            }
+
+            // sitio_show
+            if (preg_match('#^/sitio/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sitio_show')), array (  '_controller' => 'Rutica\\DataBaseBundle\\Controller\\SitioController::showAction',));
+            }
+
+            // sitio_new
+            if ($pathinfo === '/sitio/new') {
+                return array (  '_controller' => 'Rutica\\DataBaseBundle\\Controller\\SitioController::newAction',  '_route' => 'sitio_new',);
+            }
+
+            // sitio_create
+            if ($pathinfo === '/sitio/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_sitio_create;
+                }
+
+                return array (  '_controller' => 'Rutica\\DataBaseBundle\\Controller\\SitioController::createAction',  '_route' => 'sitio_create',);
+            }
+            not_sitio_create:
+
+            // sitio_edit
+            if (preg_match('#^/sitio/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sitio_edit')), array (  '_controller' => 'Rutica\\DataBaseBundle\\Controller\\SitioController::editAction',));
+            }
+
+            // sitio_update
+            if (preg_match('#^/sitio/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_sitio_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sitio_update')), array (  '_controller' => 'Rutica\\DataBaseBundle\\Controller\\SitioController::updateAction',));
+            }
+            not_sitio_update:
+
+            // sitio_delete
+            if (preg_match('#^/sitio/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_sitio_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'sitio_delete')), array (  '_controller' => 'Rutica\\DataBaseBundle\\Controller\\SitioController::deleteAction',));
+            }
+            not_sitio_delete:
+
+        }
+
         // data_base_homepage
         if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'data_base_homepage')), array (  '_controller' => 'Rutica\\DataBaseBundle\\Controller\\DefaultController::indexAction',));

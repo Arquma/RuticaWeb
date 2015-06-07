@@ -1,3 +1,11 @@
+data_base_rutasugerida:
+    resource: "@DataBaseBundle/Resources/config/routing/rutasugerida.yml"
+    prefix:   /rutasugerida
+
+data_base_sitio:
+    resource: "@DataBaseBundle/Resources/config/routing/sitio.yml"
+    prefix:   /sitio
+
 data_base_homepage:
     path:     /hello/{name}
     defaults: { _controller: DataBaseBundle:Default:index }
