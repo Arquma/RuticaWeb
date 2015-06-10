@@ -64,7 +64,7 @@ class Provincia
     }
     
      public function __toString() {
-        return $this->getId(). " ".$this->getNombre();
+        return $this->getNombre();
     }
     
 }

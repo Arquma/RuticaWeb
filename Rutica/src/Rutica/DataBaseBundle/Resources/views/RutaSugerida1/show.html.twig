@@ -1,0 +1,84 @@
+{% include 'AdministradorBundle:Default:adminHeader.html.twig' %}
+
+
+{% block body -%}
+     <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li ><a href="home.html">Inicio</a></li>
+                    
+                    <li><a href="{{url('sitio')}}">Sitios turísticos</a></li>
+                    <li class="active"><a href="{{url('rutasugerida')}}">Rutas</a></li>
+                    
+                    <li><a href="contactenos.html">Salir</a></li>                    
+                </ul>
+            </div>
+
+        </div>
+    </header><!--/header-->
+    
+      <!-- Título de página -->
+		<div class="section section-breadcrumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1>Ruta Turística Sugeridas</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Título de página -->
+   
+<div class="container">
+     <div class="col-md-6">
+
+                        <form class="form-horizontal">
+
+                            <div class="form-group">
+                                <label for="nombre" class="col-sm-2 control-label">Nombre</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" disabled="true" value="{{ entity.nombre }}">
+                                </div>                              
+                            </div>
+                            <div class="form-group">
+                                <label for="distancia" class="col-sm-2 control-label">Distancia</label>
+                                <div class="col-sm-6">
+                                    <textarea rows="4" cols="50" class="form-control" disabled="true">{{ entity.distancia }}</textarea>
+                                </div>                              
+                            </div>
+                            <div class="form-group">
+                                <label for="preciototal" class="col-sm-2 control-label">Precio Total</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" disabled="true" value="{{ entity.preciototal }}">                                </div>                              
+                            </div>
+                            <div class="form-group">
+                                <label for="provincia" class="col-sm-2 control-label">Provincia</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" disabled="true" value="{{ entity.idProvincia }}">                                </div>                              
+                            </div>
+                             <div class="form-group">
+                                <label for="tiempo" class="col-sm-2 control-label">Tiempo Estimado</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" disabled="true" value="{{ entity.tiempo | date('H:i') }}">                                </div>                              
+                            </div>
+                            
+                        </form>
+     
+ <center>
+         <button type="button" class="btn btn-primary" onclick=" location.href='{{ path('rutasugerida') }}' " data-toggle="modal">Volver a la lista</button>
+     </center>
+     </div>
+    
+
+
+                        
+
+   
+                        <div class ="col-md-6">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m34!1m12!1m3!1d7859.933826055709!2d-84.07980560988867!3d9.936710986346734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m19!3e0!4m5!1s0x8fa0e366d24d3d1b%3A0x86bd02c7707db21e!2sTeatro+Nacional+de+Costa+Rica%2C+San+Jos%C3%A9!3m2!1d9.933129!2d-84.076942!4m5!1s0x8fa0e4aabcf16c1f%3A0x9968a5c10a33d6eb!2sMuseo+Nacional+de+Costa+Rica%2C+Cuesta+de+Moras%2C+San+Jos%C3%A9!3m2!1d9.932602!2d-84.071015!4m5!1s0x8fa0e4a028084f77%3A0xe474e090ba7dc78f!2sMuseo+de+los+ni%C3%B1os+de+costa+rica%2C+San+Jos%C3%A9!3m2!1d9.941272!2d-84.080326!5e0!3m2!1ses!2scr!4v1432659181123" width="600" height="450" frameborder="0" style="border:0"></iframe>
+                        </div>
+
+ </div>
+    
+</div>
+  
+{% endblock %}

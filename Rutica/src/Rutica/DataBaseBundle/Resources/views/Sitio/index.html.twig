@@ -1,51 +1,83 @@
-{% extends '::base.html.twig' %}
+
+{% include 'AdministradorBundle:Default:adminHeader.html.twig' %}
 
 {% block body -%}
-    <h1>Sitio list</h1>
-
-    <table class="records_list">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Descripcion</th>
-                <th>Imagen</th>
-                <th>Longitud</th>
-                <th>Latitud</th>
-                <th>Precio</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('sitio_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.nombre }}</td>
-                <td>{{ entity.descripcion }}</td>
-                <td>{{ entity.imagen }}</td>
-                <td>{{ entity.longitud }}</td>
-                <td>{{ entity.latitud }}</td>
-                <td>{{ entity.precio }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('sitio_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('sitio_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
+    
+     <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li ><a href="home.html">Inicio</a></li>
+                    
+                    <li class="active"><a href="{{url('sitio')}}">Sitios turísticos</a></li>
+                    <li><a href="{{url('rutasugerida')}}">Rutas</a></li>
+                    
+                    <li><a href="contactenos.html">Salir</a></li>                    
                 </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </div>
 
-        <ul>
-        <li>
-            <a href="{{ path('sitio_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
+        </div>
+    </header><!--/header-->
+    <div class="section section-breadcrumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1>Sitios Turísticos</h1>
+					</div>
+				</div>
+			</div>
+    </div>
+    <center>
+        <div class="row">
+            <div class ="col-md-6" style="margin-left: 300px;">
+                <table class="table table-hover" data-toggle="table" data-search="true" style="width:100%">
+
+                    <thead>
+                        <tr>
+
+                            <th>Nombre</th>
+
+                            <th>Longitud</th>
+                            <th>Latitud</th>
+                            <th>Precio</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for entity in entities %}
+                            <tr>
+                                <td><a href="{{ path('sitio_show', { 'id': entity.id }) }}">{{ entity.nombre }}</a></td>
+
+                                <td>{{ entity.longitud }}</td>
+                                <td>{{ entity.latitud }}</td>
+                                <td>{{ entity.precio }}</td>
+                                <td>
+                                    <ul>
+                                        
+                                        <a href="{{ path('sitio_edit', { 'id': entity.id }) }}">editar</a>
+                                       
+                                    </ul>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                    
+                    <ul class="pager">
+				  <li><a href="#">Anterior</a></li>
+				  <li><a href="{{ path('sitio_new') }}">Nuevo Sitio</a></li>
+				  <li><a href="#">Siguiente</a></li>
+				</ul>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+</center>
+
     {% endblock %}
+    
+{% include 'AdministradorBundle:Default:adminFooter.html.twig' %}

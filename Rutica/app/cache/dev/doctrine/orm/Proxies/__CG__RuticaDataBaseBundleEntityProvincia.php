@@ -210,4 +210,15 @@ class Provincia extends \Rutica\DataBaseBundle\Entity\Provincia implements \Doct
         return parent::getNombre();
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function __toString()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', array());
+
+        return parent::__toString();
+    }
+
 }

@@ -63,7 +63,7 @@ class Actividad
         return $this->nombre;
     }
      public function __toString() {
-        return $this->getId(). " ".$this->getNombre();
+        return $this->getNombre();
     }
     
 }

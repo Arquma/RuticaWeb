@@ -1,15 +1,128 @@
-{% extends '::base.html.twig' %}
+{% include 'AdministradorBundle:Default:adminHeader.html.twig' %}
 
 {% block body -%}
-    <h1>Sitio creation</h1>
+    <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li ><a href="home.html">Inicio</a></li>
+                    
+                    <li class="active"><a href="{{url('sitio')}}">Sitios turísticos</a></li>
+                    <li><a href="{{url('rutasugerida')}}">Rutas</a></li>
+                    
+                    <li><a href="contactenos.html">Salir</a></li>                    
+                </ul>
+            </div>
 
+        </div>
+    </header><!--/header-->
+  <!-- Título de página -->
+		<div class="section section-breadcrumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1>Nuevo Sitio</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Fin Título de página --> 
+                
+                		<!-- Fin Título de página --> 
+   {{ form_start(form)}}
+        {{form_errors(form)}}
+   <div class="container">
+     <div class="col-md-6">
+       
+           <table class="table table-bordered table-striped table-condensed" style="width: 500px;">
+
+                        {{ form_start(form)}}
+                        {{form_errors(form)}}
+                        <tbody>
+                            <tr>
+                                <th style="width: 100px;"> {{ form_label(form.nombre) }}</th>
+                                <td>{{form_widget(form.nombre)}}
+                                    {{ form_errors(form.nombre) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 100px;"> {{ form_label(form.descripcion) }}</th>
+                                <td>{{form_widget(form.descripcion)}}
+                                    {{ form_errors(form.descripcion) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 100px;"> {{ form_label(form.longitud) }}</th>
+                                <td>{{form_widget(form.longitud)}}
+                                    {{ form_errors(form.longitud) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 100px;"> {{ form_label(form.latitud) }}</th>
+                                <td>{{form_widget(form.latitud)}}
+                                    {{ form_errors(form.latitud) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 100px;"> {{ form_label(form.precio) }}</th>
+                                <td>{{form_widget(form.precio)}}
+                                    {{ form_errors( form.precio) }}</td>
+                            </tr>
+                             <tr>
+                                <th style="width: 100px;"> Provincia</th>
+                                <td>{{form_widget(form.idProvincia)}}
+                                    {{ form_errors(form.idProvincia) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 100px;"> Actividad</th>
+                                <td>{{form_widget(form.idActividad)}}
+                                    {{ form_errors(form.idActividad) }}</td>
+                            </tr> 
+                          
+                            <tr>
+                                <th style="width: 100px;"> Imagen</th>
+                                <td>
+                                      <div class="col-md-12 col-sm-19">
+                                <figure>
+                                    <img src="img/sitios/4.jpg" alt="img04">
+                                </figure>
+                                 </div> 
+                                    {{form_widget(form.imagen)}}
+                                     <a href="#" class="btn btn-primary" type="button" onclick="document.getElementById('fileID').click(); return false;">Buscar</a> <input id="fileID" type="file" style="visibility: hidden; display: none;" />
+                                    <input type="file" id="fileID" class="form-control" style="visibility: hidden;" />
+
+                                    {{ form_errors(form.imagen) }}</td>
+                            </tr>
+                            
+                        </tbody> 
+                        <!-- Botones -->
+           </table>
+                                    <center>
+                                        <table>
+                                            <tr>
+
+                                                <td style="width: 60px;"> {{form_widget(form.submit)}}
+                                                </td>
+                                                <td>  <a href="{{ path('sitio') }}" class="btn btn-primary btn-sm">
+                                                        Volver
+                                                    </a>
+                                                </td>
+
+                                            </tr>
+                                        </table>
+                                    </center>
+                {{ form_end(form)}}
+
+     </div>
+                <!-- Mapa -->                                 
+     <div class ="col-md-5">
+         <iframe src="https://www.google.com/maps/embed?pb=!1m34!1m12!1m3!1d7859.933826055709!2d-84.07980560988867!3d9.936710986346734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m19!3e0!4m5!1s0x8fa0e366d24d3d1b%3A0x86bd02c7707db21e!2sTeatro+Nacional+de+Costa+Rica%2C+San+Jos%C3%A9!3m2!1d9.933129!2d-84.076942!4m5!1s0x8fa0e4aabcf16c1f%3A0x9968a5c10a33d6eb!2sMuseo+Nacional+de+Costa+Rica%2C+Cuesta+de+Moras%2C+San+Jos%C3%A9!3m2!1d9.932602!2d-84.071015!4m5!1s0x8fa0e4a028084f77%3A0xe474e090ba7dc78f!2sMuseo+de+los+ni%C3%B1os+de+costa+rica%2C+San+Jos%C3%A9!3m2!1d9.941272!2d-84.080326!5e0!3m2!1ses!2scr!4v1432659181123" width="600" height="450" frameborder="0" style="border:0"></iframe>
+     </div>
+                 <!-- Fin mapa -->
+   </div>
     {{ form(form) }}
 
         <ul class="record_actions">
     <li>
         <a href="{{ path('sitio') }}">
-            Back to the list
+            Back to the list 
         </a>
     </li>
 </ul>
 {% endblock %}
+
+{% include 'AdministradorBundle:Default:adminFooter.html.twig' %}
