@@ -61,29 +61,7 @@ class RutaSugerida
     
     private $idProvincia;
 
-     /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Tratamiento", inversedBy="$codEnfermedad")
-     * @ORM\JoinTable(name="tratamiento_enfermedad",
-     *   joinColumns={
-     *     @ORM\JoinColumn(name="cod_enfermedad", referencedColumnName="cod_enfermedad")
-     *   },
-     *   inverseJoinColumns={
-     *     @ORM\JoinColumn(name="cod_tratamiento", referencedColumnName="cod_tratamiento")
-     *   }
-     * )
-     */
-    private $sitiosRuta;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->sitiosRuta = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
+    
 
     /**
      * Get id

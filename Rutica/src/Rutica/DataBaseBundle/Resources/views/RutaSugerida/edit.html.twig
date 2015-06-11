@@ -1,16 +1,173 @@
-{% extends '::base.html.twig' %}
+{% include 'AdministradorBundle:Default:adminHeader.html.twig' %}
 
 {% block body -%}
-    <h1>RutaSugerida edit</h1>
+     <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li ><a href="home.html">Inicio</a></li>
+                    
+                    <li ><a href="{{url('sitio')}}">Sitios turísticos</a></li>
+                    <li class="active"><a href="{{url('rutasugerida')}}">Rutas</a></li>
+                    
+                    <li><a href="contactenos.html">Salir</a></li>                    
+                </ul>
+            </div>
 
-    {{ form(edit_form) }}
+        </div>
+    </header><!--/header-->
+     <!-- Título de página -->
+		<div class="section section-breadcrumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1>Editar Ruta</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Fin Título de página --> 
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('rutasugerida') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+    <div class="container">
+     <div class="col-md-6">
+       
+           <table class="table table-bordered table-striped table-condensed" >
+
+                        {{ form_start(edit_form)}}
+                        {{form_errors(edit_form)}}
+                        <tbody>
+                         
+                            <tr>
+                                <th style="width: 100px;"> {{ form_label(edit_form.nombre) }}</th>
+                                <td>{{form_widget(edit_form.nombre)}}
+                                    {{ form_errors(edit_form.nombre) }}</td>
+                            </tr>
+                          <tr>
+                                <th style="width: 100px;"> {{ form_label(edit_form.distancia) }}</th>
+                                <td>{{form_widget(edit_form.distancia)}}
+                                    {{ form_errors(edit_form.distancia) }}</td>
+                            </tr>
+                            <tr>
+                                <th style="width: 100px;"> {{ form_label(edit_form.precioTotal) }}</th>
+                                <td>{{form_widget(edit_form.precioTotal)}}
+                                    {{ form_errors(edit_form.precioTotal) }}</td>
+                            </tr>
+                             <tr>
+                                <th style="width: 100px;"> {{ form_label(edit_form.tiempo) }}</th>
+                                <td>{{form_widget(edit_form.tiempo)}}
+                                    {{ form_errors(edit_form.tiempo) }}</td>
+                            </tr>
+                               <tr>
+                                <th style="width: 100px;"> {{ form_label(edit_form.idProvincia) }}</th>
+                                <td>{{form_widget(edit_form.idProvincia)}}
+                                    {{ form_errors(edit_form.idProvincia) }}</td>
+                            </tr>
+                            
+                        </tbody> 
+                       
+           </table> 
+                              <!-- Tabla de sitio en la ruta -->
+                            <label for="sitiosenruta" class="col-sm-4 control-label" >Sitios en la ruta</label>
+
+                                    <table data-toggle="table" data-search="true">
+
+                                        <thead>
+                                            <tr>
+
+                                                <th>Nombre</th>
+                                                <th>Provincia</th>
+                                                <th>Precio</th>
+                                               
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                         
+                                                <tr>
+                                                    <td><a href=""></a>Teatro Nacional</td>
+
+                                                    <td>San Jose</td>
+                                                    <td>120</td>
+                                                    
+                                                    <td>
+                                                        <ul>
+
+
+                                                            <a href="">Quitar</a>
+
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                         
+                                        </tbody>
+                                    </table>
+                             <!--Fin tabla de sitio en la ruta -->
+                             <br>
+                             <!-- Tabla de sitios posible para la ruta -->
+                            <label for="sitiosnoenruta" class="col-sm-5 control-label" >Sitios posible para la ruta</label>
+
+                                    <table class="table table-bordered table-striped table-condensed" data-search="true">
+
+                                        <thead>
+                                            <tr>
+
+                                                <th>Nombre</th>
+                                                <th>Provincia</th>
+                                                <th>Precio</th>
+                                               
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                         
+                                                <tr>
+                                                    <td><a href=""></a>Museo de los Niños</td>
+
+                                                    <td>San Jose</td>
+                                                    <td>150</td>
+                                                    
+                                                    <td>
+                                                        <ul>
+
+
+                                                            <a href="">Agregar</a>
+
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                         
+                                        </tbody>
+                                    </table>
+                             <!--Fin tabla de sitios posibles para la ruta -->
+                            
+                            <!-- Botones -->
+                            <center>
+                               <table>
+                                        <tr>
+
+                                            <td style="width: 80px;"> {{form_widget(edit_form.submit)}}
+                                            </td>
+
+
+                                            {{ form_end(edit_form)}}
+                                            <td style="width: 60px;">  <a href="{{ path('rutasugerida') }}" class="btn btn-primary btn-sm">
+                                                    Volver
+                                                </a>
+                                            </td>
+                                            {{ form_start(delete_form)}}
+                                            <td style="width: 80px;"> 
+                                                {{ form_widget(delete_form.submit) }}
+                                            </td>
+                                                {{ form_end(delete_form)}}
+
+                                        </tr>
+                                    </table>
+                            </center>
+
+     </div>
+                <!-- Mapa -->                                 
+     <div class ="col-md-5">
+         <iframe src="https://www.google.com/maps/embed?pb=!1m34!1m12!1m3!1d7859.933826055709!2d-84.07980560988867!3d9.936710986346734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m19!3e0!4m5!1s0x8fa0e366d24d3d1b%3A0x86bd02c7707db21e!2sTeatro+Nacional+de+Costa+Rica%2C+San+Jos%C3%A9!3m2!1d9.933129!2d-84.076942!4m5!1s0x8fa0e4aabcf16c1f%3A0x9968a5c10a33d6eb!2sMuseo+Nacional+de+Costa+Rica%2C+Cuesta+de+Moras%2C+San+Jos%C3%A9!3m2!1d9.932602!2d-84.071015!4m5!1s0x8fa0e4a028084f77%3A0xe474e090ba7dc78f!2sMuseo+de+los+ni%C3%B1os+de+costa+rica%2C+San+Jos%C3%A9!3m2!1d9.941272!2d-84.080326!5e0!3m2!1ses!2scr!4v1432659181123" width="600" height="450" frameborder="0" style="border:0"></iframe>
+     </div>
+                 <!-- Fin mapa -->
+   </div>
+            
 {% endblock %}

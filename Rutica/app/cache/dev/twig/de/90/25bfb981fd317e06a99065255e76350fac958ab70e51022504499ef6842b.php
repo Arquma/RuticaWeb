@@ -62,7 +62,7 @@ class __TwigTemplate_de9025bfb981fd317e06a99065255e76350fac958ab70e51022504499ef
     <div class=\"container\">
      <div class=\"col-md-6\">
        
-           <table class=\"table table-bordered table-striped table-condensed\" style=\"width: 500px;\">
+           <table class=\"table table-bordered table-striped table-condensed\" >
 
                         ";
         // line 34
@@ -146,42 +146,117 @@ class __TwigTemplate_de9025bfb981fd317e06a99065255e76350fac958ab70e51022504499ef
                             </tr>
                             
                         </tbody> 
-                        <!-- Botones -->
-           </table>
+                       
+           </table> 
+                              <!-- Tabla de sitio en la ruta -->
+                            <label for=\"sitiosenruta\" class=\"col-sm-4 control-label\" >Sitios en la ruta</label>
+
+                                    <table class=\"table table-bordered table-striped table-condensed\" data-search=\"true\">
+
+                                        <thead>
+                                            <tr>
+
+                                                <th>Nombre</th>
+                                                <th>Provincia</th>
+                                                <th>Precio</th>
+                                               
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                         
+                                                <tr>
+                                                    <td><a href=\"\"></a>Teatro Nacional</td>
+
+                                                    <td>San Jose</td>
+                                                    <td>120</td>
+                                                    
+                                                    <td>
+                                                        <ul>
+
+
+                                                            <a href=\"\">Quitar</a>
+
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                         
+                                        </tbody>
+                                    </table>
+                             <!--Fin tabla de sitio en la ruta -->
+                             <br>
+                             <!-- Tabla de sitios posible para la ruta -->
+                            <label for=\"sitiosnoenruta\" class=\"col-sm-5 control-label\" >Sitios posible para la ruta</label>
+
+                                    <table class=\"table table-bordered table-striped table-condensed\" data-search=\"true\">
+
+                                        <thead>
+                                            <tr>
+
+                                                <th>Nombre</th>
+                                                <th>Provincia</th>
+                                                <th>Precio</th>
+                                               
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                         
+                                                <tr>
+                                                    <td><a href=\"\"></a>Museo de los Niños</td>
+
+                                                    <td>San Jose</td>
+                                                    <td>150</td>
+                                                    
+                                                    <td>
+                                                        <ul>
+
+
+                                                            <a href=\"\">Agregar</a>
+
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                         
+                                        </tbody>
+                                    </table>
+                             <!--Fin tabla de sitios posibles para la ruta -->
+                            
+                            <!-- Botones -->
                             <center>
                                <table>
                                         <tr>
 
                                             <td style=\"width: 80px;\"> ";
-        // line 71
+        // line 146
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "submit", array()), 'widget');
         echo "
                                             </td>
 
 
                                             ";
-        // line 75
+        // line 150
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), 'form_end');
         echo "
                                             <td style=\"width: 60px;\">  <a href=\"";
-        // line 76
+        // line 151
         echo $this->env->getExtension('routing')->getPath("rutasugerida");
         echo "\" class=\"btn btn-primary btn-sm\">
                                                     Volver
                                                 </a>
                                             </td>
                                             ";
-        // line 80
+        // line 155
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_start');
         echo "
                                             <td style=\"width: 80px;\"> 
                                                 ";
-        // line 82
+        // line 157
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), "submit", array()), 'widget');
         echo "
                                             </td>
                                                 ";
-        // line 84
+        // line 159
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_end');
         echo "
 
@@ -212,6 +287,6 @@ class __TwigTemplate_de9025bfb981fd317e06a99065255e76350fac958ab70e51022504499ef
 
     public function getDebugInfo()
     {
-        return array (  185 => 84,  180 => 82,  175 => 80,  168 => 76,  164 => 75,  157 => 71,  144 => 61,  140 => 60,  136 => 59,  130 => 56,  126 => 55,  122 => 54,  116 => 51,  112 => 50,  108 => 49,  102 => 46,  98 => 45,  94 => 44,  88 => 41,  84 => 40,  80 => 39,  73 => 35,  69 => 34,  41 => 9,  37 => 8,  31 => 4,  25 => 3,  22 => 2,  20 => 1,);
+        return array (  260 => 159,  255 => 157,  250 => 155,  243 => 151,  239 => 150,  232 => 146,  144 => 61,  140 => 60,  136 => 59,  130 => 56,  126 => 55,  122 => 54,  116 => 51,  112 => 50,  108 => 49,  102 => 46,  98 => 45,  94 => 44,  88 => 41,  84 => 40,  80 => 39,  73 => 35,  69 => 34,  41 => 9,  37 => 8,  31 => 4,  25 => 3,  22 => 2,  20 => 1,);
     }
 }

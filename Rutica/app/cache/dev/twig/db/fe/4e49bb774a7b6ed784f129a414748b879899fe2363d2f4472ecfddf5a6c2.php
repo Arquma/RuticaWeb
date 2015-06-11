@@ -24,8 +24,11 @@ class __TwigTemplate_dbfe4e49bb774a7b6ed784f129a414748b879899fe2363d2f4472ecfddf
 ";
         // line 4
         $this->displayBlock('body', $context, $blocks);
+        // line 117
+        $this->env->loadTemplate("AdministradorBundle:Default:adminFooter.html.twig")->display($context);
     }
 
+    // line 4
     public function block_body($context, array $blocks = array())
     {
         // line 5
@@ -110,10 +113,42 @@ class __TwigTemplate_dbfe4e49bb774a7b6ed784f129a414748b879899fe2363d2f4472ecfddf
                             </div>
                             
                         </form>
+                            <!-- Tabla de sitio en la ruta -->
+                            <label for=\"sitiosenruta\" class=\"col-sm-4 control-label\" >Sitios en la ruta</label>
+
+                                    <table class=\"table table-hover\" data-toggle=\"table\" data-search=\"true\" style=\"width:100%\">
+
+                                        <thead>
+                                            <tr>
+
+                                                <th>Nombre</th>
+                                                <th>Provincia</th>
+                                                <th>Precio</th>
+                                               
+                                               
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                         
+                                                <tr>
+                                                    <td><a href=\"\"></a>Teatro Nacional</td>
+
+                                                    <td>San Jose</td>
+                                                    <td>120</td>
+                                                    
+                                                   
+                                                </tr>
+                                         
+                                        </tbody>
+                                    </table>
+                             <!--Fin tabla de sitio en la ruta -->
+                             <br>
+                          
      
  <center>
+     <br>
          <button type=\"button\" class=\"btn btn-primary\" onclick=\" location.href='";
-        // line 67
+        // line 99
         echo $this->env->getExtension('routing')->getPath("rutasugerida");
         echo "' \" data-toggle=\"modal\">Volver a la lista</button>
      </center>
@@ -147,6 +182,6 @@ class __TwigTemplate_dbfe4e49bb774a7b6ed784f129a414748b879899fe2363d2f4472ecfddf
 
     public function getDebugInfo()
     {
-        return array (  117 => 67,  108 => 61,  100 => 56,  92 => 51,  83 => 45,  74 => 39,  42 => 10,  38 => 9,  32 => 5,  26 => 4,  22 => 2,  20 => 1,);
+        return array (  152 => 99,  111 => 61,  103 => 56,  95 => 51,  86 => 45,  77 => 39,  45 => 10,  41 => 9,  35 => 5,  32 => 4,  28 => 117,  26 => 4,  22 => 2,  20 => 1,);
     }
 }

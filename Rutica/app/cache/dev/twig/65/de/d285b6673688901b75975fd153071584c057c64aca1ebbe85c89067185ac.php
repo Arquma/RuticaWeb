@@ -23,18 +23,37 @@ class __TwigTemplate_65ded285b6673688901b75975fd153071584c057c64aca1ebbe85c89067
 ";
         // line 3
         $this->displayBlock('body', $context, $blocks);
-        // line 115
+        // line 119
         echo "
 ";
-        // line 116
+        // line 120
         $this->env->loadTemplate("AdministradorBundle:Default:adminFooter.html.twig")->display($context);
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        // line 5
-        echo "<!-- Título de página -->
+        // line 4
+        echo "<div class=\"collapse navbar-collapse\">
+                <ul class=\"nav navbar-nav navbar-right\">
+                    <li ><a href=\"home.html\">Inicio</a></li>
+                    
+                    <li class=\"active\"><a href=\"";
+        // line 8
+        echo $this->env->getExtension('routing')->getUrl("sitio");
+        echo "\">Sitios turísticos</a></li>
+                    <li><a href=\"";
+        // line 9
+        echo $this->env->getExtension('routing')->getUrl("rutasugerida");
+        echo "\">Rutas</a></li>
+                    
+                    <li><a href=\"contactenos.html\">Salir</a></li>                    
+                </ul>
+            </div>
+
+        </div>
+    </header><!--/header-->
+  <!-- Título de página -->
 \t\t<div class=\"section section-breadcrumbs\">
 \t\t\t<div class=\"container\">
 \t\t\t\t<div class=\"row\">
@@ -48,11 +67,11 @@ class __TwigTemplate_65ded285b6673688901b75975fd153071584c057c64aca1ebbe85c89067
                 
                 \t\t<!-- Fin Título de página --> 
    ";
-        // line 18
+        // line 30
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start');
         echo "
         ";
-        // line 19
+        // line 31
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'errors');
         echo "
    <div class=\"container\">
@@ -61,103 +80,103 @@ class __TwigTemplate_65ded285b6673688901b75975fd153071584c057c64aca1ebbe85c89067
            <table class=\"table table-bordered table-striped table-condensed\" style=\"width: 500px;\">
 
                         ";
-        // line 25
+        // line 37
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start');
         echo "
                         ";
-        // line 26
+        // line 38
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'errors');
         echo "
                         <tbody>
                             <tr>
                                 <th style=\"width: 100px;\"> ";
-        // line 29
+        // line 41
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "nombre", array()), 'label');
         echo "</th>
                                 <td>";
-        // line 30
+        // line 42
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "nombre", array()), 'widget');
         echo "
                                     ";
-        // line 31
+        // line 43
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "nombre", array()), 'errors');
         echo "</td>
                             </tr>
                             <tr>
                                 <th style=\"width: 100px;\"> ";
-        // line 34
+        // line 46
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "descripcion", array()), 'label');
         echo "</th>
                                 <td>";
-        // line 35
+        // line 47
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "descripcion", array()), 'widget');
         echo "
                                     ";
-        // line 36
+        // line 48
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "descripcion", array()), 'errors');
         echo "</td>
                             </tr>
                             <tr>
                                 <th style=\"width: 100px;\"> ";
-        // line 39
+        // line 51
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "longitud", array()), 'label');
         echo "</th>
                                 <td>";
-        // line 40
+        // line 52
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "longitud", array()), 'widget');
         echo "
                                     ";
-        // line 41
+        // line 53
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "longitud", array()), 'errors');
         echo "</td>
                             </tr>
                             <tr>
                                 <th style=\"width: 100px;\"> ";
-        // line 44
+        // line 56
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "latitud", array()), 'label');
         echo "</th>
                                 <td>";
-        // line 45
+        // line 57
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "latitud", array()), 'widget');
         echo "
                                     ";
-        // line 46
+        // line 58
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "latitud", array()), 'errors');
         echo "</td>
                             </tr>
                             <tr>
                                 <th style=\"width: 100px;\"> ";
-        // line 49
+        // line 61
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "precio", array()), 'label');
         echo "</th>
                                 <td>";
-        // line 50
+        // line 62
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "precio", array()), 'widget');
         echo "
                                     ";
-        // line 51
+        // line 63
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "precio", array()), 'errors');
         echo "</td>
                             </tr>
                              <tr>
                                 <th style=\"width: 100px;\"> Provincia</th>
                                 <td>";
-        // line 55
+        // line 67
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "idProvincia", array()), 'widget');
         echo "
                                     ";
-        // line 56
+        // line 68
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "idProvincia", array()), 'errors');
         echo "</td>
                             </tr>
                             <tr>
                                 <th style=\"width: 100px;\"> Actividad</th>
                                 <td>";
-        // line 60
+        // line 72
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "idActividad", array()), 'widget');
         echo "
                                     ";
-        // line 61
+        // line 73
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "idActividad", array()), 'errors');
         echo "</td>
                             </tr> 
@@ -171,14 +190,14 @@ class __TwigTemplate_65ded285b6673688901b75975fd153071584c057c64aca1ebbe85c89067
                                 </figure>
                                  </div> 
                                     ";
-        // line 72
+        // line 84
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "imagen", array()), 'widget');
         echo "
                                      <a href=\"#\" class=\"btn btn-primary\" type=\"button\" onclick=\"document.getElementById('fileID').click(); return false;\">Buscar</a> <input id=\"fileID\" type=\"file\" style=\"visibility: hidden; display: none;\" />
                                     <input type=\"file\" id=\"fileID\" class=\"form-control\" style=\"visibility: hidden;\" />
 
                                     ";
-        // line 76
+        // line 88
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "imagen", array()), 'errors');
         echo "</td>
                             </tr>
@@ -191,12 +210,12 @@ class __TwigTemplate_65ded285b6673688901b75975fd153071584c057c64aca1ebbe85c89067
                                             <tr>
 
                                                 <td style=\"width: 60px;\"> ";
-        // line 86
+        // line 98
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "submit", array()), 'widget');
         echo "
                                                 </td>
                                                 <td>  <a href=\"";
-        // line 88
+        // line 100
         echo $this->env->getExtension('routing')->getPath("sitio");
         echo "\" class=\"btn btn-primary btn-sm\">
                                                         Volver
@@ -207,7 +226,7 @@ class __TwigTemplate_65ded285b6673688901b75975fd153071584c057c64aca1ebbe85c89067
                                         </table>
                                     </center>
                 ";
-        // line 96
+        // line 108
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
 
@@ -218,21 +237,7 @@ class __TwigTemplate_65ded285b6673688901b75975fd153071584c057c64aca1ebbe85c89067
      </div>
                  <!-- Fin mapa -->
    </div>
-    ";
-        // line 105
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form');
-        echo "
-
-        <ul class=\"record_actions\">
-    <li>
-        <a href=\"";
-        // line 109
-        echo $this->env->getExtension('routing')->getPath("sitio");
-        echo "\">
-            Back to the list 
-        </a>
-    </li>
-</ul>
+  
 ";
     }
 
@@ -248,6 +253,6 @@ class __TwigTemplate_65ded285b6673688901b75975fd153071584c057c64aca1ebbe85c89067
 
     public function getDebugInfo()
     {
-        return array (  230 => 109,  223 => 105,  211 => 96,  200 => 88,  195 => 86,  182 => 76,  175 => 72,  161 => 61,  157 => 60,  150 => 56,  146 => 55,  139 => 51,  135 => 50,  131 => 49,  125 => 46,  121 => 45,  117 => 44,  111 => 41,  107 => 40,  103 => 39,  97 => 36,  93 => 35,  89 => 34,  83 => 31,  79 => 30,  75 => 29,  69 => 26,  65 => 25,  56 => 19,  52 => 18,  37 => 5,  34 => 3,  30 => 116,  27 => 115,  25 => 3,  22 => 2,  20 => 1,);
+        return array (  230 => 108,  219 => 100,  214 => 98,  201 => 88,  194 => 84,  180 => 73,  176 => 72,  169 => 68,  165 => 67,  158 => 63,  154 => 62,  150 => 61,  144 => 58,  140 => 57,  136 => 56,  130 => 53,  126 => 52,  122 => 51,  116 => 48,  112 => 47,  108 => 46,  102 => 43,  98 => 42,  94 => 41,  88 => 38,  84 => 37,  75 => 31,  71 => 30,  47 => 9,  43 => 8,  37 => 4,  34 => 3,  30 => 120,  27 => 119,  25 => 3,  22 => 2,  20 => 1,);
     }
 }
