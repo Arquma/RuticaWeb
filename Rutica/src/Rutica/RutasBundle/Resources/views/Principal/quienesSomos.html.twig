@@ -1,0 +1,93 @@
+{% include 'RutasBundle:Base:header.html.twig' %}
+
+
+<!-- Título de página -->
+<div class="section section-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>¿Quiénes somos?</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Título de página -->
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <div align="center" class="embed-responsive embed-responsive-16by9">	
+                    <video class="embed-responsive-item" src="{{asset('bundles/templateboostrap/video/Turismo en Costa Rica.mp4')}}" type="video/mp4" controls></video>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <h2>Rutica</h2>
+                <h3>Empresa dedicada a que nuestro país sea reconocido internacionalmente</h3>
+                <p>
+                    Rutica es una empresa costarricense comprometida con los empresarios y organizaciones que se dedican al área de turismo en nuestro país, con el fin de que tanto turistas extranjeros y nacionales conoscan más acerca de las bellezas con las que cuenta Costa Rica.
+                </p>
+                <p>
+                    El objetivo principal de rutica es que alrededor de todo el mundo se conozcan todas las áreas en donde se puede disfrutar al máximo en nuestro país entre amigos y familiares.
+                </p>										
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>		
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+
+            <!-- Miembros de Rutica -->
+            <div class="col-md-4 col-sm-6">
+                <div class="team-member">							
+                    <div class="team-member-image"><img src="{{asset('bundles/templateboostrap/img/team/1_1.jpg')}}" alt="" /></div>
+                    <div class="team-member-info">
+                        <ul>									
+                            <li class="team-member-name">
+                                Jorge Castillo Vindas										
+                            </li>									
+                        </ul>
+                    </div>
+                </div>
+            </div>					
+
+            <div class="col-md-4 col-sm-6">
+                <div class="team-member">							
+                    <div class="team-member-image"><img src="{{asset('bundles/templateboostrap/img/team/2_1.jpg')}}" alt="" /></div>
+                    <div class="team-member-info">
+                        <ul>
+                            <li class="team-member-name">
+                                Aaron Quirós Masis										
+                            </li>									
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-6">
+                <div class="team-member">
+                    <div class="team-member-image"><img src="{{asset('bundles/templateboostrap/img/team/3_1.jpg')}}" alt="" /></div>
+                    <div class="team-member-info">
+                        <ul>
+                            <li class="team-member-name">
+                                Olman Ureña Herrera										
+                            </li>									
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fin de los miembros de rutica -->		
+
+{# se hace un include del archivo donde se encuentra el footer #}	
+{% include 'RutasBundle:Base:footer.html.twig' %} 	
+{# Footer #} 		
+
+</body>
+</html>

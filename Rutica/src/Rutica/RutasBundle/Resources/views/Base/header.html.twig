@@ -50,12 +50,12 @@
 
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Quienes somos</a></li>
-                    <li><a href="">Sitios turísticos</a></li>
+                    <li><a href="{{ path('home') }}">Home</a></li>
+                    <li><a href="{{ path('quienes_somos') }}">¿Quienes somos?</a></li>
+                    <li><a href="{{ path('sitios') }}">Sitios turísticos</a></li>
                     <li><a href="{{ path('rutas_sugeridas') }}">Rutas sugeridas</a></li>
                     <li><a href="{{ path('crea_tus_rutas') }}">Crea tus rutas</a></li>                   
-                    <li><a href="">Contáctenos</a></li>                    
+                    <li><a href="{{ path('contactenos') }}">Contáctenos</a></li>                    
                 </ul>
             </div>
         </div>

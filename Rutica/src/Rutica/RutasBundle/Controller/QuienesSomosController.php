@@ -4,7 +4,7 @@ namespace Rutica\RutasBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class CreaTusRutasController extends Controller
+class QuienesSomosController extends Controller
 {
 	//-- Muestra la vista principal de la opción crea tus rutas
     public function mostrarAction()

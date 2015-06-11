@@ -5,3 +5,19 @@ rutas_sugeridas:
 crea_tus_rutas:
     path:     /crea_tus_rutas
     defaults: { _controller: RutasBundle:CreaTusRutas:mostrar }
+    
+home:
+    path:     /home
+    defaults: { _controller: RutasBundle:Principal:mostrar }
+
+contactenos:
+    path:     /contactenos
+    defaults: { _controller: RutasBundle:Contactenos:mostrar }    
+
+quienes_somos:
+    path:     /quienes_somos
+    defaults: { _controller: RutasBundle:QuienesSomos:mostrar }
+    
+sitios:
+    path:     /sitios
+    defaults: { _controller: RutasBundle:Sitios:mostrar }    

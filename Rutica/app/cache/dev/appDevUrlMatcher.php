@@ -137,6 +137,26 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Rutica\\RutasBundle\\Controller\\CreaTusRutasController::mostrarAction',  '_route' => 'crea_tus_rutas',);
         }
 
+        // home
+        if ($pathinfo === '/home') {
+            return array (  '_controller' => 'Rutica\\RutasBundle\\Controller\\PrincipalController::mostrarAction',  '_route' => 'home',);
+        }
+
+        // contactenos
+        if ($pathinfo === '/contactenos') {
+            return array (  '_controller' => 'Rutica\\RutasBundle\\Controller\\ContactenosController::mostrarAction',  '_route' => 'contactenos',);
+        }
+
+        // quienes_somos
+        if ($pathinfo === '/quienes_somos') {
+            return array (  '_controller' => 'Rutica\\RutasBundle\\Controller\\QuienesSomosController::mostrarAction',  '_route' => 'quienes_somos',);
+        }
+
+        // sitios
+        if ($pathinfo === '/sitios') {
+            return array (  '_controller' => 'Rutica\\RutasBundle\\Controller\\SitiosController::mostrarAction',  '_route' => 'sitios',);
+        }
+
         if (0 === strpos($pathinfo, '/rutasugerida')) {
             // rutasugerida
             if (rtrim($pathinfo, '/') === '/rutasugerida') {

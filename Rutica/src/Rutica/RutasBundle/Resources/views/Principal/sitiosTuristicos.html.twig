@@ -1,0 +1,144 @@
+{% include 'RutasBundle:Base:header.html.twig' %}
+
+<!-- Título de página -->
+<div class="section section-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Sitios Turísticos</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Título de página -->		
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Lista de sitios turísticos registrados</h2>
+                <h3>playa, montaña y diferentes locaciones para turistear</h3>					
+            </div>
+        </div>
+    </div>
+</div>	
+<div class="container">
+    <div class="modal fade" id="ventanaModalDescripcionSitio">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!--Header del modal-->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title ">Bosque nuboso Monteverde</h4>   
+                </div>
+                <!--Contenido de la ventana-->
+                <div class="modal-body" align="center">
+                    <img src="{{asset('bundles/templateboostrap/img/sitios/1.jpg')}}" width="550" height="350" title="Destino" alt="" />
+                </div>
+                <div>
+                    <p>Provincia: Puntarenas</p>
+                    <p>Actividad: Aventura</p>
+                    <p>Descrición: Con un bosque tropical nuboso mundialmente famoso la Reserva Biológica Monteverde 
+                        es una de las áreas protegidas privadas más importantes de Costa Rica. Con un 90% de selva 
+                        virgen su biodiversidad de ecosistemas reúne a unos 70.000 amantes de la naturaleza al año 
+                        provenientes de diversos países. </p>
+                </div>
+
+                <!--Footer de la ventana-->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+
+            <ul class="grid cs-style-2">
+                <div class="col-md-4 col-sm-6">
+                    <figure>
+                        <img src="{{asset('bundles/templateboostrap/img/sitios/1.jpg')}}" alt="" />
+                        <figcaption>
+                            <h3>Bosque nuboso</h3>
+                            <h3>monteverde</h3>
+                            <span>Puntarenas</span>							
+                            <a href="#ventanaModalDescripcionSitio" class="btn btn-primary" data-toggle="modal">Visítalo</a>
+                        </figcaption>
+                    </figure>
+                </div>	
+                <div class="col-md-4 col-sm-6">
+                    <figure>
+                        <img src="{{asset('bundles/templateboostrap/img/sitios/2.jpg')}}" alt="" />
+                        <figcaption>
+                            <h3>Playa Nosara</h3>
+                            <span>Guanacaste</span>
+                            <a href="#ventanaModalDescripcionSitio" class="btn btn-primary" data-toggle="modal">Visítalo</a>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <figure>
+                        <img src="{{asset('bundles/templateboostrap/img/sitios/3.jpg')}}" alt="" />
+                        <figcaption>
+                            <h3>Parque Nacional</h3>
+                            <h3>Marino Ballena</h3>
+                            <span>Puntarenas</span>
+                            <a href="#ventanaModalDescripcionSitio" class="btn btn-primary" data-toggle="modal">Visítalo</a>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <figure>
+                        <img src="{{asset('bundles/templateboostrap/img/sitios/4.jpg')}}" alt="" />
+                        <figcaption>
+                            <h3>Parque Recreativo</h3>
+                            <h3>Los Chorros</h3>
+                            <span>Alajuela</span>
+                            <a href="#ventanaModalDescripcionSitio" class="btn btn-primary" data-toggle="modal">Visítalo</a>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <figure>
+                        <img src="{{asset('bundles/templateboostrap/img/sitios/5.jpg')}}" alt="" />
+                        <figcaption>
+                            <h3>Parque Nacional Tortuguero</h3>
+                            <span>Limón</span>
+                            <a href="#ventanaModalDescripcionSitio" class="btn btn-primary" data-toggle="modal">Visítalo</a>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <figure>
+                        <img src="{{asset('bundles/templateboostrap/img/sitios/6.jpg')}}" alt="" />
+                        <figcaption>
+                            <h3>Playa Cocal</h3>
+                            <span>Puntarenas</span>
+                            <a href="#ventanaModalDescripcionSitio" class="btn btn-primary" data-toggle="modal">Visítalo</a>
+                        </figcaption>
+                    </figure>
+                </div>
+            </ul>
+
+        </div>
+                        
+
+        <ul class="pager">
+            <li><a href="#">Previous</a></li>
+            <li><a href="#">Next</a></li>
+        </ul>
+
+    </div>
+</div>
+{# Footer #}
+{# se hace un include del archivo donde se encuentra el footer #}	
+{% include 'RutasBundle:Base:footer.html.twig' %} 	
+{# Footer #} 		
+
+</body>
+</html>

@@ -121,9 +121,18 @@ class __TwigTemplate_044a25c317f578c32c5004757021a4f3f6bb2d7a30a17f0f62959d97054
 
             <div class=\"collapse navbar-collapse\">
                 <ul class=\"nav navbar-nav navbar-right\">
-                    <li><a href=\"\">Home</a></li>
-                    <li><a href=\"\">Quienes somos</a></li>
-                    <li><a href=\"\">Sitios turísticos</a></li>
+                    <li><a href=\"";
+        // line 53
+        echo $this->env->getExtension('routing')->getPath("home");
+        echo "\">Home</a></li>
+                    <li><a href=\"";
+        // line 54
+        echo $this->env->getExtension('routing')->getPath("quienes_somos");
+        echo "\">¿Quienes somos?</a></li>
+                    <li><a href=\"";
+        // line 55
+        echo $this->env->getExtension('routing')->getPath("sitios");
+        echo "\">Sitios turísticos</a></li>
                     <li><a href=\"";
         // line 56
         echo $this->env->getExtension('routing')->getPath("rutas_sugeridas");
@@ -132,7 +141,10 @@ class __TwigTemplate_044a25c317f578c32c5004757021a4f3f6bb2d7a30a17f0f62959d97054
         // line 57
         echo $this->env->getExtension('routing')->getPath("crea_tus_rutas");
         echo "\">Crea tus rutas</a></li>                   
-                    <li><a href=\"\">Contáctenos</a></li>                    
+                    <li><a href=\"";
+        // line 58
+        echo $this->env->getExtension('routing')->getPath("contactenos");
+        echo "\">Contáctenos</a></li>                    
                 </ul>
             </div>
         </div>
@@ -186,6 +198,6 @@ class __TwigTemplate_044a25c317f578c32c5004757021a4f3f6bb2d7a30a17f0f62959d97054
 
     public function getDebugInfo()
     {
-        return array (  171 => 76,  167 => 75,  162 => 73,  158 => 72,  154 => 71,  150 => 69,  147 => 68,  142 => 64,  133 => 57,  129 => 56,  117 => 47,  104 => 36,  101 => 34,  98 => 33,  91 => 28,  86 => 26,  82 => 25,  79 => 24,  72 => 19,  67 => 18,  62 => 15,  58 => 14,  53 => 13,  50 => 11,  47 => 10,  42 => 6,  39 => 5,  11 => 2,);
+        return array (  183 => 76,  179 => 75,  174 => 73,  170 => 72,  166 => 71,  162 => 69,  159 => 68,  154 => 64,  146 => 58,  142 => 57,  138 => 56,  134 => 55,  130 => 54,  126 => 53,  117 => 47,  104 => 36,  101 => 34,  98 => 33,  91 => 28,  86 => 26,  82 => 25,  79 => 24,  72 => 19,  67 => 18,  62 => 15,  58 => 14,  53 => 13,  50 => 11,  47 => 10,  42 => 6,  39 => 5,  11 => 2,);
     }
 }
