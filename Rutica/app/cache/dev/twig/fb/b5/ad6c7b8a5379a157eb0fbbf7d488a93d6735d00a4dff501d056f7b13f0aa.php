@@ -19,8 +19,15 @@ class __TwigTemplate_fbb5ad6c7b8a5379a157eb0fbbf7d488a93d6735d00a4dff501d056f7b1
         $this->env->loadTemplate("AdministradorBundle:Default:adminHeader.html.twig")->display($context);
         // line 3
         echo "<br><br><br><br>
+<<<<<<< HEAD
 ";
         // line 4
+=======
+
+
+";
+        // line 6
+>>>>>>> interfaz_admin
         $this->env->loadTemplate("AdministradorBundle:Default:adminFooter.html.twig")->display($context);
     }
 
@@ -36,6 +43,10 @@ class __TwigTemplate_fbb5ad6c7b8a5379a157eb0fbbf7d488a93d6735d00a4dff501d056f7b1
 
     public function getDebugInfo()
     {
+<<<<<<< HEAD
         return array (  24 => 4,  21 => 3,  19 => 2,);
+=======
+        return array (  26 => 6,  21 => 3,  19 => 2,);
+>>>>>>> interfaz_admin
     }
 }

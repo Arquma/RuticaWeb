@@ -7,124 +7,147 @@ class __TwigTemplate_d7bd383b28d981b72e6ed11c618ca9f7dd3d96052ac4713763c31401cc2
     {
         parent::__construct($env);
 
-        // line 1
-        try {
-            $this->parent = $this->env->loadTemplate("::base.html.twig");
-        } catch (Twig_Error_Loader $e) {
-            $e->setTemplateFile($this->getTemplateName());
-            $e->setTemplateLine(1);
-
-            throw $e;
-        }
+        $this->parent = false;
 
         $this->blocks = array(
             'body' => array($this, 'block_body'),
         );
     }
 
-    protected function doGetParent(array $context)
-    {
-        return "::base.html.twig";
-    }
-
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $this->parent->display($context, array_merge($this->blocks, $blocks));
+        // line 1
+        echo "
+";
+        // line 2
+        $this->env->loadTemplate("AdministradorBundle:Default:adminHeader.html.twig")->display($context);
+        // line 3
+        echo "
+";
+        // line 4
+        $this->displayBlock('body', $context, $blocks);
+        // line 82
+        echo "    
+";
+        // line 83
+        $this->env->loadTemplate("AdministradorBundle:Default:adminFooter.html.twig")->display($context);
     }
 
-    // line 3
+    // line 4
     public function block_body($context, array $blocks = array())
     {
-        // line 4
-        echo "<h1>Sitio list</h1>
+        // line 6
+        echo "<div class=\"collapse navbar-collapse\">
+                <ul class=\"nav navbar-nav navbar-right\">
+                    <li ><a href=\"home.html\">Inicio</a></li>
+                    
+                    <li class=\"active\"><a href=\"";
+        // line 10
+        echo $this->env->getExtension('routing')->getUrl("sitio");
+        echo "\">Sitios turísticos</a></li>
+                    <li><a href=\"";
+        // line 11
+        echo $this->env->getExtension('routing')->getUrl("rutasugerida");
+        echo "\">Rutas</a></li>
+                    
+                    <li><a href=\"contactenos.html\">Salir</a></li>                    
+                </ul>
+            </div>
 
-    <table class=\"records_list\">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Descripcion</th>
-                <th>Imagen</th>
-                <th>Longitud</th>
-                <th>Latitud</th>
-                <th>Precio</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        ";
-        // line 20
+        </div>
+    </header><!--/header-->
+    <div class=\"section section-breadcrumbs\">
+\t\t\t<div class=\"container\">
+\t\t\t\t<div class=\"row\">
+\t\t\t\t\t<div class=\"col-md-12\">
+\t\t\t\t\t\t<h1>Sitios Turísticos</h1>
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+    </div>
+    <center>
+        <div class=\"row\">
+            <div class =\"col-md-6\" style=\"margin-left: 300px;\">
+                <table class=\"table table-hover\" data-toggle=\"table\" data-search=\"true\" style=\"width:100%\">
+
+                    <thead>
+                        <tr>
+
+                            <th>Nombre</th>
+
+                            <th>Longitud</th>
+                            <th>Latitud</th>
+                            <th>Precio</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ";
+        // line 45
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 21
-            echo "            <tr>
-                <td><a href=\"";
-            // line 22
+            // line 46
+            echo "                            <tr>
+                                <td><a href=\"";
+            // line 47
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sitio_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "id", array()), "html", null, true);
-            echo "</a></td>
-                <td>";
-            // line 23
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "nombre", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 24
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "descripcion", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 25
-            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "imagen", array()), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 26
+            echo "</a></td>
+
+                                <td>";
+            // line 49
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "longitud", array()), "html", null, true);
             echo "</td>
-                <td>";
-            // line 27
+                                <td>";
+            // line 50
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "latitud", array()), "html", null, true);
             echo "</td>
-                <td>";
-            // line 28
+                                <td>";
+            // line 51
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "precio", array()), "html", null, true);
             echo "</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href=\"";
-            // line 32
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sitio_show", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
-            echo "\">show</a>
-                    </li>
-                    <li>
-                        <a href=\"";
-            // line 35
+                                <td>
+                                    <ul>
+                                        
+                                        <a href=\"";
+            // line 55
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("sitio_edit", array("id" => $this->getAttribute($context["entity"], "id", array()))), "html", null, true);
-            echo "\">edit</a>
-                    </li>
-                </ul>
-                </td>
-            </tr>
-        ";
+            echo "\">editar</a>
+                                       
+                                    </ul>
+                                </td>
+                            </tr>
+                        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 41
-        echo "        </tbody>
-    </table>
-
-        <ul>
-        <li>
-            <a href=\"";
-        // line 46
+        // line 61
+        echo "                    </tbody>
+                </table>
+                    
+                    <ul class=\"pager\">
+\t\t\t\t  <li><a href=\"#\">Anterior</a></li>
+\t\t\t\t  <li><a href=\"";
+        // line 66
         echo $this->env->getExtension('routing')->getPath("sitio_new");
-        echo "\">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
+        echo "\">Nuevo Sitio</a></li>
+\t\t\t\t  <li><a href=\"#\">Siguiente</a></li>
+\t\t\t\t</ul>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+</center>
+
     ";
     }
 
@@ -140,6 +163,6 @@ class __TwigTemplate_d7bd383b28d981b72e6ed11c618ca9f7dd3d96052ac4713763c31401cc2
 
     public function getDebugInfo()
     {
-        return array (  122 => 46,  115 => 41,  103 => 35,  97 => 32,  90 => 28,  86 => 27,  82 => 26,  78 => 25,  74 => 24,  70 => 23,  64 => 22,  61 => 21,  57 => 20,  39 => 4,  36 => 3,  11 => 1,);
+        return array (  135 => 66,  128 => 61,  116 => 55,  109 => 51,  105 => 50,  101 => 49,  94 => 47,  91 => 46,  87 => 45,  50 => 11,  46 => 10,  40 => 6,  37 => 4,  33 => 83,  30 => 82,  28 => 4,  25 => 3,  23 => 2,  20 => 1,);
     }
 }

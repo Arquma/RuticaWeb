@@ -57,9 +57,11 @@ class RutaSugerida
      *   @ORM\JoinColumn(name="id_provincia", referencedColumnName="id")
      * })
      */
+    
+    
     private $idProvincia;
 
-
+    
 
     /**
      * Get id
@@ -187,7 +189,7 @@ class RutaSugerida
     }
     
      public function __toString() {
-        return $this->getId(). " ".$this->getNombre();
+        return $this->$this->getTiempo();
     }
     
 }

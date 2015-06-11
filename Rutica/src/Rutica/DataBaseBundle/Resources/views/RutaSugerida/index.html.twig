@@ -1,47 +1,85 @@
-{% extends '::base.html.twig' %}
+{% include 'AdministradorBundle:Default:adminHeader.html.twig' %}
 
 {% block body -%}
-    <h1>RutaSugerida list</h1>
+     <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li ><a href="home.html">Inicio</a></li>
+                    
+                    <li ><a href="{{url('sitio')}}">Sitios turísticos</a></li>
+                    <li class="active"><a href="{{url('rutasugerida')}}">Rutas</a></li>
+                    
+                    <li><a href="contactenos.html">Salir</a></li>                    
+                </ul>
+            </div>
 
-    <table class="records_list">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Distancia</th>
-                <th>Preciototal</th>
-                <th>Tiempo</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+        </div>
+    </header><!--/header-->
+
+     <!-- Título de página -->
+		<div class="section section-breadcrumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h1>Lista de Rutas</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Fin Título de página --> 
+                
+                		<!-- Fin Título de página --> 
+ <center>
+        <div class="row">
+            <div class ="col-md-6" style="margin-left: 300px;">
+                <table class="table table-hover" data-toggle="table" data-search="true" style="width:100%">
+
+                    <thead>
+                        <tr>
+
+                            <th>Nombre</th>
+                            <th>Distancia</th>
+                            <th>Precio Total</th>
+                            <th>Tiempo</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('rutasugerida_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.nombre }}</td>
+                <td><a href="{{ path('rutasugerida_show', { 'id': entity.id }) }}">{{ entity.nombre }}</a></td>
+                
                 <td>{{ entity.distancia }}</td>
                 <td>{{ entity.precioTotal }}</td>
-                <td>{{ entity.tiempo }}</td>
+                <td>{{ entity.tiempo| date('H:i') }}</td>
                 <td>
                 <ul>
-                    <li>
-                        <a href="{{ path('rutasugerida_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('rutasugerida_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
+                 
+                                       
+                        <a href="{{ path('rutasugerida_edit', { 'id': entity.id }) }}">editar</a>
+                    
                 </ul>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
-    </table>
+                </table>
 
-        <ul>
-        <li>
-            <a href="{{ path('rutasugerida_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
+                        <ul class="pager">
+                            <li><a href="#">Anterior</a></li>
+                            <li><a href="{{ path('rutasugerida_new') }}">Nueva Ruta</a></li>
+                            <li><a href="#">Siguiente</a></li>
+                        </ul>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+</center>
+  
+{% endblock %}
+{% include 'AdministradorBundle:Default:adminFooter.html.twig' %}
