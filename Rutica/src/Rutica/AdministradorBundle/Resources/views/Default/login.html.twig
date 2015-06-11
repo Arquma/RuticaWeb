@@ -1,0 +1,59 @@
+{% include 'AdministradorBundle:Default:adminHeader.html.twig' %}
+	
+	<br><br><br><br><br><br><br><br><br>
+	
+	<!-- Inicio del formulario login   -->
+<center>
+
+<div class="container"style=" ">
+   
+        
+    <div class="row">
+        <div class="col-md-12 center login-header">
+            <h2>Bienvenido</h2>
+        </div>
+        <!--/span-->
+    </div><!--/row-->
+
+    <div class="row" style=" width: 50%">
+        <div class="well " >
+            
+                        
+            <div class="alert alert-info" style="background-color:#E7F598;">
+                Por favor inicie sesión con su usuario y contraseña
+            </div>
+            <form class="form-horizontal" action="" method="post">
+                <fieldset>
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user red"></i></span>
+                        <input type="text" name="usuario" class="form-control" placeholder="Usuario">
+                    </div>
+                    <div class="clearfix"></div><br>
+
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock red"></i></span>
+                        <input type="password" name="pass" class="form-control" placeholder="Contraseña">
+                    </div>
+                  <br>
+
+                    <div class="col-md-5">
+                        <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <!--/span-->
+    </div><!--/row-->
+
+</div><!--/.fluid-container-->
+
+</center>
+
+<br><br><br><br><br><br><br>
+
+{# Footer #}
+{# se hace un include del archivo donde se encuentra el footer #}	
+{% include 'RutasBundle:Base:footer.html.twig' %} 	
+{# Footer #} 
+    </body>
+</html>

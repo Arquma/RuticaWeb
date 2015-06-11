@@ -196,6 +196,7 @@ f1f1fc,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/contactenos,143
 472efd,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/crea_tus_rutas,1433989588,
 cc25dd,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/contactenos,1433989590,
 c98e4b,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/home,1433989603,
+<<<<<<< HEAD
 =======
 0758ce,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/sitio,1433718542,
 a87003,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/sitio/,1433718547,
@@ -665,3 +666,26 @@ dc47cd,::1,GET,https://localhost/RuticaWeb/Rutica/web/app_dev.php/rutasugerida/n
 d036bb,::1,GET,https://localhost/RuticaWeb/Rutica/web/app_dev.php/rutasugerida/home.html,1434001784,e24335
 e24335,::1,GET,https://localhost/RuticaWeb/Rutica/web/app_dev.php/rutasugerida/home.html,1434001784,
 >>>>>>> interfaz_admin
+=======
+dacd88,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/home,1434054566,
+e2eece,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/quienes_somos,1434054618,
+e58820,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/sitios,1434054630,
+362821,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/rutas_sugeridas,1434054633,
+7ee70c,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/crea_tus_rutas,1434054636,
+38a443,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/contactenos,1434054638,
+b5a525,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/quienes_somos,1434054641,
+370eec,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/home,1434054752,
+b4de6f,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/quienes_somos,1434054756,
+e0535a,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/login,1434054773,
+c03ad7,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/login,1434054845,
+15e7ce,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/login,1434054885,
+6ef4ba,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/login,1434054915,
+5dec5e,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/login,1434054940,
+1f0adb,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/login,1434055054,
+f8cebd,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/about-us.html,1434055076,74c751
+74c751,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/about-us.html,1434055077,
+83b4d8,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/home,1434055116,
+74c8c4,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/sitios,1434055162,
+75c8cd,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/login,1434055206,
+ebf987,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/login,1434055229,
+>>>>>>> Local
