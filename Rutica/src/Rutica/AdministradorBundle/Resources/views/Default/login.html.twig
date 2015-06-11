@@ -1,6 +1,6 @@
 {% include 'AdministradorBundle:Default:adminHeader.html.twig' %}
-	
-	<br><br><br><br><br><br><br><br><br>
+	</header>
+	<br><br><br><br><br><br><br>
 	
 	<!-- Inicio del formulario login   -->
 <center>
@@ -37,7 +37,7 @@
                   <br>
 
                     <div class="col-md-5">
-                        <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+                        <button type="button" class="btn btn-primary" onclick=" location.href='{{ path('ainicio') }}' " data-toggle="modal">Iniciar sesión</button>
                     </div>
                 </fieldset>
             </form>

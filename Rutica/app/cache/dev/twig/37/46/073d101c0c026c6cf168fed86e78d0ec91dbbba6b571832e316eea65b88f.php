@@ -18,8 +18,8 @@ class __TwigTemplate_3746073d101c0c026c6cf168fed86e78d0ec91dbbba6b571832e316eea6
         // line 1
         $this->env->loadTemplate("AdministradorBundle:Default:adminHeader.html.twig")->display($context);
         // line 2
-        echo "\t
-\t<br><br><br><br><br><br><br><br><br>
+        echo "\t</header>
+\t<br><br><br><br><br><br><br>
 \t
 \t<!-- Inicio del formulario login   -->
 <center>
@@ -56,7 +56,10 @@ class __TwigTemplate_3746073d101c0c026c6cf168fed86e78d0ec91dbbba6b571832e316eea6
                   <br>
 
                     <div class=\"col-md-5\">
-                        <button type=\"submit\" class=\"btn btn-primary\">Iniciar sesión</button>
+                        <button type=\"button\" class=\"btn btn-primary\" onclick=\" location.href='";
+        // line 40
+        echo $this->env->getExtension('routing')->getPath("ainicio");
+        echo "' \" data-toggle=\"modal\">Iniciar sesión</button>
                     </div>
                 </fieldset>
             </form>
@@ -97,6 +100,6 @@ class __TwigTemplate_3746073d101c0c026c6cf168fed86e78d0ec91dbbba6b571832e316eea6
 
     public function getDebugInfo()
     {
-        return array (  82 => 57,  78 => 56,  75 => 55,  21 => 2,  19 => 1,);
+        return array (  85 => 57,  81 => 56,  78 => 55,  61 => 40,  21 => 2,  19 => 1,);
     }
 }

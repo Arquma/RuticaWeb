@@ -32,19 +32,13 @@ class __TwigTemplate_15c4c4d302360de531332f717f0d576a5b4300bf74642fc50f20428b74e
     <meta name=\"description\" content=\"\">
     <meta name=\"author\" content=\"\">
 
-<<<<<<< HEAD
-    <title>BASICA! A Free Bootstrap3 HTML5 CSS3 Template by Vactual Art</title>
-=======
     <title>Rutica</title>
->>>>>>> interfaz_admin
 
     <!-- Bootstrap Core CSS -->
         <link href=\"";
         // line 21
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/css/bootstrap.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
-<<<<<<< HEAD
-=======
         <link rel=\"stylesheet\" href=\"";
         // line 22
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/css/bootstrap.min.css"), "html", null, true);
@@ -54,33 +48,20 @@ class __TwigTemplate_15c4c4d302360de531332f717f0d576a5b4300bf74642fc50f20428b74e
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/css/bootstrap-table.css"), "html", null, true);
         echo "\">
 
->>>>>>> interfaz_admin
 
 
     <!-- Custom CSS -->
 \t<link href=\"";
-<<<<<<< HEAD
-        // line 25
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/css/main.css"), "html", null, true);
-        echo "\" rel=\"stylesheet\">
-        <link href=\"";
-        // line 26
-=======
         // line 28
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/css/main.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
         <link href=\"";
         // line 29
->>>>>>> interfaz_admin
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/css/custom.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
     
 \t<script src=\"";
-<<<<<<< HEAD
-        // line 28
-=======
         // line 31
->>>>>>> interfaz_admin
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("use.edgefonts.net/bebas-neue.js"), "html", null, true);
         echo "\"></script>
 
@@ -89,17 +70,6 @@ class __TwigTemplate_15c4c4d302360de531332f717f0d576a5b4300bf74642fc50f20428b74e
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
 \t
 \t <link href=\"";
-<<<<<<< HEAD
-        // line 34
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/css/icomoon-social.css"), "html", null, true);
-        echo "\" rel=\"stylesheet\">
-         <link href=\"";
-        // line 35
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/css/font-awesome.min.css"), "html", null, true);
-        echo "\" rel=\"stylesheet\">
-\t<script src=\"";
-        // line 36
-=======
         // line 37
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/css/icomoon-social.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
@@ -109,8 +79,7 @@ class __TwigTemplate_15c4c4d302360de531332f717f0d576a5b4300bf74642fc50f20428b74e
         echo "\" rel=\"stylesheet\">
 \t<script src=\"";
         // line 39
->>>>>>> interfaz_admin
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("js/modernizr-2.6.2-respond-1.1.0.min.js"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/js/modernizr-2.6.2-respond-1.1.0.min.js"), "html", null, true);
         echo "\"></script>
 \t
 
@@ -132,44 +101,11 @@ class __TwigTemplate_15c4c4d302360de531332f717f0d576a5b4300bf74642fc50f20428b74e
                     <span class=\"icon-bar\"></span>
                 </button>
                 <a class=\"navbar-brand\" href=\"index.html\"><img src=\"";
-<<<<<<< HEAD
-        // line 56
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/logo.png"), "html", null, true);
-        echo "\" alt=\"Basica\"></a>
-            </div>
-            <div class=\"collapse navbar-collapse\">
-                <ul class=\"nav navbar-nav navbar-right\">
-                    <li class=\"active\"><a href=\"index.html\">Home</a></li>
-                    <li><a href=\"about-us.html\">About Us</a></li>
-                    <li><a href=\"services.html\">Services</a></li>
-                    <li><a href=\"portfolio.html\">Portfolio</a></li>
-                    <li class=\"dropdown\">
-                        <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Pages <i class=\"icon-angle-down\"></i></a>
-                        <ul class=\"dropdown-menu\">
-                            <li><a href=\"#\">Dropdown Menu 1</a></li>
-                            <li><a href=\"#\">Dropdown Menu 2</a></li>
-                            <li><a href=\"#\">Dropdown Menu 3</a></li>
-                            <li><a href=\"#\">Dropdown Menu 4</a></li>
-                            <li><a href=\"#\">Dropdown Menu 5</a></li>
-                            <li class=\"divider\"></li>
-                            <li><a href=\"#\">Privacy Policy</a></li>
-                            <li><a href=\"#\">Terms of Use</a></li>
-                        </ul>
-                    </li>
-                    <li><a href=\"blog.html\">Blog</a></li> 
-                    <li><a href=\"contact-us.html\">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </header><!--/header-->
-
-=======
         // line 59
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/logo.png"), "html", null, true);
         echo "\" alt=\"Basica\"></a>
             </div>
           
->>>>>>> interfaz_admin
 ";
     }
 
@@ -185,10 +121,6 @@ class __TwigTemplate_15c4c4d302360de531332f717f0d576a5b4300bf74642fc50f20428b74e
 
     public function getDebugInfo()
     {
-<<<<<<< HEAD
-        return array (  96 => 56,  73 => 36,  69 => 35,  65 => 34,  56 => 28,  51 => 26,  47 => 25,  40 => 21,  19 => 2,);
-=======
         return array (  105 => 59,  82 => 39,  78 => 38,  74 => 37,  65 => 31,  60 => 29,  56 => 28,  48 => 23,  44 => 22,  40 => 21,  19 => 2,);
->>>>>>> interfaz_admin
     }
 }

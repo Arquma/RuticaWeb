@@ -33,7 +33,10 @@ class __TwigTemplate_7fd05cac50151f54ef58c012095fb97be33db06ca51a9f9eaee2bae3134
         // line 4
         echo "<div class=\"collapse navbar-collapse\">
                 <ul class=\"nav navbar-nav navbar-right\">
-                    <li ><a href=\"home.html\">Inicio</a></li>
+                    <li ><a href=\"";
+        // line 6
+        echo $this->env->getExtension('routing')->getUrl("ainicio");
+        echo "\">Inicio</a></li>
                     
                     <li class=\"active\"><a href=\"";
         // line 8
@@ -185,6 +188,6 @@ class __TwigTemplate_7fd05cac50151f54ef58c012095fb97be33db06ca51a9f9eaee2bae3134
 
     public function getDebugInfo()
     {
-        return array (  169 => 107,  151 => 92,  129 => 73,  120 => 67,  111 => 61,  102 => 55,  93 => 49,  84 => 43,  75 => 37,  44 => 9,  40 => 8,  34 => 4,  31 => 3,  27 => 111,  25 => 3,  23 => 2,  20 => 1,);
+        return array (  172 => 107,  154 => 92,  132 => 73,  123 => 67,  114 => 61,  105 => 55,  96 => 49,  87 => 43,  78 => 37,  47 => 9,  43 => 8,  38 => 6,  34 => 4,  31 => 3,  27 => 111,  25 => 3,  23 => 2,  20 => 1,);
     }
 }

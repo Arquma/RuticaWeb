@@ -1,5 +1,5 @@
-index:
-    path:     /index/
+ainicio:
+    path:     /ainicio
     defaults: { _controller: AdministradorBundle:Default:index }
     
 login:
