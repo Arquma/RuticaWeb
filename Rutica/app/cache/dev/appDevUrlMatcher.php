@@ -291,6 +291,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Rutica\\AdministradorBundle\\Controller\\DefaultController::indexAction',  '_route' => 'index',);
         }
 
+        // login
+        if ($pathinfo === '/login') {
+            return array (  '_controller' => 'Rutica\\AdministradorBundle\\Controller\\LoginController::indexAction',  '_route' => 'login',);
+        }
+
         // homepage
         if ($pathinfo === '/app/example') {
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
