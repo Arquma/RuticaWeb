@@ -140,10 +140,10 @@ class __TwigTemplate_0229b872ad6071b902c1a223e558a13736977a1116b0e57a63c84b02f8e
         // line 89
         echo "     \t\t\t\t\t<div class=\"form-group\">
      \t\t\t\t\t\t<label for=\"buscar\" class=\"col-sm-1 control-label\"></label>
-     \t\t\t\t\t\t<div class\"col-sm-6\">     \t\t\t\t\t\t
-   \t\t\t\t\t\t\t\t<button id=\"buscar\" type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\">Buscar</button>
-   \t\t\t\t\t\t\t</div>
-   \t\t\t\t\t\t</div>   \t\t\t\t\t\t
+                                                <div class=\"col-sm-6\">     \t\t\t\t\t\t
+                                                    <button id=\"buscar\" type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\">Buscar</button>
+                                                </div>
+                                        </div>   \t\t\t\t\t\t
    \t\t\t\t\t\t";
         // line 96
         echo "   \t\t\t\t\t\t\t 

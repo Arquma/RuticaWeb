@@ -32,13 +32,65 @@ class __TwigTemplate_e6fd2d1357837578330d23b1b44561137da9eca8042fef9c531986c425d
 </div>
 <!-- Título de página -->
 
+<div class=\"container\">
+    <div class=\"modal fade\" id=\"ventanaModalDescripcionSitio2\">
+        <div class=\"modal-dialog\">
+            <div class=\"modal-content\">
+                <!--Header del modal-->
+                <div class=\"modal-header\">
+                    <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>
+                    <h4 class=\"modal-title \">Contáctenos</h4>   
+                </div>
+                <!--Contenido de la ventana-->
+                <div class=\"modal-body\" align=\"center\">
+                    <form class=\"form-horizontal\" role=\"form\" method=\"post\">
+
+                        <div class=\"form-group\">
+                            <label for=\"name\" class=\"col-sm-2 control-label\">Nombre:</label>
+                            <div class=\"col-sm-10\">
+                                <input type=\"text\" class=\"form-control\" id=\"nombre\" name=\"nombre\">
+                            </div>
+                        </div>
+
+                        <div class=\"form-group\">
+                            <label for=\"email\" class=\"col-sm-2 control-label\">Email:</label>
+                            <div class=\"col-sm-10\">
+                                <input type=\"email\" class=\"form-control\" id=\"email\" name=\"email\">
+                            </div>
+                        </div>
+
+                        <div class=\"form-group\">
+                            <label for=\"message\" class=\"col-sm-2 control-label\">Mensaje:</label>
+                            <div class=\"col-sm-10\">
+                                <textarea class=\"form-control\" rows=\"4\" name=\"message\"></textarea>
+                            </div>
+                        </div>
+                    </form>    
+                </div>
+
+                <!--Footer de la ventana-->
+                <div class=\"modal-footer\">
+                    <div class=\"form-group\">
+                        <div class=\"col-sm-10 col-sm-offset-2\" align=\"center\">
+                            <input id=\"submit\" name=\"submit\" type=\"submit\" value=\"Enviar\" class=\"btn btn-primary\">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
 <div class=\"section\">
     <div class=\"container\">
         <div class=\"row\">
             <div class=\"col-sm-8\">
                 <div align=\"center\" class=\"embed-responsive embed-responsive-16by9\">\t
                     <video class=\"embed-responsive-item\" src=\"";
-        // line 21
+        // line 73
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/video/Turismo en Costa Rica.mp4"), "html", null, true);
         echo "\" type=\"video/mp4\" controls></video>
                 </div>
@@ -51,10 +103,12 @@ class __TwigTemplate_e6fd2d1357837578330d23b1b44561137da9eca8042fef9c531986c425d
                 </p>
                 <p>
                     El objetivo principal de rutica es que alrededor de todo el mundo se conozcan todas las áreas en donde se puede disfrutar al máximo en nuestro país entre amigos y familiares.
-                </p>\t\t\t\t\t\t\t\t\t\t
+                </p>\t   \t\t\t\t\t\t
+                <button href=\"#ventanaModalDescripcionSitio2\" id=\"btnContactenos\" type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" >Contáctenos</button>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 <hr>\t\t
@@ -67,7 +121,7 @@ class __TwigTemplate_e6fd2d1357837578330d23b1b44561137da9eca8042fef9c531986c425d
             <div class=\"col-md-4 col-sm-6\">
                 <div class=\"team-member\">\t\t\t\t\t\t\t
                     <div class=\"team-member-image\"><img src=\"";
-        // line 47
+        // line 101
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/team/1_1.jpg"), "html", null, true);
         echo "\" alt=\"\" /></div>
                     <div class=\"team-member-info\">
@@ -83,7 +137,7 @@ class __TwigTemplate_e6fd2d1357837578330d23b1b44561137da9eca8042fef9c531986c425d
             <div class=\"col-md-4 col-sm-6\">
                 <div class=\"team-member\">\t\t\t\t\t\t\t
                     <div class=\"team-member-image\"><img src=\"";
-        // line 60
+        // line 114
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/team/2_1.jpg"), "html", null, true);
         echo "\" alt=\"\" /></div>
                     <div class=\"team-member-info\">
@@ -99,7 +153,7 @@ class __TwigTemplate_e6fd2d1357837578330d23b1b44561137da9eca8042fef9c531986c425d
             <div class=\"col-md-4 col-sm-6\">
                 <div class=\"team-member\">
                     <div class=\"team-member-image\"><img src=\"";
-        // line 73
+        // line 127
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/team/3_1.jpg"), "html", null, true);
         echo "\" alt=\"\" /></div>
                     <div class=\"team-member-info\">
@@ -117,14 +171,14 @@ class __TwigTemplate_e6fd2d1357837578330d23b1b44561137da9eca8042fef9c531986c425d
 <!-- Fin de los miembros de rutica -->\t\t
 
 ";
-        // line 88
+        // line 142
         echo "\t
 ";
-        // line 89
+        // line 143
         $this->env->loadTemplate("RutasBundle:Base:footer.html.twig")->display($context);
         echo " \t
 ";
-        // line 90
+        // line 144
         echo " \t\t
 
 </body>
@@ -144,6 +198,6 @@ class __TwigTemplate_e6fd2d1357837578330d23b1b44561137da9eca8042fef9c531986c425d
 
     public function getDebugInfo()
     {
-        return array (  128 => 90,  124 => 89,  121 => 88,  103 => 73,  87 => 60,  71 => 47,  42 => 21,  21 => 2,  19 => 1,);
+        return array (  182 => 144,  178 => 143,  175 => 142,  157 => 127,  141 => 114,  125 => 101,  94 => 73,  21 => 2,  19 => 1,);
     }
 }

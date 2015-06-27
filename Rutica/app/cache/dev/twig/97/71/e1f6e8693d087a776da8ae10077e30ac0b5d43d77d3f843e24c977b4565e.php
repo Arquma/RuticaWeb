@@ -73,6 +73,7 @@ class __TwigTemplate_9771e1f6e8693d087a776da8ae10077e30ac0b5d43d77d3f843e24c977b
             </div>
         </div>
 
+
     </div>
 
 </div>
@@ -85,7 +86,7 @@ class __TwigTemplate_9771e1f6e8693d087a776da8ae10077e30ac0b5d43d77d3f843e24c977b
                 <div class=\"col-md-4 col-sm-6\">
                     <figure>
                         <img src=\"";
-        // line 65
+        // line 66
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/sitios/1.jpg"), "html", null, true);
         echo "\" alt=\"\" />
                         <figcaption>
@@ -99,7 +100,7 @@ class __TwigTemplate_9771e1f6e8693d087a776da8ae10077e30ac0b5d43d77d3f843e24c977b
                 <div class=\"col-md-4 col-sm-6\">
                     <figure>
                         <img src=\"";
-        // line 76
+        // line 77
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/sitios/2.jpg"), "html", null, true);
         echo "\" alt=\"\" />
                         <figcaption>
@@ -112,7 +113,7 @@ class __TwigTemplate_9771e1f6e8693d087a776da8ae10077e30ac0b5d43d77d3f843e24c977b
                 <div class=\"col-md-4 col-sm-6\">
                     <figure>
                         <img src=\"";
-        // line 86
+        // line 87
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/sitios/3.jpg"), "html", null, true);
         echo "\" alt=\"\" />
                         <figcaption>
@@ -126,7 +127,7 @@ class __TwigTemplate_9771e1f6e8693d087a776da8ae10077e30ac0b5d43d77d3f843e24c977b
                 <div class=\"col-md-4 col-sm-6\">
                     <figure>
                         <img src=\"";
-        // line 97
+        // line 98
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/sitios/4.jpg"), "html", null, true);
         echo "\" alt=\"\" />
                         <figcaption>
@@ -140,7 +141,7 @@ class __TwigTemplate_9771e1f6e8693d087a776da8ae10077e30ac0b5d43d77d3f843e24c977b
                 <div class=\"col-md-4 col-sm-6\">
                     <figure>
                         <img src=\"";
-        // line 108
+        // line 109
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/sitios/5.jpg"), "html", null, true);
         echo "\" alt=\"\" />
                         <figcaption>
@@ -153,7 +154,7 @@ class __TwigTemplate_9771e1f6e8693d087a776da8ae10077e30ac0b5d43d77d3f843e24c977b
                 <div class=\"col-md-4 col-sm-6\">
                     <figure>
                         <img src=\"";
-        // line 118
+        // line 119
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/sitios/6.jpg"), "html", null, true);
         echo "\" alt=\"\" />
                         <figcaption>
@@ -176,14 +177,14 @@ class __TwigTemplate_9771e1f6e8693d087a776da8ae10077e30ac0b5d43d77d3f843e24c977b
     </div>
 </div>
 ";
-        // line 139
+        // line 140
         echo "\t
 ";
-        // line 140
+        // line 141
         $this->env->loadTemplate("RutasBundle:Base:footer.html.twig")->display($context);
         echo " \t
 ";
-        // line 141
+        // line 142
         echo " \t\t
 
 </body>
@@ -203,6 +204,6 @@ class __TwigTemplate_9771e1f6e8693d087a776da8ae10077e30ac0b5d43d77d3f843e24c977b
 
     public function getDebugInfo()
     {
-        return array (  187 => 141,  183 => 140,  180 => 139,  157 => 118,  144 => 108,  130 => 97,  116 => 86,  103 => 76,  89 => 65,  57 => 36,  21 => 2,  19 => 1,);
+        return array (  188 => 142,  184 => 141,  181 => 140,  158 => 119,  145 => 109,  131 => 98,  117 => 87,  104 => 77,  90 => 66,  57 => 36,  21 => 2,  19 => 1,);
     }
 }
