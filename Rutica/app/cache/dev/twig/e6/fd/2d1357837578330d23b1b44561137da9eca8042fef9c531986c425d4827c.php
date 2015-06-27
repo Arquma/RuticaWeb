@@ -43,7 +43,10 @@ class __TwigTemplate_e6fd2d1357837578330d23b1b44561137da9eca8042fef9c531986c425d
                 </div>
                 <!--Contenido de la ventana-->
                 <div class=\"modal-body\" align=\"center\">
-                    <form class=\"form-horizontal\" role=\"form\" method=\"post\">
+                    <form action=\"";
+        // line 27
+        echo $this->env->getExtension('routing')->getPath("enviar_correo");
+        echo "\" class=\"form-horizontal\" method=\"post\">
 
                         <div class=\"form-group\">
                             <label for=\"name\" class=\"col-sm-2 control-label\">Nombre:</label>
@@ -65,16 +68,17 @@ class __TwigTemplate_e6fd2d1357837578330d23b1b44561137da9eca8042fef9c531986c425d
                                 <textarea class=\"form-control\" rows=\"4\" name=\"message\"></textarea>
                             </div>
                         </div>
-                    </form>    
-                </div>
 
-                <!--Footer de la ventana-->
-                <div class=\"modal-footer\">
-                    <div class=\"form-group\">
-                        <div class=\"col-sm-10 col-sm-offset-2\" align=\"center\">
-                            <input id=\"submit\" name=\"submit\" type=\"submit\" value=\"Enviar\" class=\"btn btn-primary\">
+
+                        <!--Footer de la ventana-->
+                        <div class=\"modal-footer\">
+                            <div class=\"form-group\">
+                                <div class=\"col-sm-10 col-sm-offset-2\" align=\"center\">
+                                    <input id=\"submit\" name=\"submit\" type=\"submit\" value=\"Enviar\" class=\"btn btn-primary\">
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </form>    
                 </div>
             </div>
         </div>
@@ -90,7 +94,7 @@ class __TwigTemplate_e6fd2d1357837578330d23b1b44561137da9eca8042fef9c531986c425d
             <div class=\"col-sm-8\">
                 <div align=\"center\" class=\"embed-responsive embed-responsive-16by9\">\t
                     <video class=\"embed-responsive-item\" src=\"";
-        // line 73
+        // line 74
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/video/Turismo en Costa Rica.mp4"), "html", null, true);
         echo "\" type=\"video/mp4\" controls></video>
                 </div>
@@ -121,7 +125,7 @@ class __TwigTemplate_e6fd2d1357837578330d23b1b44561137da9eca8042fef9c531986c425d
             <div class=\"col-md-4 col-sm-6\">
                 <div class=\"team-member\">\t\t\t\t\t\t\t
                     <div class=\"team-member-image\"><img src=\"";
-        // line 101
+        // line 102
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/team/1_1.jpg"), "html", null, true);
         echo "\" alt=\"\" /></div>
                     <div class=\"team-member-info\">
@@ -137,7 +141,7 @@ class __TwigTemplate_e6fd2d1357837578330d23b1b44561137da9eca8042fef9c531986c425d
             <div class=\"col-md-4 col-sm-6\">
                 <div class=\"team-member\">\t\t\t\t\t\t\t
                     <div class=\"team-member-image\"><img src=\"";
-        // line 114
+        // line 115
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/team/2_1.jpg"), "html", null, true);
         echo "\" alt=\"\" /></div>
                     <div class=\"team-member-info\">
@@ -153,7 +157,7 @@ class __TwigTemplate_e6fd2d1357837578330d23b1b44561137da9eca8042fef9c531986c425d
             <div class=\"col-md-4 col-sm-6\">
                 <div class=\"team-member\">
                     <div class=\"team-member-image\"><img src=\"";
-        // line 127
+        // line 128
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/team/3_1.jpg"), "html", null, true);
         echo "\" alt=\"\" /></div>
                     <div class=\"team-member-info\">
@@ -171,14 +175,14 @@ class __TwigTemplate_e6fd2d1357837578330d23b1b44561137da9eca8042fef9c531986c425d
 <!-- Fin de los miembros de rutica -->\t\t
 
 ";
-        // line 142
+        // line 143
         echo "\t
 ";
-        // line 143
+        // line 144
         $this->env->loadTemplate("RutasBundle:Base:footer.html.twig")->display($context);
         echo " \t
 ";
-        // line 144
+        // line 145
         echo " \t\t
 
 </body>
@@ -198,6 +202,6 @@ class __TwigTemplate_e6fd2d1357837578330d23b1b44561137da9eca8042fef9c531986c425d
 
     public function getDebugInfo()
     {
-        return array (  182 => 144,  178 => 143,  175 => 142,  157 => 127,  141 => 114,  125 => 101,  94 => 73,  21 => 2,  19 => 1,);
+        return array (  186 => 145,  182 => 144,  179 => 143,  161 => 128,  145 => 115,  129 => 102,  98 => 74,  48 => 27,  21 => 2,  19 => 1,);
     }
 }

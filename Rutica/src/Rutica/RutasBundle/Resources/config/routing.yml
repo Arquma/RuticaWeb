@@ -20,4 +20,8 @@ quienes_somos:
     
 sitios:
     path:     /sitios
-    defaults: { _controller: RutasBundle:Sitios:mostrar }    
+    defaults: { _controller: RutasBundle:Sitios:mostrar }   
+    
+enviar_correo:
+    path:     /correo
+    defaults: { _controller: RutasBundle:Contactenos:enviarCorreo }     
