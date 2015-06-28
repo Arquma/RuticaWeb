@@ -37,14 +37,16 @@ class __TwigTemplate_38bdf2c9ae3a0bb339d315e000463cf13ba6ee163d8cea4d2131a65ec1e
                     <div class=\"row\">
                         <div class=\"col-sm-12\">
                             <div class=\"carousel-content centered\">
-                                <h2 class=\"animation animated-item-1\">¡Conoce Costa Rica con nosotros!</h2>                                    
+                                <h2 class=\"animation animated-item-1\">¡Conoce Costa Rica con nosotros!</h2> 
+                                <br>
+                                <p class=\"animation animated-item-2\">Aprende de nuestros sitios y enterate de rutas turísticas o crealas tu mismo</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class=\"item\" style=\"background-image: url(";
-        // line 24
+        // line 26
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/slides/2.jpg"), "html", null, true);
         echo ")\">
                 <div class=\"container\">
@@ -52,10 +54,10 @@ class __TwigTemplate_38bdf2c9ae3a0bb339d315e000463cf13ba6ee163d8cea4d2131a65ec1e
                         <div class=\"col-sm-12\">
                             <div class=\"carousel-content center centered\">
                                 <h2 class=\"animation animated-item-1\">Visita Nuevos lugares</h2>
-                                <p class=\"animation animated-item-2\">Escoja el que más le gusta y aproveche los precios de temporada.</p>
+                                <p class=\"animation animated-item-2\">Escoje el que más le gusta y aproveche los precios de temporada.</p>
                                 <br>
                                 <a class=\"btn btn-md animation animated-item-3\" href=\"";
-        // line 32
+        // line 34
         echo $this->env->getExtension('routing')->getUrl("sitios");
         echo "\">Ver Más</a>
                             </div>
@@ -64,7 +66,7 @@ class __TwigTemplate_38bdf2c9ae3a0bb339d315e000463cf13ba6ee163d8cea4d2131a65ec1e
                 </div>
             </div>
             <div class=\"item\" style=\"background-image: url(";
-        // line 38
+        // line 40
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/slides/3.jpg"), "html", null, true);
         echo ")\">
                 <div class=\"container\">
@@ -75,7 +77,7 @@ class __TwigTemplate_38bdf2c9ae3a0bb339d315e000463cf13ba6ee163d8cea4d2131a65ec1e
                                 <p class=\"animation animated-item-2\">Cree sus propias rutas y aproveche </p>
                                 <br>
                                 <a class=\"btn btn-md animation animated-item-3\" href=\"";
-        // line 46
+        // line 48
         echo $this->env->getExtension('routing')->getUrl("crea_tus_rutas");
         echo "\">Ver Más</a>
                             </div>
@@ -118,7 +120,7 @@ class __TwigTemplate_38bdf2c9ae3a0bb339d315e000463cf13ba6ee163d8cea4d2131a65ec1e
                     <h3>Conoce cada rincón de Costa Rica</h3>
                     <p>Escápate de la rutina y disfrute en familia un descanso en la playa, un paseo por la montaña o descubrí una nueva aventura con tus amigos.</p>
                     <a href=\"";
-        // line 86
+        // line 88
         echo $this->env->getExtension('routing')->getUrl("sitios");
         echo "\" class=\"btn\">Ver Más</a>
                 </div>
@@ -129,7 +131,7 @@ class __TwigTemplate_38bdf2c9ae3a0bb339d315e000463cf13ba6ee163d8cea4d2131a65ec1e
                     <h3>Visita las rutas que hemos creado para disfrutar</h3>
                     <p>Pegate la turisteada de tu vida con nuestras rutas preelaboradas.</p>
                     <a href=\"";
-        // line 94
+        // line 96
         echo $this->env->getExtension('routing')->getUrl("rutas_sugeridas");
         echo "\" class=\"btn\">Ver Más</a>
                 </div>
@@ -141,7 +143,7 @@ class __TwigTemplate_38bdf2c9ae3a0bb339d315e000463cf13ba6ee163d8cea4d2131a65ec1e
                     <br>\t\t        \t\t\t
                     <p>Conoce las bellezas ocultas de Costa Rica creando tus propias rutas.</p>\t\t        \t\t\t
                     <a href=\"";
-        // line 103
+        // line 105
         echo $this->env->getExtension('routing')->getUrl("crea_tus_rutas");
         echo "\" class=\"btn\">Ver Más</a>
                 </div>
@@ -168,7 +170,7 @@ class __TwigTemplate_38bdf2c9ae3a0bb339d315e000463cf13ba6ee163d8cea4d2131a65ec1e
                 <div class=\"col-md-4 col-sm-6\">
                     <figure>
                         <img src=\"";
-        // line 127
+        // line 129
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/sitios/1.jpg"), "html", null, true);
         echo "\" alt=\"\" />
                         <figcaption>
@@ -182,7 +184,7 @@ class __TwigTemplate_38bdf2c9ae3a0bb339d315e000463cf13ba6ee163d8cea4d2131a65ec1e
                 <div class=\"col-md-4 col-sm-6\">
                     <figure>
                         <img src=\"";
-        // line 138
+        // line 140
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/sitios/2.jpg"), "html", null, true);
         echo "\" alt=\"\" />
                         <figcaption>
@@ -195,7 +197,7 @@ class __TwigTemplate_38bdf2c9ae3a0bb339d315e000463cf13ba6ee163d8cea4d2131a65ec1e
                 <div class=\"col-md-4 col-sm-6\">
                     <figure>
                         <img src=\"";
-        // line 148
+        // line 150
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/sitios/3.jpg"), "html", null, true);
         echo "\" alt=\"\" />
                         <figcaption>
@@ -209,7 +211,7 @@ class __TwigTemplate_38bdf2c9ae3a0bb339d315e000463cf13ba6ee163d8cea4d2131a65ec1e
                 <div class=\"col-md-4 col-sm-6\">
                     <figure>
                         <img src=\"";
-        // line 159
+        // line 161
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/sitios/4.jpg"), "html", null, true);
         echo "\" alt=\"\" />
                         <figcaption>
@@ -223,7 +225,7 @@ class __TwigTemplate_38bdf2c9ae3a0bb339d315e000463cf13ba6ee163d8cea4d2131a65ec1e
                 <div class=\"col-md-4 col-sm-6\">
                     <figure>
                         <img src=\"";
-        // line 170
+        // line 172
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/sitios/5.jpg"), "html", null, true);
         echo "\" alt=\"\" />
                         <figcaption>
@@ -237,7 +239,7 @@ class __TwigTemplate_38bdf2c9ae3a0bb339d315e000463cf13ba6ee163d8cea4d2131a65ec1e
                 <div class=\"col-md-4 col-sm-6\">
                     <figure>
                         <img src=\"";
-        // line 181
+        // line 183
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/sitios/6.jpg"), "html", null, true);
         echo "\" alt=\"\" />
                         <figcaption>
@@ -265,7 +267,7 @@ class __TwigTemplate_38bdf2c9ae3a0bb339d315e000463cf13ba6ee163d8cea4d2131a65ec1e
                 <!--Contenido de la ventana-->
                 <div class=\"modal-body\" align=\"center\">
                     <img src=\"";
-        // line 206
+        // line 208
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/sitios/1.jpg"), "html", null, true);
         echo "\" width=\"550\" height=\"350\" title=\"Destino\" alt=\"\" />
                 </div>
@@ -292,14 +294,14 @@ class __TwigTemplate_38bdf2c9ae3a0bb339d315e000463cf13ba6ee163d8cea4d2131a65ec1e
 <!-- termina la sección de los nuevos sitios turísticos -->
 
 ";
-        // line 231
+        // line 233
         echo "\t
 ";
-        // line 232
+        // line 234
         $this->env->loadTemplate("RutasBundle:Base:footer.html.twig")->display($context);
         echo " \t
 ";
-        // line 233
+        // line 235
         echo " \t\t
 
 </body>
@@ -319,6 +321,6 @@ class __TwigTemplate_38bdf2c9ae3a0bb339d315e000463cf13ba6ee163d8cea4d2131a65ec1e
 
     public function getDebugInfo()
     {
-        return array (  303 => 233,  299 => 232,  296 => 231,  269 => 206,  241 => 181,  227 => 170,  213 => 159,  199 => 148,  186 => 138,  172 => 127,  145 => 103,  133 => 94,  122 => 86,  79 => 46,  68 => 38,  59 => 32,  48 => 24,  34 => 13,  21 => 2,  19 => 1,);
+        return array (  305 => 235,  301 => 234,  298 => 233,  271 => 208,  243 => 183,  229 => 172,  215 => 161,  201 => 150,  188 => 140,  174 => 129,  147 => 105,  135 => 96,  124 => 88,  81 => 48,  70 => 40,  61 => 34,  50 => 26,  34 => 13,  21 => 2,  19 => 1,);
     }
 }

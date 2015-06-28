@@ -139,6 +139,10 @@ class __TwigTemplate_044a25c317f578c32c5004757021a4f3f6bb2d7a30a17f0f62959d97054
         echo "\">Crea tus rutas</a></li> 
                     <li><a href=\"";
         // line 57
+        echo $this->env->getExtension('routing')->getPath("mapa_del_sitio");
+        echo "\">Mapa del sitio</a></li>
+                    <li><a href=\"";
+        // line 58
         echo $this->env->getExtension('routing')->getPath("quienes_somos");
         echo "\">¿Quienes somos?</a></li>
                 </ul>
@@ -146,36 +150,36 @@ class __TwigTemplate_044a25c317f578c32c5004757021a4f3f6bb2d7a30a17f0f62959d97054
         </div>
     </header>
 ";
-        // line 63
+        // line 64
         echo "
 ";
     }
 
-    // line 67
+    // line 68
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 68
+        // line 69
         echo "    
     <script src=\"http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js\"></script>
     <script>window.jQuery || document.write('<script src=\"";
-        // line 70
+        // line 71
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/js/jquery-1.9.1.min.js"), "html", null, true);
         echo "\"><\\/script>')</script>
     <script src=\"";
-        // line 71
+        // line 72
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 72
+        // line 73
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/js/bootstrap-table.js"), "html", null, true);
         echo "\"></script>
 
     <script src=\"";
-        // line 74
+        // line 75
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/js/jquery.easing.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 75
+        // line 76
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/js/scrolling-nav.js"), "html", null, true);
         echo "\"></script> 
 
@@ -194,6 +198,6 @@ class __TwigTemplate_044a25c317f578c32c5004757021a4f3f6bb2d7a30a17f0f62959d97054
 
     public function getDebugInfo()
     {
-        return array (  179 => 75,  175 => 74,  170 => 72,  166 => 71,  162 => 70,  158 => 68,  155 => 67,  150 => 63,  142 => 57,  138 => 56,  134 => 55,  130 => 54,  126 => 53,  117 => 47,  104 => 36,  101 => 34,  98 => 33,  91 => 28,  86 => 26,  82 => 25,  79 => 24,  72 => 19,  67 => 18,  62 => 15,  58 => 14,  53 => 13,  50 => 11,  47 => 10,  42 => 6,  39 => 5,  11 => 2,);
+        return array (  183 => 76,  179 => 75,  174 => 73,  170 => 72,  166 => 71,  162 => 69,  159 => 68,  154 => 64,  146 => 58,  142 => 57,  138 => 56,  134 => 55,  130 => 54,  126 => 53,  117 => 47,  104 => 36,  101 => 34,  98 => 33,  91 => 28,  86 => 26,  82 => 25,  79 => 24,  72 => 19,  67 => 18,  62 => 15,  58 => 14,  53 => 13,  50 => 11,  47 => 10,  42 => 6,  39 => 5,  11 => 2,);
     }
 }

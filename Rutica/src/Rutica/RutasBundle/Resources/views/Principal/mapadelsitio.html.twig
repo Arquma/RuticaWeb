@@ -1,0 +1,32 @@
+{% include 'RutasBundle:Base:header.html.twig' %}	
+
+<!-- Título de página -->
+<div class="section section-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Mapa del Sitio</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Título de página -->
+
+<map name="mapeo"> 
+    <area alt="Home" shape="circle" coords="515,165,100" href="{{ path('home') }}"> 
+    <area alt="Sitios Turísticos" shape="circle" coords="125,470,100" href="{{ path('sitios') }}"> 
+    <area alt="Crear Rutas" shape="circle" coords="385,625,100" href="{{ path('crea_tus_rutas') }}"> 
+    <area alt="Rutas Sugeridas" shape="circle" coords="635,615,95" href="{{ path('rutas_sugeridas') }}">
+    <area alt="¿Quiénes somos?" shape="circle" coords="870,475,100" href="{{ path('quienes_somos') }}"> 
+    
+</map> 
+<div align="center">
+    <img src="{{asset('bundles/templateboostrap/img/mapaDelSitio/MapaDelSitio.PNG')}}"  width="1000" height="800" usemap="#mapeo"/>
+</div>
+<br> 
+      
+{# se hace un include del archivo donde se encuentra el footer #}	
+{% include 'RutasBundle:Base:footer.html.twig' %} 	
+{# Footer #} 
+</body>
+</html>

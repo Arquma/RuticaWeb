@@ -162,6 +162,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Rutica\\RutasBundle\\Controller\\ContactenosController::enviarCorreoAction',  '_route' => 'enviar_correo',);
         }
 
+        // mapa_del_sitio
+        if ($pathinfo === '/mapa_del_sitio') {
+            return array (  '_controller' => 'Rutica\\RutasBundle\\Controller\\MapaDelSitioController::mostrarAction',  '_route' => 'mapa_del_sitio',);
+        }
+
         if (0 === strpos($pathinfo, '/rutasugerida')) {
             // rutasugerida
             if (rtrim($pathinfo, '/') === '/rutasugerida') {

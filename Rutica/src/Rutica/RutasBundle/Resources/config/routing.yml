@@ -24,4 +24,8 @@ sitios:
     
 enviar_correo:
     path:     /correo
-    defaults: { _controller: RutasBundle:Contactenos:enviarCorreo }     
+    defaults: { _controller: RutasBundle:Contactenos:enviarCorreo }  
+    
+mapa_del_sitio:
+    path:     /mapa_del_sitio
+    defaults: { _controller: RutasBundle:MapaDelSitio:mostrar }  
