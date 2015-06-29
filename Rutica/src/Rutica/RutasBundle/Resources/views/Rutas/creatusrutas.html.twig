@@ -25,6 +25,7 @@
 
 	<div class="section">
 	    <div class="container">
+<<<<<<< HEAD
 			<div class="row">
 
 				<div class="col-md-8">
@@ -116,92 +117,169 @@
                 	</ul>
 
                 </div>           
+=======
+			  <div class="row">							
+>>>>>>> dev-olman
 
+          <div class = "col-md-8">
+
+            <div class="section-title">
+              <h2><i class="glyphicon glyphicon-map-marker"></i>  Pasos para crear tu ruta</h2>
+              <br>
             </div>
 
-            <hr>{# Separador #}
+            <ul>
+              <li> Completa el formulario de la derecha con las características de los lugares que se añadiran en tu ruta</li>
+              <li> Selecciona un punto de inicio y final para tu ruta en el formulario a la derecha del mapa</li>
+              <li> Selecciona los puntos por donde deseas que pase la ruta </li>
+              <li> Cuando termines de agregar lugares a tu ruta, presiona el botón, gerear ruta al final del formulario </li>
+              <li> Verifica los detalles de tu ruta en el mapa</li>
+              <li> Listo ya tienes tu ruta, ya puedes empezar a turistear </li>
+            </ul>
 
-            <div class="row">
+          </div>
 
-            	<div class="col-md-8">            		
-            		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2014000.0863537437!2d-84.25418434999999!3d9.630189200000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f92e56221acc925%3A0x6254f72535819a2b!2sCosta+Rica!5e0!3m2!1ses!2scr!4v1433606713902" width="700" height="400" frameborder="0" style="border:0"></iframe>
-            	</div>
+          <div class = "col-md-4">
 
-            	<div class = "col-md-4">
-
-            		<div class="section-title">
-                   		<h3>  Selecciona los sitios de tu ruta</h3>
-                    	<br>
-                	</div>
-
-                	{# Formulario de los sitios de la ruta #}
-            		<form class="form-horizontal" >
-
-            			{# Select del Punto de Inicio #}
-     					<div class="form-group">
-        					<label for="inicio" class="col-sm-2 control-label">Inicio</label>
-         					<div class="col-sm-8">
-            					<select id="inicio" class="form-control">            						
-            						<option>Teatro Nacional</option>
-  									<option>Museo de los niños</option>
-  									<option>Antigua Aduana</option>
-  									<option>Museo Nacional</option>				                       					
-                    			</select>
-         					</div>
-     					</div>
-     					{# Select del Punto de Inicio #}
-
-     					{# Select del Punto Final #}
-     					<div class="form-group">
-        					<label for="final" class="col-sm-2 control-label">Final</label>
-         					<div class="col-sm-8">
-            					<select id="final" class="form-control">            						
-            						<option>Parque metropolitano la sabana</option>
-  									<option>Museo de Arte Costarricense</option>
-  									<option>Parque de diversiones</option>
-  									<option>Multiplaza, Escazú</option>				                       					
-                    			</select>
-         					</div>
-     					</div>
-     					{# Select del Punto Final #}
-
-     					{# Select de los Puntos Intermedios #}
-     					<div class="form-group">
-        					<label for="medio" class="col-sm-2 control-label">Camino</label>
-         					<div class="col-sm-8">
-            					<select multiple id="medio" class="form-control">            						
-            						<option>Teatro Nacional</option>
-  									<option>Museo de los niños</option>
-  									<option>Antigua Aduana</option>
-  									<option>Museo Nacional</option>
-  									<option>Parque metropolitano la sabana</option>
-  									<option>Museo de Arte Costarricense</option>
-  									<option>Parque de diversiones</option>
-  									<option>Multiplaza, Escazú</option>				                       					
-                    			</select>
-                    			<h6>"Ctrl + click" para una selección múltiple</h6>
-         					</div>
-     					</div>
-     					{# Select de los Puntos Intermedios #}
-
-     					{# Botón de generar ruta #}
-     					<div class="form-group">
-     						<label for="generar" class="col-sm-1 control-label"></label>
-     						<div class"col-sm-8">     						
-   								<button id="generar" type="button" class="btn btn-primary" data-toggle="modal">Generar Ruta</button>
-   							</div>
-   						</div>   						
-   						{# Botón de generar ruta #}
-
-            		</form>
-            		{# Formulario de los sitios de la ruta #}
-
-            	</div>    	
-
+            <div class="section-title" >
+              <h3>Elije las preferencias de su ruta</h3>
+              <br>
             </div>
+
+            {# Formulario de las preferencias de la ruta #}
+            <form class="form-horizontal" action="{{ path('crea_tus_rutas') }}" method="post">
+
+              {# Select de Provincia #}
+              <div class="form-group">
+                <label style="text-align: center;" for="provincia" class="col-sm-4 control-label">Provincia:</label>
+                <div class="col-sm-6">
+                  <select id="provincia" name="provincia" class="form-control">                    
+                    <option>San José</option>
+                    <option>Alajuela</option>
+                    <option>Heredia</option>
+                    <option>Cartago</option>
+                    <option>Puntarenas</option>
+                    <option>Guanacaste</option>
+                    <option>Limón</option>                                
+                  </select>
+                </div>
+              </div>
+              {# Select de Provincia #}
+
+              {# Select de Actividad #}
+              <div class="form-group">
+                <label style="text-align: center;" for="actividad" class="col-sm-4 control-label">Actividad:</label>
+                <div class="col-sm-6">
+                  <select id="actividad" name="actividad" class="form-control">                    
+                    <option>Ciudad</option>
+                    <option>Rural</option>
+                    <option>Aventura</option>
+                    <option>Extremo</option>                    
+                    <option>Ecológico</option>
+                    <option>Familiar</option>                                            
+                  </select>
+                </div>                    
+              </div>
+              {# Select de Actividad #}
+
+              {# Select de Precio #}
+              <div class="form-group">
+                <label style="text-align: center;" for="precio" class="col-sm-4 control-label">Precio:</label>
+                  <div class="col-sm-6">
+                    <select id="precio" name="precio" class="form-control">                      
+                      <option>Económico</option>
+                      <option>Medio</option>
+                      <option>Pura Vida</option>                                          
+                    </select>
+                  </div>                    
+              </div>
+              {# Select de Precio #} 
+
+              {# Botón de Buscar #}
+              <div class="form-group">
+                <label for="buscar" class="col-sm-1 control-label"></label>
+                <div class"col-sm-6">                 
+                  <button id="buscar" type="submit" class="btn btn-primary" data-toggle="modal">Buscar</button>
+                </div>
+              </div>              
+              {# Botón de Buscar #}
+                 
+            </form>
+            {# Formulario de las preferencias de la ruta #}
+          </div>
 
         </div>
-    </div>
+
+        {% if sitios is defined %}
+        <hr>{# Separador #}
+
+        <div class="row">                    
+
+            <div class="col-md-8" id="main-map" style="width: 700px; height: 400px"></div> 
+
+            <div class="col-md-4">
+
+              <div class="section-title" >
+                <h3>Sitios de la ruta</h3>
+                <br>
+              </div>            
+
+                {# Select de Inicio #}
+                <div class="form-group">
+                  <label style="text-align: center;" for="inicio" class="col-sm-4 control-label">Inicio:</label>
+                    <div class="col-sm-6">
+                      <select id="inicio" name="inicio" class="form-control">
+                        {% for sitio in sitios %}                      
+                          <option value="{{ sitio.nombre }}">{{ sitio.nombre }}</option>                         
+                        {% endfor %}                                          
+                      </select>
+                    </div>                    
+                </div>
+                {# Select de Inicio #}
+
+                {# Select de Sitios #}
+                <div class="form-group">
+                  <label style="text-align: center;" for="sitios" class="col-sm-4 control-label">Sitios:</label>             
+                    <div class="col-sm-6">
+                      <select multiple id="sitios" name="sitios" class="form-control">
+                        {% for sitio in sitios %}                      
+                          <option value="{{ sitio.nombre }}">{{ sitio.nombre }}</option>                         
+                        {% endfor %}                                          
+                      </select>
+                      <i>(Ctrl-Click para selección múltiple)</i> <br>
+                    </div>                    
+                </div>
+                {# Select de Sitios #}
+
+                {# Select de Final #}
+                <div class="form-group">
+                  <label style="text-align: center;" for="final" class="col-sm-4 control-label">Final:</label>
+                    <div class="col-sm-6">
+                      <select id="final" name="final" class="form-control">
+                        {% for sitio in sitios %}                      
+                          <option value="{{ sitio.nombre }}">{{ sitio.nombre }}</option>                         
+                        {% endfor %}                                          
+                      </select>
+                    </div>                    
+                </div>
+                {# Select de Final #}
+
+                {# Botón de Buscar #}
+                <div class="form-group">
+                  <label for="buscar" class="col-sm-1 control-label"></label>
+                  <div class"col-sm-6">                 
+                    <input value ="Crear ruta" type="submit" class="btn btn-primary" data-toggle="modal" onclick="generateRoute();"></input>
+                  </div>
+                </div>              
+                {# Botón de Buscar #}             
+
+            </div>    
+
+        </div>
+        {% endif %}
+
+      </div>      
+  </div>
 
 	{# Footer #}
 		{# se hace un include del archivo donde se encuentra el footer #}	
