@@ -121,9 +121,18 @@ class __TwigTemplate_afba36abf44831140dc887cf5aa2e28cec072e81594f73c23000895e81e
 
             <div class=\"collapse navbar-collapse\">
                 <ul class=\"nav navbar-nav navbar-right\">
-                    <li><a href=\"\">Home</a></li>
-                    <li><a href=\"\">Quienes somos</a></li>
-                    <li><a href=\"\">Sitios turísticos</a></li>
+                    <li><a href=\"";
+        // line 53
+        echo $this->env->getExtension('routing')->getPath("home");
+        echo "\">Home</a></li>
+                    <li><a href=\"";
+        // line 54
+        echo $this->env->getExtension('routing')->getPath("quienes_somos");
+        echo "\">¿Quienes somos?</a></li>
+                    <li><a href=\"";
+        // line 55
+        echo $this->env->getExtension('routing')->getPath("sitios");
+        echo "\">Sitios turísticos</a></li>
                     <li><a href=\"";
         // line 56
         echo $this->env->getExtension('routing')->getPath("rutas_sugeridas");
@@ -132,7 +141,10 @@ class __TwigTemplate_afba36abf44831140dc887cf5aa2e28cec072e81594f73c23000895e81e
         // line 57
         echo $this->env->getExtension('routing')->getPath("crea_tus_rutas");
         echo "\">Crea tus rutas</a></li>                   
-                    <li><a href=\"\">Contáctenos</a></li>                    
+                    <li><a href=\"";
+        // line 58
+        echo $this->env->getExtension('routing')->getPath("contactenos");
+        echo "\">Contáctenos</a></li>                    
                 </ul>
             </div>
         </div>
@@ -169,6 +181,12 @@ class __TwigTemplate_afba36abf44831140dc887cf5aa2e28cec072e81594f73c23000895e81e
     <script src=\"";
         // line 76
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/js/scrolling-nav.js"), "html", null, true);
+        echo "\"></script>
+
+    <script src=\"https://maps.googleapis.com/maps/api/js?v=3.exp\"></script>
+    <script src=\"";
+        // line 79
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/googlemaps/js/maps.js"), "html", null, true);
         echo "\"></script> 
 
 ";
@@ -186,6 +204,6 @@ class __TwigTemplate_afba36abf44831140dc887cf5aa2e28cec072e81594f73c23000895e81e
 
     public function getDebugInfo()
     {
-        return array (  171 => 76,  167 => 75,  162 => 73,  158 => 72,  154 => 71,  150 => 69,  147 => 68,  142 => 64,  133 => 57,  129 => 56,  117 => 47,  104 => 36,  101 => 34,  98 => 33,  91 => 28,  86 => 26,  82 => 25,  79 => 24,  72 => 19,  67 => 18,  62 => 15,  58 => 14,  53 => 13,  50 => 11,  47 => 10,  42 => 6,  39 => 5,  11 => 2,);
+        return array (  189 => 79,  183 => 76,  179 => 75,  174 => 73,  170 => 72,  166 => 71,  162 => 69,  159 => 68,  154 => 64,  146 => 58,  142 => 57,  138 => 56,  134 => 55,  130 => 54,  126 => 53,  117 => 47,  104 => 36,  101 => 34,  98 => 33,  91 => 28,  86 => 26,  82 => 25,  79 => 24,  72 => 19,  67 => 18,  62 => 15,  58 => 14,  53 => 13,  50 => 11,  47 => 10,  42 => 6,  39 => 5,  11 => 2,);
     }
 }
