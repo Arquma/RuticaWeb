@@ -22,6 +22,7 @@
         </div>
     </div>
 </div>	
+
 <div class="container">
     <div class="modal fade" id="ventanaModalDescripcionSitio">
         <div class="modal-dialog">
@@ -61,74 +62,22 @@
         <div class="row">
 
             <ul class="grid cs-style-2">
-                <div class="col-md-4 col-sm-6">
-                    <figure>
-                        <img src="{{asset('bundles/templateboostrap/img/sitios/1.jpg')}}" alt="" />
-                        <figcaption>
-                            <h3>Bosque nuboso</h3>
-                            <h3>monteverde</h3>
-                            <span>Puntarenas</span>							
-                            <a href="#ventanaModalDescripcionSitio" class="btn btn-primary" data-toggle="modal">Visítalo</a>
-                        </figcaption>
-                    </figure>
-                </div>	
-                <div class="col-md-4 col-sm-6">
-                    <figure>
-                        <img src="{{asset('bundles/templateboostrap/img/sitios/2.jpg')}}" alt="" />
-                        <figcaption>
-                            <h3>Playa Nosara</h3>
-                            <span>Guanacaste</span>
-                            <a href="#ventanaModalDescripcionSitio" class="btn btn-primary" data-toggle="modal">Visítalo</a>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <figure>
-                        <img src="{{asset('bundles/templateboostrap/img/sitios/3.jpg')}}" alt="" />
-                        <figcaption>
-                            <h3>Parque Nacional</h3>
-                            <h3>Marino Ballena</h3>
-                            <span>Puntarenas</span>
-                            <a href="#ventanaModalDescripcionSitio" class="btn btn-primary" data-toggle="modal">Visítalo</a>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <figure>
-                        <img src="{{asset('bundles/templateboostrap/img/sitios/4.jpg')}}" alt="" />
-                        <figcaption>
-                            <h3>Parque Recreativo</h3>
-                            <h3>Los Chorros</h3>
-                            <span>Alajuela</span>
-                            <a href="#ventanaModalDescripcionSitio" class="btn btn-primary" data-toggle="modal">Visítalo</a>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <figure>
-                        <img src="{{asset('bundles/templateboostrap/img/sitios/5.jpg')}}" alt="" />
-                        <figcaption>
-                            <h3>Parque Nacional Tortuguero</h3>
-                            <span>Limón</span>
-                            <a href="#ventanaModalDescripcionSitio" class="btn btn-primary" data-toggle="modal">Visítalo</a>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <figure>
-                        <img src="{{asset('bundles/templateboostrap/img/sitios/6.jpg')}}" alt="" />
-                        <figcaption>
-                            <h3>Playa Cocal</h3>
-                            <span>Puntarenas</span>
-                            <a href="#ventanaModalDescripcionSitio" class="btn btn-primary" data-toggle="modal">Visítalo</a>
-                        </figcaption>
-                    </figure>
-                </div>
+
+                {% for entity in entities %}
+                    <div class="col-md-4 col-sm-6">
+                        <figure>
+                            {% set foo ='bundles/templateboostrap/img/sitios/' ~ entity.imagen %}   
+
+                            <img src="{{asset(foo)}}" alt="" height="250px" width="400px" href="#ventanaModalDescripcionSitio" class="btn btn-primary" data-toggle="modal"/>
+                            <figcaption>
+                                <h3>{{ entity.nombre }}</h3>
+                                <span>TODO</span>
+                            </figcaption>
+                        </figure>
+                    </div>
+                {% endfor %}
             </ul>
-
         </div>
-                        
-
         <ul class="pager">
             <li><a href="#">Previous</a></li>
             <li><a href="#">Next</a></li>
@@ -136,6 +85,7 @@
 
     </div>
 </div>
+
 {# Footer #}
 {# se hace un include del archivo donde se encuentra el footer #}	
 {% include 'RutasBundle:Base:footer.html.twig' %} 	

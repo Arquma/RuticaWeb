@@ -68,6 +68,7 @@ class __TwigTemplate_0229b872ad6071b902c1a223e558a13736977a1116b0e57a63c84b02f8e
         echo "
 \t<div class=\"section\">
 \t    <div class=\"container\">
+<<<<<<< HEAD
 \t\t\t<div class=\"row\">
 
 \t\t\t\t<div class=\"col-md-8\">
@@ -78,11 +79,11 @@ class __TwigTemplate_0229b872ad6071b902c1a223e558a13736977a1116b0e57a63c84b02f8e
                     </div>
 
                     ";
-        // line 38
+        // line 39
         echo "                \t<form class=\"form-horizontal\">
 
                 \t\t";
-        // line 41
+        // line 42
         echo "     \t\t\t\t\t<div class=\"form-group\">
         \t\t\t\t\t<label for=\"provincia\" class=\"col-sm-2 control-label\">Provincia</label>
          \t\t\t\t\t<div class=\"col-sm-6\">
@@ -99,10 +100,10 @@ class __TwigTemplate_0229b872ad6071b902c1a223e558a13736977a1116b0e57a63c84b02f8e
          \t\t\t\t\t</div>
      \t\t\t\t\t</div>
      \t\t\t\t\t";
-        // line 57
+        // line 58
         echo "
      \t\t\t\t\t";
-        // line 59
+        // line 60
         echo "     \t\t\t\t\t<div class=\"form-group\">
      \t\t\t\t\t\t<label for=\"actividad\" class=\"col-sm-2 control-label\">Actividad</label>
          \t\t\t\t\t<div class=\"col-sm-6\">
@@ -117,10 +118,10 @@ class __TwigTemplate_0229b872ad6071b902c1a223e558a13736977a1116b0e57a63c84b02f8e
          \t\t\t\t\t</div>         \t\t\t\t\t\t
      \t\t\t\t\t</div>
      \t\t\t\t\t";
-        // line 73
+        // line 74
         echo "
      \t\t\t\t\t";
-        // line 75
+        // line 76
         echo "     \t\t\t\t\t<div class=\"form-group\">
      \t\t\t\t\t\t<label for=\"precio\" class=\"col-sm-2 control-label\">Precio</label>
          \t\t\t\t\t<div class=\"col-sm-6\">
@@ -133,11 +134,11 @@ class __TwigTemplate_0229b872ad6071b902c1a223e558a13736977a1116b0e57a63c84b02f8e
          \t\t\t\t\t</div>         \t\t\t\t\t\t
      \t\t\t\t\t</div>
      \t\t\t\t\t";
-        // line 86
+        // line 87
         echo " 
 
      \t\t\t\t\t";
-        // line 89
+        // line 90
         echo "     \t\t\t\t\t<div class=\"form-group\">
      \t\t\t\t\t\t<label for=\"buscar\" class=\"col-sm-1 control-label\"></label>
                                                 <div class=\"col-sm-6\">     \t\t\t\t\t\t
@@ -145,11 +146,11 @@ class __TwigTemplate_0229b872ad6071b902c1a223e558a13736977a1116b0e57a63c84b02f8e
                                                 </div>
                                         </div>   \t\t\t\t\t\t
    \t\t\t\t\t\t";
-        // line 96
+        // line 97
         echo "   \t\t\t\t\t\t\t 
 \t\t\t\t\t</form>
 \t\t\t\t\t";
-        // line 99
+        // line 100
         echo "
                 </div>\t\t\t\t
 
@@ -170,114 +171,256 @@ class __TwigTemplate_0229b872ad6071b902c1a223e558a13736977a1116b0e57a63c84b02f8e
                 \t</ul>
 
                 </div>           
+=======
+\t\t\t  <div class=\"row\">\t\t\t\t\t\t\t
+>>>>>>> dev-olman
 
+          <div class = \"col-md-8\">
+
+            <div class=\"section-title\">
+              <h2><i class=\"glyphicon glyphicon-map-marker\"></i>  Pasos para crear tu ruta</h2>
+              <br>
             </div>
 
-            <hr>";
-        // line 123
-        echo "
-            <div class=\"row\">
+            <ul>
+              <li> Completa el formulario de la derecha con las características de los lugares que se añadiran en tu ruta</li>
+              <li> Selecciona un punto de inicio y final para tu ruta en el formulario a la derecha del mapa</li>
+              <li> Selecciona los puntos por donde deseas que pase la ruta </li>
+              <li> Cuando termines de agregar lugares a tu ruta, presiona el botón, gerear ruta al final del formulario </li>
+              <li> Verifica los detalles de tu ruta en el mapa</li>
+              <li> Listo ya tienes tu ruta, ya puedes empezar a turistear </li>
+            </ul>
 
-            \t<div class=\"col-md-8\">            \t\t
-            \t\t<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2014000.0863537437!2d-84.25418434999999!3d9.630189200000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f92e56221acc925%3A0x6254f72535819a2b!2sCosta+Rica!5e0!3m2!1ses!2scr!4v1433606713902\" width=\"700\" height=\"400\" frameborder=\"0\" style=\"border:0\"></iframe>
-            \t</div>
+          </div>
 
-            \t<div class = \"col-md-4\">
+          <div class = \"col-md-4\">
 
-            \t\t<div class=\"section-title\">
-                   \t\t<h3>  Selecciona los sitios de tu ruta</h3>
-                    \t<br>
-                \t</div>
+            <div class=\"section-title\" >
+              <h3>Elije las preferencias de su ruta</h3>
+              <br>
+            </div>
 
-                \t";
-        // line 138
-        echo "            \t\t<form class=\"form-horizontal\" >
+            ";
+        // line 150
+        echo "            <form class=\"form-horizontal\" action=\"";
+        echo $this->env->getExtension('routing')->getPath("crea_tus_rutas");
+        echo "\" method=\"post\">
 
-            \t\t\t";
-        // line 141
-        echo "     \t\t\t\t\t<div class=\"form-group\">
-        \t\t\t\t\t<label for=\"inicio\" class=\"col-sm-2 control-label\">Inicio</label>
-         \t\t\t\t\t<div class=\"col-sm-8\">
-            \t\t\t\t\t<select id=\"inicio\" class=\"form-control\">            \t\t\t\t\t\t
-            \t\t\t\t\t\t<option>Teatro Nacional</option>
-  \t\t\t\t\t\t\t\t\t<option>Museo de los niños</option>
-  \t\t\t\t\t\t\t\t\t<option>Antigua Aduana</option>
-  \t\t\t\t\t\t\t\t\t<option>Museo Nacional</option>\t\t\t\t                       \t\t\t\t\t
-                    \t\t\t</select>
-         \t\t\t\t\t</div>
-     \t\t\t\t\t</div>
-     \t\t\t\t\t";
+              ";
         // line 153
+        echo "              <div class=\"form-group\">
+                <label style=\"text-align: center;\" for=\"provincia\" class=\"col-sm-4 control-label\">Provincia:</label>
+                <div class=\"col-sm-6\">
+                  <select id=\"provincia\" name=\"provincia\" class=\"form-control\">                    
+                    <option>San José</option>
+                    <option>Alajuela</option>
+                    <option>Heredia</option>
+                    <option>Cartago</option>
+                    <option>Puntarenas</option>
+                    <option>Guanacaste</option>
+                    <option>Limón</option>                                
+                  </select>
+                </div>
+              </div>
+              ";
+        // line 168
         echo "
-     \t\t\t\t\t";
-        // line 155
-        echo "     \t\t\t\t\t<div class=\"form-group\">
-        \t\t\t\t\t<label for=\"final\" class=\"col-sm-2 control-label\">Final</label>
-         \t\t\t\t\t<div class=\"col-sm-8\">
-            \t\t\t\t\t<select id=\"final\" class=\"form-control\">            \t\t\t\t\t\t
-            \t\t\t\t\t\t<option>Parque metropolitano la sabana</option>
-  \t\t\t\t\t\t\t\t\t<option>Museo de Arte Costarricense</option>
-  \t\t\t\t\t\t\t\t\t<option>Parque de diversiones</option>
-  \t\t\t\t\t\t\t\t\t<option>Multiplaza, Escazú</option>\t\t\t\t                       \t\t\t\t\t
-                    \t\t\t</select>
-         \t\t\t\t\t</div>
-     \t\t\t\t\t</div>
-     \t\t\t\t\t";
-        // line 167
+              ";
+        // line 170
+        echo "              <div class=\"form-group\">
+                <label style=\"text-align: center;\" for=\"actividad\" class=\"col-sm-4 control-label\">Actividad:</label>
+                <div class=\"col-sm-6\">
+                  <select id=\"actividad\" name=\"actividad\" class=\"form-control\">                    
+                    <option>Ciudad</option>
+                    <option>Rural</option>
+                    <option>Aventura</option>
+                    <option>Extremo</option>                    
+                    <option>Ecológico</option>
+                    <option>Familiar</option>                                            
+                  </select>
+                </div>                    
+              </div>
+              ";
+        // line 184
         echo "
-     \t\t\t\t\t";
-        // line 169
-        echo "     \t\t\t\t\t<div class=\"form-group\">
-        \t\t\t\t\t<label for=\"medio\" class=\"col-sm-2 control-label\">Camino</label>
-         \t\t\t\t\t<div class=\"col-sm-8\">
-            \t\t\t\t\t<select multiple id=\"medio\" class=\"form-control\">            \t\t\t\t\t\t
-            \t\t\t\t\t\t<option>Teatro Nacional</option>
-  \t\t\t\t\t\t\t\t\t<option>Museo de los niños</option>
-  \t\t\t\t\t\t\t\t\t<option>Antigua Aduana</option>
-  \t\t\t\t\t\t\t\t\t<option>Museo Nacional</option>
-  \t\t\t\t\t\t\t\t\t<option>Parque metropolitano la sabana</option>
-  \t\t\t\t\t\t\t\t\t<option>Museo de Arte Costarricense</option>
-  \t\t\t\t\t\t\t\t\t<option>Parque de diversiones</option>
-  \t\t\t\t\t\t\t\t\t<option>Multiplaza, Escazú</option>\t\t\t\t                       \t\t\t\t\t
-                    \t\t\t</select>
-                    \t\t\t<h6>\"Ctrl + click\" para una selección múltiple</h6>
-         \t\t\t\t\t</div>
-     \t\t\t\t\t</div>
-     \t\t\t\t\t";
+              ";
         // line 186
-        echo "
-     \t\t\t\t\t";
-        // line 188
-        echo "     \t\t\t\t\t<div class=\"form-group\">
-     \t\t\t\t\t\t<label for=\"generar\" class=\"col-sm-1 control-label\"></label>
-     \t\t\t\t\t\t<div class\"col-sm-8\">     \t\t\t\t\t\t
-   \t\t\t\t\t\t\t\t<button id=\"generar\" type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\">Generar Ruta</button>
-   \t\t\t\t\t\t\t</div>
-   \t\t\t\t\t\t</div>   \t\t\t\t\t\t
-   \t\t\t\t\t\t";
-        // line 195
-        echo "
-            \t\t</form>
-            \t\t";
-        // line 198
-        echo "
-            \t</div>    \t
+        echo "              <div class=\"form-group\">
+                <label style=\"text-align: center;\" for=\"precio\" class=\"col-sm-4 control-label\">Precio:</label>
+                  <div class=\"col-sm-6\">
+                    <select id=\"precio\" name=\"precio\" class=\"form-control\">                      
+                      <option>Económico</option>
+                      <option>Medio</option>
+                      <option>Pura Vida</option>                                          
+                    </select>
+                  </div>                    
+              </div>
+              ";
+        // line 196
+        echo " 
 
-            </div>
+              ";
+        // line 199
+        echo "              <div class=\"form-group\">
+                <label for=\"buscar\" class=\"col-sm-1 control-label\"></label>
+                <div class\"col-sm-6\">                 
+                  <button id=\"buscar\" type=\"submit\" class=\"btn btn-primary\" data-toggle=\"modal\">Buscar</button>
+                </div>
+              </div>              
+              ";
+        // line 206
+        echo "                 
+            </form>
+            ";
+        // line 209
+        echo "          </div>
 
         </div>
-    </div>
+
+        ";
+        // line 213
+        if (array_key_exists("sitios", $context)) {
+            // line 214
+            echo "        <hr>";
+            // line 215
+            echo "
+        <div class=\"row\">                    
+
+            <div class=\"col-md-8\" id=\"main-map\" style=\"width: 700px; height: 400px\"></div> 
+
+            <div class=\"col-md-4\">
+
+              <div class=\"section-title\" >
+                <h3>Sitios de la ruta</h3>
+                <br>
+              </div>            
+
+                ";
+            // line 228
+            echo "                <div class=\"form-group\">
+                  <label style=\"text-align: center;\" for=\"inicio\" class=\"col-sm-4 control-label\">Inicio:</label>
+                    <div class=\"col-sm-6\">
+                      <select id=\"inicio\" name=\"inicio\" class=\"form-control\">
+                        ";
+            // line 232
+            $context['_parent'] = (array) $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["sitios"]) ? $context["sitios"] : $this->getContext($context, "sitios")));
+            foreach ($context['_seq'] as $context["_key"] => $context["sitio"]) {
+                echo "                      
+                          <option value=\"";
+                // line 233
+                echo twig_escape_filter($this->env, $this->getAttribute($context["sitio"], "nombre", array()), "html", null, true);
+                echo "\">";
+                echo twig_escape_filter($this->env, $this->getAttribute($context["sitio"], "nombre", array()), "html", null, true);
+                echo "</option>                         
+                        ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['sitio'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 234
+            echo "                                          
+                      </select>
+                    </div>                    
+                </div>
+                ";
+            // line 239
+            echo "
+                ";
+            // line 241
+            echo "                <div class=\"form-group\">
+                  <label style=\"text-align: center;\" for=\"sitios\" class=\"col-sm-4 control-label\">Sitios:</label>             
+                    <div class=\"col-sm-6\">
+                      <select multiple id=\"sitios\" name=\"sitios\" class=\"form-control\">
+                        ";
+            // line 245
+            $context['_parent'] = (array) $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["sitios"]) ? $context["sitios"] : $this->getContext($context, "sitios")));
+            foreach ($context['_seq'] as $context["_key"] => $context["sitio"]) {
+                echo "                      
+                          <option value=\"";
+                // line 246
+                echo twig_escape_filter($this->env, $this->getAttribute($context["sitio"], "nombre", array()), "html", null, true);
+                echo "\">";
+                echo twig_escape_filter($this->env, $this->getAttribute($context["sitio"], "nombre", array()), "html", null, true);
+                echo "</option>                         
+                        ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['sitio'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 247
+            echo "                                          
+                      </select>
+                      <i>(Ctrl-Click para selección múltiple)</i> <br>
+                    </div>                    
+                </div>
+                ";
+            // line 253
+            echo "
+                ";
+            // line 255
+            echo "                <div class=\"form-group\">
+                  <label style=\"text-align: center;\" for=\"final\" class=\"col-sm-4 control-label\">Final:</label>
+                    <div class=\"col-sm-6\">
+                      <select id=\"final\" name=\"final\" class=\"form-control\">
+                        ";
+            // line 259
+            $context['_parent'] = (array) $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["sitios"]) ? $context["sitios"] : $this->getContext($context, "sitios")));
+            foreach ($context['_seq'] as $context["_key"] => $context["sitio"]) {
+                echo "                      
+                          <option value=\"";
+                // line 260
+                echo twig_escape_filter($this->env, $this->getAttribute($context["sitio"], "nombre", array()), "html", null, true);
+                echo "\">";
+                echo twig_escape_filter($this->env, $this->getAttribute($context["sitio"], "nombre", array()), "html", null, true);
+                echo "</option>                         
+                        ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['sitio'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 261
+            echo "                                          
+                      </select>
+                    </div>                    
+                </div>
+                ";
+            // line 266
+            echo "
+                ";
+            // line 268
+            echo "                <div class=\"form-group\">
+                  <label for=\"buscar\" class=\"col-sm-1 control-label\"></label>
+                  <div class\"col-sm-6\">                 
+                    <input value =\"Crear ruta\" type=\"submit\" class=\"btn btn-primary\" data-toggle=\"modal\" onclick=\"generateRoute();\"></input>
+                  </div>
+                </div>              
+                ";
+            // line 274
+            echo "             
+
+            </div>    
+
+        </div>
+        ";
+        }
+        // line 280
+        echo "
+      </div>      
+  </div>
 
 \t";
-        // line 207
+        // line 285
         echo "\t\t";
         echo "\t
 \t\t";
-        // line 208
+        // line 286
         $this->env->loadTemplate("RutasBundle:Base:footer.html.twig")->display($context);
         echo " \t
 \t";
-        // line 209
+        // line 287
         echo " 
 
 ";
@@ -295,6 +438,6 @@ class __TwigTemplate_0229b872ad6071b902c1a223e558a13736977a1116b0e57a63c84b02f8e
 
     public function getDebugInfo()
     {
-        return array (  281 => 209,  277 => 208,  273 => 207,  263 => 198,  259 => 195,  251 => 188,  248 => 186,  230 => 169,  227 => 167,  214 => 155,  211 => 153,  198 => 141,  194 => 138,  178 => 123,  153 => 99,  149 => 96,  141 => 89,  137 => 86,  124 => 75,  121 => 73,  106 => 59,  103 => 57,  86 => 41,  82 => 38,  68 => 25,  56 => 14,  53 => 13,  51 => 12,  48 => 11,  45 => 10,  40 => 6,  37 => 5,  11 => 2,);
+        return array (  424 => 287,  420 => 286,  416 => 285,  410 => 280,  402 => 274,  394 => 268,  391 => 266,  385 => 261,  375 => 260,  369 => 259,  363 => 255,  360 => 253,  353 => 247,  343 => 246,  337 => 245,  331 => 241,  328 => 239,  322 => 234,  312 => 233,  306 => 232,  300 => 228,  286 => 215,  284 => 214,  282 => 213,  276 => 209,  272 => 206,  264 => 199,  260 => 196,  248 => 186,  245 => 184,  230 => 170,  227 => 168,  211 => 153,  205 => 150,  154 => 100,  150 => 97,  142 => 90,  138 => 87,  125 => 76,  122 => 74,  107 => 60,  104 => 58,  87 => 42,  83 => 39,  68 => 25,  56 => 14,  53 => 13,  51 => 12,  48 => 11,  45 => 10,  40 => 6,  37 => 5,  11 => 2,);
     }
 }

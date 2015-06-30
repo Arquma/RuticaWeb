@@ -9,6 +9,13 @@ class SitiosController extends Controller
 	//-- Muestra la vista principal de la opción crea tus rutas
     public function mostrarAction()
     {
-        return $this->render('RutasBundle:Principal:sitiosTuristicos.html.twig');
-    }
+         $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('DataBaseBundle:Sitio')->findAll();
+
+        return $this->render('RutasBundle:Principal:sitiosTuristicos.html.twig', array(
+            'entities' => $entities,
+        ));
+        
+         }
 }

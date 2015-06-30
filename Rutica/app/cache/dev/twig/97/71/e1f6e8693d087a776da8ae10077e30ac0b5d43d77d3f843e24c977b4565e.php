@@ -41,6 +41,7 @@ class __TwigTemplate_9771e1f6e8693d087a776da8ae10077e30ac0b5d43d77d3f843e24c977b
         </div>
     </div>
 </div>\t
+
 <div class=\"container\">
     <div class=\"modal fade\" id=\"ventanaModalDescripcionSitio\">
         <div class=\"modal-dialog\">
@@ -53,7 +54,7 @@ class __TwigTemplate_9771e1f6e8693d087a776da8ae10077e30ac0b5d43d77d3f843e24c977b
                 <!--Contenido de la ventana-->
                 <div class=\"modal-body\" align=\"center\">
                     <img src=\"";
-        // line 36
+        // line 37
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/sitios/1.jpg"), "html", null, true);
         echo "\" width=\"550\" height=\"350\" title=\"Destino\" alt=\"\" />
                 </div>
@@ -83,92 +84,41 @@ class __TwigTemplate_9771e1f6e8693d087a776da8ae10077e30ac0b5d43d77d3f843e24c977b
         <div class=\"row\">
 
             <ul class=\"grid cs-style-2\">
-                <div class=\"col-md-4 col-sm-6\">
-                    <figure>
-                        <img src=\"";
+
+                ";
         // line 66
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/sitios/1.jpg"), "html", null, true);
-        echo "\" alt=\"\" />
-                        <figcaption>
-                            <h3>Bosque nuboso</h3>
-                            <h3>monteverde</h3>
-                            <span>Puntarenas</span>\t\t\t\t\t\t\t
-                            <a href=\"#ventanaModalDescripcionSitio\" class=\"btn btn-primary\" data-toggle=\"modal\">Visítalo</a>
-                        </figcaption>
-                    </figure>
-                </div>\t
-                <div class=\"col-md-4 col-sm-6\">
-                    <figure>
-                        <img src=\"";
-        // line 77
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/sitios/2.jpg"), "html", null, true);
-        echo "\" alt=\"\" />
-                        <figcaption>
-                            <h3>Playa Nosara</h3>
-                            <span>Guanacaste</span>
-                            <a href=\"#ventanaModalDescripcionSitio\" class=\"btn btn-primary\" data-toggle=\"modal\">Visítalo</a>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class=\"col-md-4 col-sm-6\">
-                    <figure>
-                        <img src=\"";
-        // line 87
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/sitios/3.jpg"), "html", null, true);
-        echo "\" alt=\"\" />
-                        <figcaption>
-                            <h3>Parque Nacional</h3>
-                            <h3>Marino Ballena</h3>
-                            <span>Puntarenas</span>
-                            <a href=\"#ventanaModalDescripcionSitio\" class=\"btn btn-primary\" data-toggle=\"modal\">Visítalo</a>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class=\"col-md-4 col-sm-6\">
-                    <figure>
-                        <img src=\"";
-        // line 98
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/sitios/4.jpg"), "html", null, true);
-        echo "\" alt=\"\" />
-                        <figcaption>
-                            <h3>Parque Recreativo</h3>
-                            <h3>Los Chorros</h3>
-                            <span>Alajuela</span>
-                            <a href=\"#ventanaModalDescripcionSitio\" class=\"btn btn-primary\" data-toggle=\"modal\">Visítalo</a>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class=\"col-md-4 col-sm-6\">
-                    <figure>
-                        <img src=\"";
-        // line 109
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/sitios/5.jpg"), "html", null, true);
-        echo "\" alt=\"\" />
-                        <figcaption>
-                            <h3>Parque Nacional Tortuguero</h3>
-                            <span>Limón</span>
-                            <a href=\"#ventanaModalDescripcionSitio\" class=\"btn btn-primary\" data-toggle=\"modal\">Visítalo</a>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class=\"col-md-4 col-sm-6\">
-                    <figure>
-                        <img src=\"";
-        // line 119
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/sitios/6.jpg"), "html", null, true);
-        echo "\" alt=\"\" />
-                        <figcaption>
-                            <h3>Playa Cocal</h3>
-                            <span>Puntarenas</span>
-                            <a href=\"#ventanaModalDescripcionSitio\" class=\"btn btn-primary\" data-toggle=\"modal\">Visítalo</a>
-                        </figcaption>
-                    </figure>
-                </div>
-            </ul>
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
+        foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
+            // line 67
+            echo "                    <div class=\"col-md-4 col-sm-6\">
+                        <figure>
+                            ";
+            // line 69
+            $context["foo"] = ("bundles/templateboostrap/img/sitios/" . $this->getAttribute($context["entity"], "imagen", array()));
+            echo "   
 
+                            <img src=\"";
+            // line 71
+            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl((isset($context["foo"]) ? $context["foo"] : $this->getContext($context, "foo"))), "html", null, true);
+            echo "\" alt=\"\" height=\"250px\" width=\"400px\" href=\"#ventanaModalDescripcionSitio\" class=\"btn btn-primary\" data-toggle=\"modal\"/>
+                            <figcaption>
+                                <h3>";
+            // line 73
+            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "nombre", array()), "html", null, true);
+            echo "</h3>
+                                <span>TODO</span>
+                            </figcaption>
+                        </figure>
+                    </div>
+                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 79
+        echo "            </ul>
         </div>
-                        
-
         <ul class=\"pager\">
             <li><a href=\"#\">Previous</a></li>
             <li><a href=\"#\">Next</a></li>
@@ -176,15 +126,16 @@ class __TwigTemplate_9771e1f6e8693d087a776da8ae10077e30ac0b5d43d77d3f843e24c977b
 
     </div>
 </div>
+
 ";
-        // line 140
+        // line 90
         echo "\t
 ";
-        // line 141
+        // line 91
         $this->env->loadTemplate("RutasBundle:Base:footer.html.twig")->display($context);
         echo " \t
 ";
-        // line 142
+        // line 92
         echo " \t\t
 
 </body>
@@ -204,6 +155,6 @@ class __TwigTemplate_9771e1f6e8693d087a776da8ae10077e30ac0b5d43d77d3f843e24c977b
 
     public function getDebugInfo()
     {
-        return array (  188 => 142,  184 => 141,  181 => 140,  158 => 119,  145 => 109,  131 => 98,  117 => 87,  104 => 77,  90 => 66,  57 => 36,  21 => 2,  19 => 1,);
+        return array (  139 => 92,  135 => 91,  132 => 90,  120 => 79,  108 => 73,  103 => 71,  98 => 69,  94 => 67,  90 => 66,  58 => 37,  21 => 2,  19 => 1,);
     }
 }
