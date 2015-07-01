@@ -36,7 +36,7 @@ class __TwigTemplate_b54edd2e04dbc02e65167ad2949d1ad143f1b3704145e60d8ee9b0ec063
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("favicon.ico"), "html", null, true);
         echo "\" />
     </head>
-    <body>
+    <body onload=\"showMap()\">
         ";
         // line 10
         $this->displayBlock('body', $context, $blocks);

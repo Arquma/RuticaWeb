@@ -23,7 +23,7 @@ class __TwigTemplate_f99e8c07b115d16c498f7124525553d6be2d7ccaee62a9a818613a88854
 ";
         // line 3
         $this->displayBlock('body', $context, $blocks);
-        // line 124
+        // line 123
         $this->env->loadTemplate("AdministradorBundle:Default:adminFooter.html.twig")->display($context);
     }
 
@@ -33,7 +33,10 @@ class __TwigTemplate_f99e8c07b115d16c498f7124525553d6be2d7ccaee62a9a818613a88854
         // line 4
         echo "<div class=\"collapse navbar-collapse\">
                 <ul class=\"nav navbar-nav navbar-right\">
-                    <li ><a href=\"home.html\">Inicio</a></li>
+                   <li ><a href=\"";
+        // line 6
+        echo $this->env->getExtension('routing')->getUrl("ainicio");
+        echo "\">Inicio</a></li>
                     
                     <li class=\"active\"><a href=\"";
         // line 8
@@ -174,19 +177,24 @@ class __TwigTemplate_f99e8c07b115d16c498f7124525553d6be2d7ccaee62a9a818613a88854
                                 <th style=\"width: 100px;\"> Imagen</th>
                                 <td>
                                       <div class=\"col-md-12 col-sm-19\">
-                                <figure>
-                                    <img src=\"img/sitios/4.jpg\" alt=\"img04\">
-                                </figure>
+                                ";
+        // line 78
+        $context["foo"] = ("imagenes_sitios/" . $this->getAttribute((isset($context["entity"]) ? $context["entity"] : $this->getContext($context, "entity")), "imagen", array()));
+        echo "    
+                                <img src=\"";
+        // line 79
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl((isset($context["foo"]) ? $context["foo"] : $this->getContext($context, "foo"))), "html", null, true);
+        echo "\" alt=\"one\" height=\"150px\" width=\"200px\">
                                  </div> 
                                     ";
-        // line 82
+        // line 81
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "imagen", array()), 'widget');
         echo "
                                      <a href=\"#\" class=\"btn btn-primary\" type=\"button\" onclick=\"document.getElementById('fileID').click(); return false;\">Buscar</a> <input id=\"fileID\" type=\"file\" style=\"visibility: hidden; display: none;\" />
                                     <input type=\"file\" id=\"fileID\" class=\"form-control\" style=\"visibility: hidden;\" />
 
                                     ";
-        // line 86
+        // line 85
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "imagen", array()), 'errors');
         echo "</td>
                             </tr>
@@ -199,35 +207,35 @@ class __TwigTemplate_f99e8c07b115d16c498f7124525553d6be2d7ccaee62a9a818613a88854
                                         <tr>
 
                                             <td style=\"width: 80px;\"> ";
-        // line 96
+        // line 95
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), "submit", array()), 'widget');
         echo "
                                             </td>
 
 
                                             ";
-        // line 100
+        // line 99
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), 'form_end');
         echo "
                                             <td style=\"width: 60px;\">  <a href=\"";
-        // line 101
+        // line 100
         echo $this->env->getExtension('routing')->getPath("sitio");
         echo "\" class=\"btn btn-primary btn-sm\">
                                                     Volver
                                                 </a>
                                             </td>
                                             ";
-        // line 105
+        // line 104
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_start');
         echo "
                                             <td style=\"width: 80px;\"> 
                                                 ";
-        // line 107
+        // line 106
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), "submit", array()), 'widget');
         echo "
                                             </td>
                                                 ";
-        // line 109
+        // line 108
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_end');
         echo "
 
@@ -258,6 +266,6 @@ class __TwigTemplate_f99e8c07b115d16c498f7124525553d6be2d7ccaee62a9a818613a88854
 
     public function getDebugInfo()
     {
-        return array (  231 => 109,  226 => 107,  221 => 105,  214 => 101,  210 => 100,  203 => 96,  190 => 86,  183 => 82,  169 => 71,  165 => 70,  158 => 66,  154 => 65,  147 => 61,  143 => 60,  139 => 59,  133 => 56,  129 => 55,  125 => 54,  119 => 51,  115 => 50,  111 => 49,  105 => 46,  101 => 45,  97 => 44,  91 => 41,  87 => 40,  83 => 39,  77 => 36,  73 => 35,  44 => 9,  40 => 8,  34 => 4,  31 => 3,  27 => 124,  25 => 3,  22 => 2,  20 => 1,);
+        return array (  239 => 108,  234 => 106,  229 => 104,  222 => 100,  218 => 99,  211 => 95,  198 => 85,  191 => 81,  186 => 79,  182 => 78,  172 => 71,  168 => 70,  161 => 66,  157 => 65,  150 => 61,  146 => 60,  142 => 59,  136 => 56,  132 => 55,  128 => 54,  122 => 51,  118 => 50,  114 => 49,  108 => 46,  104 => 45,  100 => 44,  94 => 41,  90 => 40,  86 => 39,  80 => 36,  76 => 35,  47 => 9,  43 => 8,  38 => 6,  34 => 4,  31 => 3,  27 => 123,  25 => 3,  22 => 2,  20 => 1,);
     }
 }

@@ -285,6 +285,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
             not_sitio_delete:
 
+            // aSubirImagen
+            if ($pathinfo === '/sitio/aSubirImagen') {
+                return array (  '_controller' => 'Rutica\\DataBaseBundle\\Controller\\SitioController::aSubirImagenAction',  '_route' => 'aSubirImagen',);
+            }
+
         }
 
         // data_base_homepage

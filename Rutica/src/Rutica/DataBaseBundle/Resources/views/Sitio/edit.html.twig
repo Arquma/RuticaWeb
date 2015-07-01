@@ -75,9 +75,8 @@
                                 <th style="width: 100px;"> Imagen</th>
                                 <td>
                                       <div class="col-md-12 col-sm-19">
-                                <figure>
-                                    <img src="img/sitios/4.jpg" alt="img04">
-                                </figure>
+                                {% set foo ='imagenes_sitios/' ~ entity.imagen %}    
+                                <img src="{{asset(foo)}}" alt="one" height="150px" width="200px">
                                  </div> 
                                     {{form_widget(edit_form.imagen)}}
                                      <a href="#" class="btn btn-primary" type="button" onclick="document.getElementById('fileID').click(); return false;">Buscar</a> <input id="fileID" type="file" style="visibility: hidden; display: none;" />
