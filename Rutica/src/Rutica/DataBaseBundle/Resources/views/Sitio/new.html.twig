@@ -13,6 +13,62 @@
     </div>
 
 </div>
+
+  <style>
+      #map-canvas {
+        width: 500px;
+        height: 400px;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="{{ asset('bundles/googlemaps/js/maps.js') }}"></script> 
+    <script>
+        
+    function camCoordenadas(marker){
+        var LatLong=marker.getPosition();
+        var latitud=LatLong.lat();
+        var longitud=LatLong.lng();
+        
+        var latnum=latitud.toString();
+        var lngnum=longitud.toString();
+       
+        document.getElementById('lat').value=latnum.substr(0,8);
+        document.getElementById('lng').value=lngnum.substr(0,10);
+        
+      
+        
+     }
+      function initialize() {
+         var lat = 9.933110;
+         var long =-84.090491;
+
+         var myLatLng= new google.maps.LatLng(lat,long);
+        var mapCanvas = document.getElementById('map-canvas');
+        var mapOptions = {
+          center: new google.maps.LatLng(lat, long),
+          zoom: 14,
+         mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+        
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            draggable: true,
+            map: map,
+            animation: google.maps.Animation.DROP,
+
+        });
+      
+
+       google.maps.event.addListener(marker, 'dragend', function(){
+        camCoordenadas(marker);
+    });
+      }
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </head>
+
 </header><!--/header-->
 <!-- Título de página -->
 <div class="section section-breadcrumbs">
@@ -54,14 +110,14 @@
                                 <label for="longitud" class="col-sm-2 control-label" >Longitud</label>
                                 <div class="col-sm-4">
                                     </th>    
-                                    <td> <input type="text" name="longitud"  style="width: 250px;"></td>
+                                    <td> <input type="text" id="lng" name="longitud"  style="width: 250px;"></td>
                                     </tr>
                                     <tr>
                                         <th>	<div class="form-group">
                                         <label for="latitud" class="col-sm-2 control-label">Latitud</label>
                                         <div class="col-sm-4">
                                             </th>    
-                                            <td> <input type="text" name="latitud"  style="width: 250px;"></td>
+                                            <td> <input type="text" id="lat" name="latitud"  style="width: 250px;"></td>
                                             </tr>
                                             <tr>
                                                 <th>	<div class="form-group">
@@ -166,8 +222,7 @@
 
                                                         </div>
                                                         <!-- Mapa -->                                 
-                                                        <div class ="col-md-5">
-                                                            <iframe src="https://www.google.com/maps/embed?pb=!1m34!1m12!1m3!1d7859.933826055709!2d-84.07980560988867!3d9.936710986346734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m19!3e0!4m5!1s0x8fa0e366d24d3d1b%3A0x86bd02c7707db21e!2sTeatro+Nacional+de+Costa+Rica%2C+San+Jos%C3%A9!3m2!1d9.933129!2d-84.076942!4m5!1s0x8fa0e4aabcf16c1f%3A0x9968a5c10a33d6eb!2sMuseo+Nacional+de+Costa+Rica%2C+Cuesta+de+Moras%2C+San+Jos%C3%A9!3m2!1d9.932602!2d-84.071015!4m5!1s0x8fa0e4a028084f77%3A0xe474e090ba7dc78f!2sMuseo+de+los+ni%C3%B1os+de+costa+rica%2C+San+Jos%C3%A9!3m2!1d9.941272!2d-84.080326!5e0!3m2!1ses!2scr!4v1432659181123" width="600" height="450" frameborder="0" style="border:0"></iframe>
+                                                        <div class ="col-md-5" id="map-canvas">
                                                         </div>
                                                         <!-- Fin mapa -->
                                                     </div>

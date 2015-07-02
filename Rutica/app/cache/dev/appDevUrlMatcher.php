@@ -290,6 +290,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'Rutica\\DataBaseBundle\\Controller\\SitioController::aSubirImagenAction',  '_route' => 'aSubirImagen',);
             }
 
+            // editarSitio
+            if ($pathinfo === '/sitio/editarSitio') {
+                return array (  '_controller' => 'Rutica\\DataBaseBundle\\Controller\\SitioController::editarSitioAction',  '_route' => 'editarSitio',);
+            }
+
         }
 
         // data_base_homepage

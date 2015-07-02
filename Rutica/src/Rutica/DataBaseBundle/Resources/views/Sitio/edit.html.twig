@@ -1,6 +1,64 @@
 {% include 'AdministradorBundle:Default:adminHeader.html.twig' %}
 
 {% block body -%}
+    
+     <head>
+    <style>
+      #map-canvas {
+        width: 500px;
+        height: 400px;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="{{ asset('bundles/googlemaps/js/maps.js') }}"></script> 
+    <script>
+        
+    function camCoordenadas(marker){
+        var LatLong=marker.getPosition();
+        var latitud=LatLong.lat();
+        var longitud=LatLong.lng();
+        
+        var latnum=latitud.toString();
+        var lngnum=longitud.toString();
+       
+        document.getElementById('lat').value=latnum.substr(0,8);
+        document.getElementById('lng').value=lngnum.substr(0,10);
+        
+      
+        
+     }
+      function initialize() {
+         var lat = {{ entity.latitud }};
+         var long ={{ entity.longitud }};
+
+         var myLatLng= new google.maps.LatLng(lat,long);
+        var mapCanvas = document.getElementById('map-canvas');
+        var mapOptions = {
+          center: new google.maps.LatLng(lat, long),
+          zoom: 18,
+         mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+        
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            draggable: true,
+            title:'{{ entity.nombre }}',
+            map: map,
+            animation: google.maps.Animation.DROP,
+
+        });
+      
+
+       google.maps.event.addListener(marker, 'dragend', function(){
+        camCoordenadas(marker);
+    });
+      }
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </head>
+    
      <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                    <li ><a href="{{url('ainicio')}}">Inicio</a></li>
@@ -29,46 +87,60 @@
    
    <div class="container">
      <div class="col-md-6">
-       
+        <form role="form" method="POST" enctype="multipart/form-data" action="{{ path('editarSitio') }}">
            <table class="table table-bordered table-striped table-condensed" style="width: 500px;">
 
-                        {{ form_start(edit_form)}}
-                        {{form_errors(edit_form)}}
+                       
                         <tbody>
+                        <input type="text" name="id" value="{{ entity.id }}" hidden="true" style="width: 250px;">
                             <tr>
-                                <th style="width: 100px;"> {{ form_label(edit_form.nombre) }}</th>
-                                <td>{{form_widget(edit_form.nombre)}}
-                                    {{ form_errors(edit_form.nombre) }}</td>
+                                <th style="width: 100px;"> Nombre</th>
+                                <td> <input type="text" name="nombre" value="{{ entity.nombre }}" style="width: 250px;"></td>
+                            </tr>
+                             
+                            <tr>
+                                <th style="width: 100px;"> Descripcion</th>
+                                <td><textarea rows="4" cols="20" style="width: 250px;"  name="descripcion">{{ entity.descripcion }}</textarea></td>
                             </tr>
                             <tr>
-                                <th style="width: 100px;"> {{ form_label(edit_form.descripcion) }}</th>
-                                <td>{{form_widget(edit_form.descripcion)}}
-                                    {{ form_errors(edit_form.descripcion) }}</td>
+                                <th style="with:100px;">Latitud</th>
+                                <td><input name="lati" id="lat" value="{{entity.latitud}}"/>
                             </tr>
                             <tr>
-                                <th style="width: 100px;"> {{ form_label(edit_form.longitud) }}</th>
-                                <td>{{form_widget(edit_form.longitud)}}
-                                    {{ form_errors(edit_form.longitud) }}</td>
-                            </tr>
+                                <th style="with:100px;">Longitud</th>
+                                <td><input name="longi" id="lng" value="{{entity.longitud}}"/>
+                            <tr/>
                             <tr>
-                                <th style="width: 100px;"> {{ form_label(edit_form.latitud) }}</th>
-                                <td>{{form_widget(edit_form.latitud)}}
-                                    {{ form_errors(edit_form.latitud) }}</td>
+                                <th style="width: 100px;">Precio</th>
+                                <td><input name="precio" value="{{ entity.precio }}" ></td>
                             </tr>
-                            <tr>
-                                <th style="width: 100px;"> {{ form_label(edit_form.precio) }}</th>
-                                <td>{{form_widget(edit_form.precio)}}
-                                    {{ form_errors(edit_form.precio) }}</td>
-                            </tr>
+                            
                              <tr>
                                 <th style="width: 100px;"> Provincia</th>
-                                <td>{{form_widget(edit_form.idProvincia)}}
-                                    {{ form_errors(edit_form.idProvincia) }}</td>
+                                <td> <select id="selectError" data-rel="chosen" class="form-control" name="provincia" style="width: 250px;">
+                                                                    <option></option>
+                                                                    <option value="1" selected>San José</option>
+                                                                    <option value="2">Alajuela</option>
+                                                                    <option value="3">Cartago</option>
+                                                                    <option value="4">Heredia</option>
+                                                                    <option value="5">Puntarenas</option>
+                                                                    <option value="6">Guanacaste</option>
+                                                                    <option value="7">Limón</option>                       					
+                                                                </select></td>
                             </tr>
                             <tr>
                                 <th style="width: 100px;"> Actividad</th>
-                                <td>{{form_widget(edit_form.idActividad)}}
-                                    {{ form_errors(edit_form.idActividad) }}</td>
+                                <td>   <select  class="form-control" id="selectError" data-rel="chosen" name="actividad" style="width: 250px;">
+                                                                    <option></option>
+                                                                    
+                                                                    
+                                                                    <option value="1" selected>Ciudad</option>
+                                                                    <option value="2">Rural</option>
+                                                                    <option value="3">Aventura</option>
+                                                                    <option value="4">Extremo</option>
+                                                                    <option value="5">Ecologico</option>
+                                                                    <option value="6">Familiar</option>
+                                                                </select></td>
                             </tr> 
                           
                             <tr>
@@ -78,11 +150,9 @@
                                 {% set foo ='imagenes_sitios/' ~ entity.imagen %}    
                                 <img src="{{asset(foo)}}" alt="one" height="150px" width="200px">
                                  </div> 
-                                    {{form_widget(edit_form.imagen)}}
-                                     <a href="#" class="btn btn-primary" type="button" onclick="document.getElementById('fileID').click(); return false;">Buscar</a> <input id="fileID" type="file" style="visibility: hidden; display: none;" />
-                                    <input type="file" id="fileID" class="form-control" style="visibility: hidden;" />
+                                    <input type="file" id="fileID" class="form-control"  name="archivo" />
 
-                                    {{ form_errors(edit_form.imagen) }}</td>
+                                    </td>
                             </tr>
                             
                         </tbody> 
@@ -92,29 +162,30 @@
                                <table>
                                         <tr>
 
-                                            <td style="width: 80px;"> {{form_widget(edit_form.submit)}}
-                                            </td>
+                                            <td style="width: 80px;"> 
+                                              <button class="btn btn-primary btn-sm">Actualizar</button>
+                                           </td> 
 
-
-                                            {{ form_end(edit_form)}}
+                                             
                                             <td style="width: 60px;">  <a href="{{ path('sitio') }}" class="btn btn-primary btn-sm">
                                                     Volver
                                                 </a>
                                             </td>
-                                            {{ form_start(delete_form)}}
+                                            
                                             <td style="width: 80px;"> 
-                                                {{ form_widget(delete_form.submit) }}
+                                                
                                             </td>
-                                                {{ form_end(delete_form)}}
+                                                
 
                                         </tr>
                                     </table>
+                                                <input type="text" name="latitud" hidden="true" />
+                                                 <input type="text" name="longitud" hidden="true" />
                             </center>
-
+        </form>
      </div>
                 <!-- Mapa -->                                 
-     <div class ="col-md-5">
-         <iframe src="https://www.google.com/maps/embed?pb=!1m34!1m12!1m3!1d7859.933826055709!2d-84.07980560988867!3d9.936710986346734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m19!3e0!4m5!1s0x8fa0e366d24d3d1b%3A0x86bd02c7707db21e!2sTeatro+Nacional+de+Costa+Rica%2C+San+Jos%C3%A9!3m2!1d9.933129!2d-84.076942!4m5!1s0x8fa0e4aabcf16c1f%3A0x9968a5c10a33d6eb!2sMuseo+Nacional+de+Costa+Rica%2C+Cuesta+de+Moras%2C+San+Jos%C3%A9!3m2!1d9.932602!2d-84.071015!4m5!1s0x8fa0e4a028084f77%3A0xe474e090ba7dc78f!2sMuseo+de+los+ni%C3%B1os+de+costa+rica%2C+San+Jos%C3%A9!3m2!1d9.941272!2d-84.080326!5e0!3m2!1ses!2scr!4v1432659181123" width="600" height="450" frameborder="0" style="border:0"></iframe>
+     <div class ="col-md-5" id="map-canvas">
      </div>
                  <!-- Fin mapa -->
    </div>

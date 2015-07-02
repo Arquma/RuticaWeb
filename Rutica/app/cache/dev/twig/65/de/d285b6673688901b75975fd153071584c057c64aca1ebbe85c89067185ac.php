@@ -23,10 +23,10 @@ class __TwigTemplate_65ded285b6673688901b75975fd153071584c057c64aca1ebbe85c89067
 ";
         // line 3
         $this->displayBlock('body', $context, $blocks);
-        // line 176
+        // line 231
         echo "
                                                 ";
-        // line 177
+        // line 232
         $this->env->loadTemplate("AdministradorBundle:Default:adminFooter.html.twig")->display($context);
     }
 
@@ -55,6 +55,65 @@ class __TwigTemplate_65ded285b6673688901b75975fd153071584c057c64aca1ebbe85c89067
     </div>
 
 </div>
+
+  <style>
+      #map-canvas {
+        width: 500px;
+        height: 400px;
+      }
+    </style>
+    <script src=\"https://maps.googleapis.com/maps/api/js\"></script>
+    <script src=\"";
+        // line 24
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/googlemaps/js/maps.js"), "html", null, true);
+        echo "\"></script> 
+    <script>
+        
+    function camCoordenadas(marker){
+        var LatLong=marker.getPosition();
+        var latitud=LatLong.lat();
+        var longitud=LatLong.lng();
+        
+        var latnum=latitud.toString();
+        var lngnum=longitud.toString();
+       
+        document.getElementById('lat').value=latnum.substr(0,8);
+        document.getElementById('lng').value=lngnum.substr(0,10);
+        
+      
+        
+     }
+      function initialize() {
+         var lat = 9.933110;
+         var long =-84.090491;
+
+         var myLatLng= new google.maps.LatLng(lat,long);
+        var mapCanvas = document.getElementById('map-canvas');
+        var mapOptions = {
+          center: new google.maps.LatLng(lat, long),
+          zoom: 14,
+         mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+        
+        var marker = new google.maps.Marker({
+            position: myLatLng,
+            draggable: true,
+            map: map,
+            animation: google.maps.Animation.DROP,
+
+        });
+      
+
+       google.maps.event.addListener(marker, 'dragend', function(){
+        camCoordenadas(marker);
+    });
+      }
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </head>
+
 </header><!--/header-->
 <!-- Título de página -->
 <div class=\"section section-breadcrumbs\">
@@ -73,7 +132,7 @@ class __TwigTemplate_65ded285b6673688901b75975fd153071584c057c64aca1ebbe85c89067
 <div class=\"container\">
     <div class=\"col-md-6\">
         <form role=\"form\" method=\"POST\" enctype=\"multipart/form-data\" action=\"";
-        // line 33
+        // line 89
         echo $this->env->getExtension('routing')->getPath("aSubirImagen");
         echo "\">
         <table class=\"table table-bordered table-striped table-condensed\" style=\"width: 500px;\">
@@ -99,14 +158,14 @@ class __TwigTemplate_65ded285b6673688901b75975fd153071584c057c64aca1ebbe85c89067
                                 <label for=\"longitud\" class=\"col-sm-2 control-label\" >Longitud</label>
                                 <div class=\"col-sm-4\">
                                     </th>    
-                                    <td> <input type=\"text\" name=\"longitud\"  style=\"width: 250px;\"></td>
+                                    <td> <input type=\"text\" id=\"lng\" name=\"longitud\"  style=\"width: 250px;\"></td>
                                     </tr>
                                     <tr>
                                         <th>\t<div class=\"form-group\">
                                         <label for=\"latitud\" class=\"col-sm-2 control-label\">Latitud</label>
                                         <div class=\"col-sm-4\">
                                             </th>    
-                                            <td> <input type=\"text\" name=\"latitud\"  style=\"width: 250px;\"></td>
+                                            <td> <input type=\"text\" id=\"lat\" name=\"latitud\"  style=\"width: 250px;\"></td>
                                             </tr>
                                             <tr>
                                                 <th>\t<div class=\"form-group\">
@@ -118,7 +177,7 @@ class __TwigTemplate_65ded285b6673688901b75975fd153071584c057c64aca1ebbe85c89067
                                                     <tr>
 
                                                         ";
-        // line 76
+        // line 132
         echo "                                                        <th>\t<div class=\"form-group\">
                                                         <label for=\"provincia\" class=\"col-sm-2 control-label\">Provincia</label>
                                                         <div class=\"col-sm-4\">
@@ -137,7 +196,7 @@ class __TwigTemplate_65ded285b6673688901b75975fd153071584c057c64aca1ebbe85c89067
                                                         </div>
                                                     </div>
                                                     ";
-        // line 94
+        // line 150
         echo "                                                    </td>
                                                     </tr>
                                                     <tr>
@@ -160,7 +219,7 @@ class __TwigTemplate_65ded285b6673688901b75975fd153071584c057c64aca1ebbe85c89067
                                                         </div>         \t\t\t\t\t\t
                                                     </div>
                                                     ";
-        // line 115
+        // line 171
         echo "</td>
                                                     </tr> 
 
@@ -189,24 +248,24 @@ class __TwigTemplate_65ded285b6673688901b75975fd153071584c057c64aca1ebbe85c89067
 
                                                                 
                                                                     ";
-        // line 142
+        // line 198
         if (array_key_exists("message", $context)) {
-            // line 143
+            // line 199
             echo "                                                                        <p class=\"help-block\"><font color=\"088A08\">";
             echo twig_escape_filter($this->env, (isset($context["message"]) ? $context["message"] : $this->getContext($context, "message")), "html", null, true);
             echo "</font></p>
                                                                         ";
         }
-        // line 145
+        // line 201
         echo "                                                                        ";
         if (array_key_exists("error", $context)) {
-            // line 146
+            // line 202
             echo "                                                                        <p class=\"help-block\"><font color=\"#FF0000\">";
             echo twig_escape_filter($this->env, (isset($context["error"]) ? $context["error"] : $this->getContext($context, "error")), "html", null, true);
             echo "</font></p>
                                                                         ";
         }
-        // line 148
+        // line 204
         echo "
                                                                     <center>
                                                                         <table>
@@ -216,7 +275,7 @@ class __TwigTemplate_65ded285b6673688901b75975fd153071584c057c64aca1ebbe85c89067
                                                                                     <button class=\"btn btn-primary btn-sm\">Guardar</button>
                                                                                 </td>
                                                                                <td style=\"width: 90px;\">    <a href=\"";
-        // line 156
+        // line 212
         echo $this->env->getExtension('routing')->getPath("sitio");
         echo "\" class=\"btn btn-primary btn-sm\">
                                                                                         Volver
@@ -231,8 +290,7 @@ class __TwigTemplate_65ded285b6673688901b75975fd153071584c057c64aca1ebbe85c89067
 
                                                         </div>
                                                         <!-- Mapa -->                                 
-                                                        <div class =\"col-md-5\">
-                                                            <iframe src=\"https://www.google.com/maps/embed?pb=!1m34!1m12!1m3!1d7859.933826055709!2d-84.07980560988867!3d9.936710986346734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m19!3e0!4m5!1s0x8fa0e366d24d3d1b%3A0x86bd02c7707db21e!2sTeatro+Nacional+de+Costa+Rica%2C+San+Jos%C3%A9!3m2!1d9.933129!2d-84.076942!4m5!1s0x8fa0e4aabcf16c1f%3A0x9968a5c10a33d6eb!2sMuseo+Nacional+de+Costa+Rica%2C+Cuesta+de+Moras%2C+San+Jos%C3%A9!3m2!1d9.932602!2d-84.071015!4m5!1s0x8fa0e4a028084f77%3A0xe474e090ba7dc78f!2sMuseo+de+los+ni%C3%B1os+de+costa+rica%2C+San+Jos%C3%A9!3m2!1d9.941272!2d-84.080326!5e0!3m2!1ses!2scr!4v1432659181123\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\"></iframe>
+                                                        <div class =\"col-md-5\" id=\"map-canvas\">
                                                         </div>
                                                         <!-- Fin mapa -->
                                                     </div>
@@ -252,6 +310,6 @@ class __TwigTemplate_65ded285b6673688901b75975fd153071584c057c64aca1ebbe85c89067
 
     public function getDebugInfo()
     {
-        return array (  220 => 156,  210 => 148,  204 => 146,  201 => 145,  195 => 143,  193 => 142,  164 => 115,  141 => 94,  122 => 76,  77 => 33,  50 => 9,  46 => 8,  41 => 6,  37 => 4,  34 => 3,  30 => 177,  27 => 176,  25 => 3,  22 => 2,  20 => 1,);
+        return array (  279 => 212,  269 => 204,  263 => 202,  260 => 201,  254 => 199,  252 => 198,  223 => 171,  200 => 150,  181 => 132,  136 => 89,  68 => 24,  50 => 9,  46 => 8,  41 => 6,  37 => 4,  34 => 3,  30 => 232,  27 => 231,  25 => 3,  22 => 2,  20 => 1,);
     }
 }
