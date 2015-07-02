@@ -28,3 +28,11 @@ sitio_delete:
     path:     /{id}/delete
     defaults: { _controller: "DataBaseBundle:Sitio:delete" }
     requirements: { _method: post|delete }
+    
+aSubirImagen:
+    pattern: /aSubirImagen
+    defaults: {_controller: "DataBaseBundle:Sitio:aSubirImagen" }
+    
+editarSitio:
+    pattern: /editarSitio
+    defaults: {_controller: "DataBaseBundle:Sitio:editarSitio" }

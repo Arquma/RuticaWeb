@@ -29,6 +29,88 @@ class SitioController extends Controller
             'entities' => $entities,
         ));
     }
+    
+    
+     public function aSubirImagenAction() {
+        $hostname = $this->container->getParameter('database_host');
+        $user = $this->container->getParameter('database_user');
+        $pass = $this->container->getParameter('database_password');
+        $dataBase = $this->container->getParameter('database_name');
+        mysql_connect($hostname, $user, $pass);
+        mysql_select_db($dataBase);
+
+        $request = $this->getRequest();
+        
+
+        if ($request->getMethod() == 'POST') {
+            
+           
+
+           
+           $descripcion = $request->get('descripcion');
+           $nombre = $request->get('nombre');
+           $precio = $request->get('precio');
+           $latitud = $request->get('latitud');
+           $longitud = $request->get('longitud');
+           $provincia= $request->get('provincia');
+           $actividad= $request->get('actividad');
+           $activ= $this->getDoctrine()->getRepository('DataBaseBundle:Actividad')->findOneBy(array("id"=>$actividad));
+           $provin= $this->getDoctrine()->getRepository('DataBaseBundle:Provincia')->findOneBy(array("id"=>$provincia));
+            // File Properties
+            $file_name = $_FILES['archivo']['name'];
+            $file_tmp = $_FILES['archivo']['tmp_name'];
+
+
+
+            // Working With File Extension
+            $file_ext = explode('.', $file_name);
+            $file_fname = explode('.', $file_name);
+
+            $file_fname = strtolower(current($file_fname));
+            $file_ext = strtolower(end($file_ext));
+            $allowed = array('jpg', 'jpeg', 'png');
+
+            $entity = new Sitio();
+            $form = $this->createCreateForm($entity);
+            $form->handleRequest($request);
+            $entity->setImagen($file_name);
+            $entity->setNombre($nombre);
+            $entity->setPrecio($precio);
+            $entity->setLatitud($latitud);
+            $entity->setLongitud($longitud);
+            $entity->setDescripcion($descripcion);
+            $entity->setIdActividad($activ);
+            $entity->setIdProvincia($provin);
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($entity);
+            $em->flush();
+
+//        $qry = "INSERT INTO rutica.sitio(nombre,descripcion,imagen,id_provincia,id_actividad,longitud,latitud,precio) VALUES
+//                ('$nombre','123','".$file_name."','1','1','123','312','200')";
+//        
+//
+//        mysql_query($qry);
+//            
+            
+            if (in_array($file_ext, $allowed)) {
+                $root = getcwd();
+                move_uploaded_file($_FILES['archivo']['tmp_name'], $root . '/imagenes_sitios/' . $_FILES['archivo']['name']);
+                $message = '¡Archivo cargado correctamente!';
+
+
+
+                return $this->redirect($this->generateUrl('sitio'));
+            }//fin validadicon de formato
+            else {
+                $error = '¡Informato incorrecto!';
+                return $this->redirect($this->generateUrl('sitio'));
+            }
+        }
+
+        return $this->redirect($this->generateUrl('sitio'));
+
+    }
     /**
      * Creates a new Sitio entity.
      *
@@ -113,12 +195,80 @@ class SitioController extends Controller
      * Displays a form to edit an existing Sitio entity.
      *
      */
+    public function editarSitioAction(){
+         $hostname = $this->container->getParameter('database_host');
+        $user = $this->container->getParameter('database_user');
+        $pass = $this->container->getParameter('database_password');
+        $dataBase = $this->container->getParameter('database_name');
+        mysql_connect($hostname, $user, $pass);
+        mysql_select_db($dataBase);
+
+        $request = $this->getRequest();
+        
+
+        if ($request->getMethod() == 'POST') {
+           $id = $request->get('id');
+           $descripcion = $request->get('descripcion');
+           $nombre = $request->get('nombre');
+           $precio = $request->get('precio');
+           $latitud =  $request->get('lati') ;
+           $longitud = $request->get('longi');
+             // File Properties
+            $file_name = $_FILES['archivo']['name'];
+            $file_tmp = $_FILES['archivo']['tmp_name'];
+            
+           
+            // Working With File Extension
+            $file_ext = explode('.', $file_name);
+            $file_fname = explode('.', $file_name);
+
+            $file_fname = strtolower(current($file_fname));
+            $file_ext = strtolower(end($file_ext));
+            $allowed = array('jpg', 'jpeg', 'png');
+            
+            if ($file_name == ""){
+                $qry = "UPDATE  rutica.sitio set nombre='$nombre',descripcion='$descripcion',longitud=$longitud,latitud=$latitud,precio=$precio where id=$id";
+                  mysql_query($qry);
+            }else{
+                $qry = "UPDATE  rutica.sitio set nombre='$nombre',descripcion=''$descripcion'',imagen='".$file_name."',longitud=$longitud,latitud=$latitud,precio=$precio where id=$id";
+                  mysql_query($qry);
+                  
+                  if (in_array($file_ext, $allowed)) {
+                $root = getcwd();
+                move_uploaded_file($_FILES['archivo']['tmp_name'], $root . '/imagenes_sitios/' . $_FILES['archivo']['name']);
+                $message = '¡Archivo cargado correctamente!';
+
+                return $this->redirect($this->generateUrl('sitio'));
+            }//fin validadicon de formato
+            else {
+                $error = '¡Informato incorrecto!';
+                return $this->redirect($this->generateUrl('sitio'));
+            }
+            }
+                    
+             
+            
+                  
+             
+             return $this->redirect($this->generateUrl('sitio'));
+            
+        }
+            
+        
+        
+        
+        
+       
+        
+        return $this->redirect($this->generateUrl('sitio'));
+    }
+    
     public function editAction($id)
     {
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('DataBaseBundle:Sitio')->find($id);
-
+        
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Sitio entity.');
         }
