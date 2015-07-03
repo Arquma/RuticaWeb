@@ -68,7 +68,7 @@ class __TwigTemplate_0229b872ad6071b902c1a223e558a13736977a1116b0e57a63c84b02f8e
         echo "
 \t<div class=\"section\">
 \t    <div class=\"container\">
-<<<<<<< HEAD
+
 \t\t\t<div class=\"row\">
 
 \t\t\t\t<div class=\"col-md-8\">
@@ -171,9 +171,9 @@ class __TwigTemplate_0229b872ad6071b902c1a223e558a13736977a1116b0e57a63c84b02f8e
                 \t</ul>
 
                 </div>           
-=======
+
 \t\t\t  <div class=\"row\">\t\t\t\t\t\t\t
->>>>>>> dev-olman
+
 
           <div class = \"col-md-8\">
 
@@ -263,7 +263,7 @@ class __TwigTemplate_0229b872ad6071b902c1a223e558a13736977a1116b0e57a63c84b02f8e
         // line 199
         echo "              <div class=\"form-group\">
                 <label for=\"buscar\" class=\"col-sm-1 control-label\"></label>
-                <div class\"col-sm-6\">                 
+                <div class=\"col-sm-6\">                 
                   <button id=\"buscar\" type=\"submit\" class=\"btn btn-primary\" data-toggle=\"modal\">Buscar</button>
                 </div>
               </div>              
@@ -286,7 +286,7 @@ class __TwigTemplate_0229b872ad6071b902c1a223e558a13736977a1116b0e57a63c84b02f8e
             echo "
         <div class=\"row\">                    
 
-            <div class=\"col-md-8\" id=\"main-map\" style=\"width: 700px; height: 400px\"></div> 
+            <div class=\"col-md-6\" id=\"main-map\" style=\"width: 700px; height: 400px\"></div> 
 
             <div class=\"col-md-4\">
 
@@ -393,7 +393,7 @@ class __TwigTemplate_0229b872ad6071b902c1a223e558a13736977a1116b0e57a63c84b02f8e
             // line 268
             echo "                <div class=\"form-group\">
                   <label for=\"buscar\" class=\"col-sm-1 control-label\"></label>
-                  <div class\"col-sm-6\">                 
+                  <div class=\"col-sm-6\">                 
                     <input value =\"Crear ruta\" type=\"submit\" class=\"btn btn-primary\" data-toggle=\"modal\" onclick=\"generateRoute();\"></input>
                   </div>
                 </div>              
@@ -410,7 +410,7 @@ class __TwigTemplate_0229b872ad6071b902c1a223e558a13736977a1116b0e57a63c84b02f8e
         echo "
       </div>      
   </div>
-
+        </div>
 \t";
         // line 285
         echo "\t\t";

@@ -84,7 +84,6 @@ class __TwigTemplate_15c4c4d302360de531332f717f0d576a5b4300bf74642fc50f20428b74e
 \t
 
 </head>
-
 <body>
         <!--[if lt IE 7]>
             <p class=\"chromeframe\">You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/\">upgrade your browser</a> or <a href=\"http://www.google.com/chromeframe/?redirect=true\">activate Google Chrome Frame</a> to improve your experience.</p>
@@ -101,7 +100,7 @@ class __TwigTemplate_15c4c4d302360de531332f717f0d576a5b4300bf74642fc50f20428b74e
                     <span class=\"icon-bar\"></span>
                 </button>
                 <a class=\"navbar-brand\" href=\"index.html\"><img src=\"";
-        // line 59
+        // line 58
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/logo.png"), "html", null, true);
         echo "\" alt=\"Basica\"></a>
             </div>
@@ -121,6 +120,6 @@ class __TwigTemplate_15c4c4d302360de531332f717f0d576a5b4300bf74642fc50f20428b74e
 
     public function getDebugInfo()
     {
-        return array (  105 => 59,  82 => 39,  78 => 38,  74 => 37,  65 => 31,  60 => 29,  56 => 28,  48 => 23,  44 => 22,  40 => 21,  19 => 2,);
+        return array (  104 => 58,  82 => 39,  78 => 38,  74 => 37,  65 => 31,  60 => 29,  56 => 28,  48 => 23,  44 => 22,  40 => 21,  19 => 2,);
     }
 }

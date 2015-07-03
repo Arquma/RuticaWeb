@@ -28,3 +28,8 @@ rutasugerida_delete:
     path:     /{id}/delete
     defaults: { _controller: "DataBaseBundle:RutaSugerida:delete" }
     requirements: { _method: post|delete }
+
+nueva_rutasugerida:
+    path:     /nueva_rutasugerida
+    defaults: { _controller: "DataBaseBundle:RutaSugerida:mostrar" }
+    requirements: { _method: post|delete }
