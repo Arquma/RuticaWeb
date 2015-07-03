@@ -33,3 +33,8 @@ nueva_rutasugerida:
     path:     /nueva_rutasugerida
     defaults: { _controller: "DataBaseBundle:RutaSugerida:mostrar" }
     requirements: { _method: post|delete }
+    
+nueva_ruta:
+    path:     /nueva_ruta
+    defaults: { _controller: "DataBaseBundle:RutaSugerida:nueva_ruta" }
+    requirements: { _method: post|delete }

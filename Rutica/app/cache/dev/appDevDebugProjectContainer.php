@@ -739,7 +739,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_metadata_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_5d1fc72e3e1294c6d1cff2c1bfabb65f9e7e188a6b71b959d1d35594c7cd257b');
+        $instance->setNamespace('sf2orm_default_df8bec8b3f26342d963f054d83ff2ff72a1d62d32c512bac3355024fab5b4c87');
 
         return $instance;
     }
@@ -756,7 +756,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_query_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_5d1fc72e3e1294c6d1cff2c1bfabb65f9e7e188a6b71b959d1d35594c7cd257b');
+        $instance->setNamespace('sf2orm_default_df8bec8b3f26342d963f054d83ff2ff72a1d62d32c512bac3355024fab5b4c87');
 
         return $instance;
     }
@@ -773,7 +773,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_result_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_5d1fc72e3e1294c6d1cff2c1bfabb65f9e7e188a6b71b959d1d35594c7cd257b');
+        $instance->setNamespace('sf2orm_default_df8bec8b3f26342d963f054d83ff2ff72a1d62d32c512bac3355024fab5b4c87');
 
         return $instance;
     }
@@ -4201,8 +4201,8 @@ class appDevDebugProjectContainer extends Container
             'assetic.variables' => array(
 
             ),
-            'assetic.java.bin' => 'C:\\Windows\\system32\\java.EXE',
-            'assetic.node.bin' => '/usr/bin/node',
+            'assetic.java.bin' => 'C:\\windows\\system32\\java.EXE',
+            'assetic.node.bin' => 'C:\\Program Files\\nodejs\\\\node.EXE',
             'assetic.ruby.bin' => '/usr/bin/ruby',
             'assetic.sass.bin' => '/usr/bin/sass',
             'assetic.filter.cssrewrite.class' => 'Assetic\\Filter\\CssRewriteFilter',

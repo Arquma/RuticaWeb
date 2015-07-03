@@ -103,234 +103,259 @@
 </div>
 <!-- Fin Título de página --> 
 <div class="section">
-	    <div class="container">
+    <div class="container">
 
-			<div class="row">
+        <div class="row">
 
-				<div class="col-md-8">
+            <div class="col-md-8">
 
-                	<div class="section-title" >
-                        <h2>Elije las preferencias de su ruta</h2>
-                        <br>
+                <div class="section-title" >
+                    <h2>Elije las preferencias de su ruta</h2>
+                    <br>
+                </div>
+
+                {# Formulario de las preferencias de la ruta #}
+                <form class="form-horizontal">
+
+                    {# Select de Provincia #}
+                    <div class="form-group">
+                        <label for="provincia" class="col-sm-2 control-label">Provincia</label>
+                        <div class="col-sm-6">
+                            <select id="provincia" class="form-control">
+                                <option></option>
+                                <option>San José</option>
+                                <option>Alajuela</option>
+                                <option>Heredia</option>
+                                <option>Cartago</option>
+                                <option>Puntarenas</option>
+                                <option>Guanacaste</option>
+                                <option>Limón</option>                       					
+                            </select>
+                        </div>
                     </div>
+                    {# Select de Provincia #}
 
-                    {# Formulario de las preferencias de la ruta #}
-                	<form class="form-horizontal">
+                    {# Select de Actividad #}
+                    <div class="form-group">
+                        <label for="actividad" class="col-sm-2 control-label">Actividad</label>
+                        <div class="col-sm-6">
+                            <select id="actividad" class="form-control">
+                                <option></option>
+                                <option>Montaña</option>
+                                <option>Playa</option>
+                                <option>Extremo</option>
+                                <option>Ciudad</option>
+                                <option>Rural</option>						                       					
+                            </select>
+                        </div>         						
+                    </div>
+                    {# Select de Actividad #}
 
-                		{# Select de Provincia #}
-     					<div class="form-group">
-        					<label for="provincia" class="col-sm-2 control-label">Provincia</label>
-         					<div class="col-sm-6">
-            					<select id="provincia" class="form-control">
-            						<option></option>
-            						<option>San José</option>
-  									<option>Alajuela</option>
-  									<option>Heredia</option>
-  									<option>Cartago</option>
-  									<option>Puntarenas</option>
-  									<option>Guanacaste</option>
-  									<option>Limón</option>                       					
-                    			</select>
-         					</div>
-     					</div>
-     					{# Select de Provincia #}
+                    {# Select de Precio #}
+                    <div class="form-group">
+                        <label for="precio" class="col-sm-2 control-label">Precio</label>
+                        <div class="col-sm-6">
+                            <select id="precio" class="form-control">
+                                <option></option>
+                                <option>Económico</option>
+                                <option>Medio</option>
+                                <option>Pura Vida</option>					                       					
+                            </select>
+                        </div>         						
+                    </div>
+                    {# Select de Precio #} 
 
-     					{# Select de Actividad #}
-     					<div class="form-group">
-     						<label for="actividad" class="col-sm-2 control-label">Actividad</label>
-         					<div class="col-sm-6">
-            					<select id="actividad" class="form-control">
-            						<option></option>
-            						<option>Montaña</option>
-  									<option>Playa</option>
-  									<option>Extremo</option>
-  									<option>Ciudad</option>
-  									<option>Rural</option>						                       					
-                    			</select>
-         					</div>         						
-     					</div>
-     					{# Select de Actividad #}
+                    {# Botón de Buscar #}
+                    <div class="form-group">
+                        <label for="buscar" class="col-sm-1 control-label"></label>
+                        <div class="col-sm-6">     						
+                            <button id="buscar" type="button" class="btn btn-primary" data-toggle="modal">Buscar</button>
+                        </div>
+                    </div>   						
+                    {# Botón de Buscar #}
 
-     					{# Select de Precio #}
-     					<div class="form-group">
-     						<label for="precio" class="col-sm-2 control-label">Precio</label>
-         					<div class="col-sm-6">
-            					<select id="precio" class="form-control">
-            						<option></option>
-            						<option>Económico</option>
-  									<option>Medio</option>
-  									<option>Pura Vida</option>					                       					
-                    			</select>
-         					</div>         						
-     					</div>
-     					{# Select de Precio #} 
+                </form>
+                {# Formulario de las preferencias de la ruta #}
 
-     					{# Botón de Buscar #}
-     					<div class="form-group">
-     						<label for="buscar" class="col-sm-1 control-label"></label>
-                                                <div class="col-sm-6">     						
-                                                    <button id="buscar" type="button" class="btn btn-primary" data-toggle="modal">Buscar</button>
-                                                </div>
-                                        </div>   						
-   						{# Botón de Buscar #}
-   							 
-					</form>
-					{# Formulario de las preferencias de la ruta #}
+            </div>				
 
-                </div>				
 
-               
 
-          <div class = "col-md-4">
+            <div class = "col-md-4">
 
-            <div class="section-title" >
-              <h3>Elije las preferencias de su ruta</h3>
-              <br>
+                <div class="section-title" >
+                    <h3>Elije las preferencias de su ruta</h3>
+                    <br>
+                </div>
+
+                {# Formulario de las preferencias de la ruta #}
+                <form class="form-horizontal" action="{{ path('nueva_rutasugerida') }}" method="post">
+
+                    {# Select de Provincia #}
+                    <div class="form-group">
+                        <label style="text-align: center;" for="provincia" class="col-sm-4 control-label">Provincia:</label>
+                        <div class="col-sm-6">
+                            <select id="provincia" name="provincia" class="form-control">                    
+                                <option>San José</option>
+                                <option>Alajuela</option>
+                                <option>Heredia</option>
+                                <option>Cartago</option>
+                                <option>Puntarenas</option>
+                                <option>Guanacaste</option>
+                                <option>Limón</option>                                
+                            </select>
+                        </div>
+                    </div>
+                    {# Select de Provincia #}
+
+                    {# Select de Actividad #}
+                    <div class="form-group">
+                        <label style="text-align: center;" for="actividad" class="col-sm-4 control-label">Actividad:</label>
+                        <div class="col-sm-6">
+                            <select id="actividad" name="actividad" class="form-control">                    
+                                <option>Ciudad</option>
+                                <option>Rural</option>
+                                <option>Aventura</option>
+                                <option>Extremo</option>                    
+                                <option>Ecológico</option>
+                                <option>Familiar</option>                                            
+                            </select>
+                        </div>                    
+                    </div>
+                    {# Select de Actividad #}
+
+                    {# Select de Precio #}
+                    <div class="form-group">
+                        <label style="text-align: center;" for="precio" class="col-sm-4 control-label">Precio:</label>
+                        <div class="col-sm-6">
+                            <select id="precio" name="precio" class="form-control">                      
+                                <option>Económico</option>
+                                <option>Medio</option>
+                                <option>Pura Vida</option>                                          
+                            </select>
+                        </div>                    
+                    </div>
+                    {# Select de Precio #} 
+
+                    {# Botón de Buscar #}
+                    <div class="form-group">
+                        <label for="buscar" class="col-sm-1 control-label"></label>
+                        <div class="col-sm-6">                 
+                            <button id="buscar" type="submit" class="btn btn-primary" data-toggle="modal">Buscar</button>
+                        </div>
+                    </div>              
+                    {# Botón de Buscar #}
+
+                </form>
+                {# Formulario de las preferencias de la ruta #}
             </div>
-
-            {# Formulario de las preferencias de la ruta #}
-            <form class="form-horizontal" action="{{ path('nueva_rutasugerida') }}" method="post">
-
-              {# Select de Provincia #}
-              <div class="form-group">
-                <label style="text-align: center;" for="provincia" class="col-sm-4 control-label">Provincia:</label>
-                <div class="col-sm-6">
-                  <select id="provincia" name="provincia" class="form-control">                    
-                    <option>San José</option>
-                    <option>Alajuela</option>
-                    <option>Heredia</option>
-                    <option>Cartago</option>
-                    <option>Puntarenas</option>
-                    <option>Guanacaste</option>
-                    <option>Limón</option>                                
-                  </select>
-                </div>
-              </div>
-              {# Select de Provincia #}
-
-              {# Select de Actividad #}
-              <div class="form-group">
-                <label style="text-align: center;" for="actividad" class="col-sm-4 control-label">Actividad:</label>
-                <div class="col-sm-6">
-                  <select id="actividad" name="actividad" class="form-control">                    
-                    <option>Ciudad</option>
-                    <option>Rural</option>
-                    <option>Aventura</option>
-                    <option>Extremo</option>                    
-                    <option>Ecológico</option>
-                    <option>Familiar</option>                                            
-                  </select>
-                </div>                    
-              </div>
-              {# Select de Actividad #}
-
-              {# Select de Precio #}
-              <div class="form-group">
-                <label style="text-align: center;" for="precio" class="col-sm-4 control-label">Precio:</label>
-                  <div class="col-sm-6">
-                    <select id="precio" name="precio" class="form-control">                      
-                      <option>Económico</option>
-                      <option>Medio</option>
-                      <option>Pura Vida</option>                                          
-                    </select>
-                  </div>                    
-              </div>
-              {# Select de Precio #} 
-
-              {# Botón de Buscar #}
-              <div class="form-group">
-                <label for="buscar" class="col-sm-1 control-label"></label>
-                <div class="col-sm-6">                 
-                  <button id="buscar" type="submit" class="btn btn-primary" data-toggle="modal">Buscar</button>
-                </div>
-              </div>              
-              {# Botón de Buscar #}
-                 
-            </form>
-            {# Formulario de las preferencias de la ruta #}
-          </div>
 
         </div>
 
         {% if sitios is defined %}
-        <hr>{# Separador #}
+            <hr>{# Separador #}
 
-        <div class="row">                    
+            <div class="row">                    
 
-            <div class="col-md-6" id="main-map" style="width: 700px; height: 400px"></div> 
+                <div class="col-md-6" id="main-map" style="width: 700px; height: 400px"></div> 
 
-            <div class="col-md-4">
+                <div class="col-md-4">
 
-              <div class="section-title" >
-                <h3>Sitios de la ruta</h3>
-                <br>
-              </div>            
+                    <div class="section-title" >
+                        <h3>Sitios de la ruta</h3>
+                        <br>
+                    </div>            
+                    <form role="form" method="POST" enctype="multipart/form-data" action="{{ path('nueva_ruta')}}" >
+                        <table>
+                            <tr style="height: 60px;">
+                                {# nombree ruta #}
+                            <div class="form-group">
+                                <td> <label style="text-align: center;" for="nombre" class="col-sm-4 control-label">Nombre:</label></td>
+                                <td> <div class="col-sm-6">
+                                        <input type="text" name="nombre" style="width: 250px;">
+                                    </div>                    </td>
+                            </div>
+                            {# Select de Inicio #}
+                            </tr>
+                            <tr  style="height: 60px;">
+                                {# Select de Inicio #}
+                            <div class="form-group">
+                                <td> <label style="text-align: center;" for="inicio" class="col-sm-4 control-label">Inicio:</label></td>
+                                <td>  <div class="col-sm-6">
+                                        <select id="inicio" name="inicio" style="width: 250px;" class="form-control">
+                                            {% for sitio in sitios %}                      
+                                                <option value="{{ sitio.nombre }}">{{ sitio.nombre }}</option>                         
+                                            {% endfor %}                                          
+                                        </select>
+                                    </div>  </td>                  
+                            </div>
+                            {# Select de Inicio #}
+                            </tr>
+                            
+                            <tr style="height: 60px;">
+                                {# Select de Sitios #}
 
-                {# nombree ruta #}
-                <div class="form-group">
-                  <label style="text-align: center;" for="nombre" class="col-sm-4 control-label">Nombre:</label>
-                    <div class="col-sm-6">
-                        <input type="text" name="nombre" value="" style="width: 250px;">
-                    </div>                    
-                </div><br>
-                {# Select de Inicio #}
-                
-                {# Select de Inicio #}
-                <div class="form-group">
-                  <label style="text-align: center;" for="inicio" class="col-sm-4 control-label">Inicio:</label>
-                    <div class="col-sm-6">
-                        <select id="inicio" name="inicio" style="width: 250px;" class="form-control">
-                        {% for sitio in sitios %}                      
-                          <option value="{{ sitio.nombre }}">{{ sitio.nombre }}</option>                         
-                        {% endfor %}                                          
-                      </select>
-                    </div>                    
-                </div><br>
-                {# Select de Inicio #}
+                            <div class="form-group">
+                                <td> <label style="text-align: center;" for="sitios" class="col-sm-4 control-label">Sitios:</label>   </td>          
+                                <td><div class="col-sm-6">
+                                        <select multiple id="sitios" style="width: 250px;" name="sitios[]" class="form-control">
+                                            {% for sitio in sitios %}                      
+                                                <option value="{{ sitio.nombre }}">{{ sitio.nombre }}</option>                         
+                                            {% endfor %}                                          
+                                        </select>
+                                        <i style="width: 250px;">(Ctrl-Click para selección múltiple)</i> <br>
+                                    </div>  </td>                  
+                            </div>
+                            {# Select de Sitios #}
+                            </tr>
+                           
+                            <tr style="height: 60px;">
+                                {# Select de Final #}
+                            <div class="form-group">
+                                <td><label style="text-align: center;" for="final" class="col-sm-4 control-label">Final:</label></td>
+                                <td> <div class="col-sm-6">
+                                        <select id="final" name="final" style="width: 250px;" class="form-control">
+                                            {% for sitio in sitios %}                      
+                                                <option value="{{ sitio.nombre }}">{{ sitio.nombre }}</option>                         
+                                            {% endfor %}                                          
+                                        </select>
+                                    </div>     </td>               
+                            </div><br>
+                            {# Select de Final #}
+                            </tr> 
+                            
+                            <tr>
+                                {# Botón de Buscar #}
+                            <div class="form-group">
+                                <td > <label for="buscar" class="col-sm-1 control-label"></label></td>
+                                <td><div class="col-sm-6">                 
+                                        <button class="btn btn-primary btn-sm">Guardar Ruta</button>                  </div>
+                            </div>
+                            </td>
+                            </tr>
+                            {# Botón de Buscar #}           
+                        </table>
+                    </form>
 
-                {# Select de Sitios #}
-                <div class="form-group">
-                  <label style="text-align: center;" for="sitios" class="col-sm-4 control-label">Sitios:</label>             
-                    <div class="col-sm-6">
-                      <select multiple id="sitios" style="width: 250px;" name="sitios" class="form-control">
-                        {% for sitio in sitios %}                      
-                          <option value="{{ sitio.nombre }}">{{ sitio.nombre }}</option>                         
-                        {% endfor %}                                          
-                      </select>
-                      <i style="width: 250px;">(Ctrl-Click para selección múltiple)</i> <br>
-                    </div>                    
-                </div><br>
-                {# Select de Sitios #}
+                </div>    
 
-                {# Select de Final #}
-                <div class="form-group">
-                  <label style="text-align: center;" for="final" class="col-sm-4 control-label">Final:</label>
-                    <div class="col-sm-6">
-                      <select id="final" name="final" style="width: 250px;" class="form-control">
-                        {% for sitio in sitios %}                      
-                          <option value="{{ sitio.nombre }}">{{ sitio.nombre }}</option>                         
-                        {% endfor %}                                          
-                      </select>
-                    </div>                    
-                </div><br>
-                {# Select de Final #}
-
-                {# Botón de Buscar #}
-                <div class="form-group">
-                  <label for="buscar" class="col-sm-1 control-label"></label>
-                  <div class="col-sm-6">                 
-                    <input value ="Crear ruta" type="submit" class="btn btn-primary" data-toggle="modal" onclick="generateRoute();"></input>
-                  </div>
-                </div>              
-                {# Botón de Buscar #}             
-
-            </div>    
-
-        </div>
+            </div>
         {% endif %}
 
-      </div>      
-  </div>
-        </div>
+
+        {% if sitios is defined %}  
+            {# Botón de Buscar #}
+            <div class="form-group">
+                <label for="buscar" class="col-sm-1 control-label"></label>
+                <div class="col-sm-6">                 
+                    <input value ="Ver Ruta" type="submit" class="btn btn-primary" data-toggle="modal" onclick="generateRoute();"></input>
+                </div>
+            </div>              
+            {# Botón de Buscar #}             
+
+        {% endif %}
+    </div>      
+</div>
+</div>
 {% endblock %}
 {% include 'AdministradorBundle:Default:adminFooter.html.twig' %}

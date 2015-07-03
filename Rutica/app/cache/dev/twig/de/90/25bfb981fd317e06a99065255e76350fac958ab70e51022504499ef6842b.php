@@ -30,7 +30,10 @@ class __TwigTemplate_de9025bfb981fd317e06a99065255e76350fac958ab70e51022504499ef
         // line 4
         echo "<div class=\"collapse navbar-collapse\">
                 <ul class=\"nav navbar-nav navbar-right\">
-                    <li ><a href=\"home.html\">Inicio</a></li>
+                    <li ><a href=\"";
+        // line 6
+        echo $this->env->getExtension('routing')->getUrl("ainicio");
+        echo "\">Inicio</a></li>
                     
                     <li ><a href=\"";
         // line 8
@@ -151,7 +154,7 @@ class __TwigTemplate_de9025bfb981fd317e06a99065255e76350fac958ab70e51022504499ef
                               <!-- Tabla de sitio en la ruta -->
                             <label for=\"sitiosenruta\" class=\"col-sm-4 control-label\" >Sitios en la ruta</label>
 
-                                    <table class=\"table table-bordered table-striped table-condensed\" data-search=\"true\">
+                                    <table data-toggle=\"table\" data-search=\"true\">
 
                                         <thead>
                                             <tr>
@@ -287,6 +290,6 @@ class __TwigTemplate_de9025bfb981fd317e06a99065255e76350fac958ab70e51022504499ef
 
     public function getDebugInfo()
     {
-        return array (  260 => 159,  255 => 157,  250 => 155,  243 => 151,  239 => 150,  232 => 146,  144 => 61,  140 => 60,  136 => 59,  130 => 56,  126 => 55,  122 => 54,  116 => 51,  112 => 50,  108 => 49,  102 => 46,  98 => 45,  94 => 44,  88 => 41,  84 => 40,  80 => 39,  73 => 35,  69 => 34,  41 => 9,  37 => 8,  31 => 4,  25 => 3,  22 => 2,  20 => 1,);
+        return array (  263 => 159,  258 => 157,  253 => 155,  246 => 151,  242 => 150,  235 => 146,  147 => 61,  143 => 60,  139 => 59,  133 => 56,  129 => 55,  125 => 54,  119 => 51,  115 => 50,  111 => 49,  105 => 46,  101 => 45,  97 => 44,  91 => 41,  87 => 40,  83 => 39,  76 => 35,  72 => 34,  44 => 9,  40 => 8,  35 => 6,  31 => 4,  25 => 3,  22 => 2,  20 => 1,);
     }
 }
