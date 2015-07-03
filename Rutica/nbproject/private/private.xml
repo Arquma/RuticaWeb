@@ -2,6 +2,13 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/xampp/htdocs/RuticaWeb/Rutica/src/Rutica/RutasBundle/Controller/SitiosController.php</file>
+            <file>file:/C:/xampp/htdocs/RuticaWeb/Rutica/src/Rutica/RutasBundle/Resources/views/Principal/sitiosTuristicos.html.twig</file>
+            <file>file:/C:/xampp/htdocs/RuticaWeb/Rutica/src/Rutica/RutasBundle/Resources/config/routing.yml</file>
+            <file>file:/C:/xampp/htdocs/RuticaWeb/Rutica/src/Rutica/DataBaseBundle/Entity/Sitio.php</file>
+            <file>file:/C:/xampp/htdocs/RuticaWeb/Rutica/src/Rutica/DataBaseBundle/Controller/SitioController.php</file>
+            <file>file:/C:/xampp/htdocs/RuticaWeb/Rutica/src/Rutica/RutasBundle/Resources/views/Principal/quienesSomos.html.twig</file>
+        </group>
     </open-files>
 </project-private>

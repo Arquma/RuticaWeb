@@ -167,6 +167,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Rutica\\RutasBundle\\Controller\\MapaDelSitioController::mostrarAction',  '_route' => 'mapa_del_sitio',);
         }
 
+        // obtener_sitio
+        if (preg_match('#^/(?P<id>[^/]++)/obtener_sitio$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'obtener_sitio')), array (  '_controller' => 'Rutica\\RutasBundle\\Controller\\SitiosController::obtenerAction',));
+        }
+
         if (0 === strpos($pathinfo, '/rutasugerida')) {
             // rutasugerida
             if (rtrim($pathinfo, '/') === '/rutasugerida') {
