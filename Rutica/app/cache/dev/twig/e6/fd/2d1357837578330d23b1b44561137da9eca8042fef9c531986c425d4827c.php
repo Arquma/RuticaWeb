@@ -82,10 +82,6 @@ class __TwigTemplate_e6fd2d1357837578330d23b1b44561137da9eca8042fef9c531986c425d
                 </div>
             </div>
         </div>
-
-        <script language=\"javascript\" >
-            prompt(\"Escribe tu primer valor\", \"primero\");             
-        </script>
     </div>
 
 </div>
@@ -96,7 +92,7 @@ class __TwigTemplate_e6fd2d1357837578330d23b1b44561137da9eca8042fef9c531986c425d
             <div class=\"col-sm-8\">
                 <div align=\"center\" class=\"embed-responsive embed-responsive-16by9\">\t
                     <video class=\"embed-responsive-item\" src=\"";
-        // line 76
+        // line 72
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/video/Turismo en Costa Rica.mp4"), "html", null, true);
         echo "\" type=\"video/mp4\" controls></video>
                 </div>
@@ -127,7 +123,7 @@ class __TwigTemplate_e6fd2d1357837578330d23b1b44561137da9eca8042fef9c531986c425d
             <div class=\"col-md-4 col-sm-6\">
                 <div class=\"team-member\">\t\t\t\t\t\t\t
                     <div class=\"team-member-image\"><img src=\"";
-        // line 104
+        // line 100
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/team/1_1.jpg"), "html", null, true);
         echo "\" alt=\"\" /></div>
                     <div class=\"team-member-info\">
@@ -143,7 +139,7 @@ class __TwigTemplate_e6fd2d1357837578330d23b1b44561137da9eca8042fef9c531986c425d
             <div class=\"col-md-4 col-sm-6\">
                 <div class=\"team-member\">\t\t\t\t\t\t\t
                     <div class=\"team-member-image\"><img src=\"";
-        // line 117
+        // line 113
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/team/2_1.jpg"), "html", null, true);
         echo "\" alt=\"\" /></div>
                     <div class=\"team-member-info\">
@@ -159,7 +155,7 @@ class __TwigTemplate_e6fd2d1357837578330d23b1b44561137da9eca8042fef9c531986c425d
             <div class=\"col-md-4 col-sm-6\">
                 <div class=\"team-member\">
                     <div class=\"team-member-image\"><img src=\"";
-        // line 130
+        // line 126
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/team/3_1.jpg"), "html", null, true);
         echo "\" alt=\"\" /></div>
                     <div class=\"team-member-info\">
@@ -177,14 +173,14 @@ class __TwigTemplate_e6fd2d1357837578330d23b1b44561137da9eca8042fef9c531986c425d
 <!-- Fin de los miembros de rutica -->\t\t
 
 ";
-        // line 145
+        // line 141
         echo "\t
 ";
-        // line 146
+        // line 142
         $this->env->loadTemplate("RutasBundle:Base:footer.html.twig")->display($context);
         echo " \t
 ";
-        // line 147
+        // line 143
         echo " \t\t
 
 </body>
@@ -204,6 +200,6 @@ class __TwigTemplate_e6fd2d1357837578330d23b1b44561137da9eca8042fef9c531986c425d
 
     public function getDebugInfo()
     {
-        return array (  188 => 147,  184 => 146,  181 => 145,  163 => 130,  147 => 117,  131 => 104,  100 => 76,  48 => 27,  21 => 2,  19 => 1,);
+        return array (  184 => 143,  180 => 142,  177 => 141,  159 => 126,  143 => 113,  127 => 100,  96 => 72,  48 => 27,  21 => 2,  19 => 1,);
     }
 }

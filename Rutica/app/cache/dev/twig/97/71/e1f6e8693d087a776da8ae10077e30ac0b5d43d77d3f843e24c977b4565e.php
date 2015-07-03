@@ -19,6 +19,62 @@ class __TwigTemplate_9771e1f6e8693d087a776da8ae10077e30ac0b5d43d77d3f843e24c977b
         $this->env->loadTemplate("RutasBundle:Base:header.html.twig")->display($context);
         // line 2
         echo "
+<script>
+    \$(document).ready(function (e) {
+
+
+        \$('#ventanaModalDescripcionSitio').on('show.bs.modal', function (e) {
+            var imagen = \$(e.relatedTarget).data().test;
+            var desc = \$(e.relatedTarget).data().desc;
+            var nombre = \$(e.relatedTarget).data().nombre;
+            var actividad = \$(e.relatedTarget).data().actividad;
+            var provincia = \$(e.relatedTarget).data().provincia;
+            var id = \$(e.relatedTarget).data().id;
+
+            document.getElementById('rutasSug').textContent = 'NO';
+
+
+    ";
+        // line 18
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["sitiosRutaSugerida"]) ? $context["sitiosRutaSugerida"] : $this->getContext($context, "sitiosRutaSugerida")));
+        foreach ($context['_seq'] as $context["_key"] => $context["entitySR"]) {
+            // line 19
+            echo "
+                if (";
+            // line 20
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["entitySR"], "idsitio", array()), "id", array()), "html", null, true);
+            echo " == id) {
+                    document.getElementById('rutasSug').textContent = '";
+            // line 21
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["entitySR"], "idrutasugerida", array()), "nombre", array()), "html", null, true);
+            echo "';
+                }
+
+
+
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entitySR'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 27
+        echo "
+                document.getElementById('imagen').src = \"";
+        // line 28
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/sitios/"), "html", null, true);
+        echo "\";
+                document.getElementById('imagen').src += imagen;
+                document.getElementById('desc').value = desc;
+                document.getElementById('nombreSitio').textContent = nombre;
+                document.getElementById('provincia').textContent = provincia;
+                document.getElementById('actividad').textContent = actividad;
+            });
+        });
+
+</script>
+
+
 <!-- Título de página -->
 <div class=\"section section-breadcrumbs\">
     <div class=\"container\">
@@ -49,23 +105,54 @@ class __TwigTemplate_9771e1f6e8693d087a776da8ae10077e30ac0b5d43d77d3f843e24c977b
                 <!--Header del modal-->
                 <div class=\"modal-header\">
                     <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>
-                    <h4 class=\"modal-title \">Bosque nuboso Monteverde</h4>   
+                    <h4 id=\"nombreSitio\" class=\"modal-title \"></h4>   
                 </div>
                 <!--Contenido de la ventana-->
                 <div class=\"modal-body\" align=\"center\">
-                    <img src=\"";
-        // line 37
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/templateboostrap/img/sitios/1.jpg"), "html", null, true);
-        echo "\" width=\"550\" height=\"350\" title=\"Destino\" alt=\"\" />
+                    <img id=\"imagen\" src=\"\" width=\"550\" height=\"350\" title=\"Destino\" alt=\"\" />
                 </div>
-                <div>
-                    <p>Provincia: Puntarenas</p>
-                    <p>Actividad: Aventura</p>
-                    <p>Descrición: Con un bosque tropical nuboso mundialmente famoso la Reserva Biológica Monteverde 
-                        es una de las áreas protegidas privadas más importantes de Costa Rica. Con un 90% de selva 
-                        virgen su biodiversidad de ecosistemas reúne a unos 70.000 amantes de la naturaleza al año 
-                        provenientes de diversos países. </p>
-                </div>
+                <center>
+                    <table>
+                        <tr>
+                        <thead>
+                        <th style=\"width: 120px;\">Provincia</th>
+                        <th style=\"width: 120px;\">Actividad</th>
+                        <th style=\"width: 120px;\">Rutas</th>
+
+                        </thead>
+                        </tr> 
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p id=\"provincia\"></p>  
+                                </td>
+
+                                <td>
+                                    <p id=\"actividad\"></p>  
+                                </td>
+                                <td>
+                                    <p id=\"rutasSug\"></p>  
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </center><br>
+
+                <center>
+                    <table>
+                        <tr>
+                        <thead>
+                        <th style=\"width: 570px;\">Descripción</th>
+                        </tr>    
+                        </thead>
+                    </table>      
+
+
+                    <textarea id=\"desc\" disabled=\"true\" rows=\"6\" cols=\"76\" al=\"center\"></textarea>
+                </center>
+
+
 
                 <!--Footer de la ventana-->
                 <div class=\"modal-footer\">
@@ -79,35 +166,56 @@ class __TwigTemplate_9771e1f6e8693d087a776da8ae10077e30ac0b5d43d77d3f843e24c977b
 
 </div>
 
+
 <div class=\"section\">
     <div class=\"container\">
         <div class=\"row\">
 
-            <ul class=\"grid cs-style-2\">
-
+            <ul class=\"grid cs-style-2\"> 
                 ";
-        // line 66
+        // line 137
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 67
+            // line 138
             echo "                    <div class=\"col-md-4 col-sm-6\">
                         <figure>
                             ";
-            // line 69
+            // line 140
             $context["foo"] = ("bundles/templateboostrap/img/sitios/" . $this->getAttribute($context["entity"], "imagen", array()));
             echo "   
 
                             <img src=\"";
-            // line 71
+            // line 142
             echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl((isset($context["foo"]) ? $context["foo"] : $this->getContext($context, "foo"))), "html", null, true);
-            echo "\" alt=\"\" height=\"250px\" width=\"400px\" href=\"#ventanaModalDescripcionSitio\" class=\"btn btn-primary\" data-toggle=\"modal\"/>
+            echo "\" alt=\"\" height=\"250px\" width=\"400px\" href=\"#ventanaModalDescripcionSitio\" class=\"btn btn-primary\" data-toggle=\"modal\" data-test=\"";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "imagen", array()), "html", null, true);
+            echo "\" 
+                                 data-desc=\"";
+            // line 143
+            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "descripcion", array()), "html", null, true);
+            echo "\" data-nombre=\"";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "nombre", array()), "html", null, true);
+            echo "\" data-provincia=\"";
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["entity"], "IdProvincia", array()), "nombre", array()), "html", null, true);
+            echo "\"
+                                 data-actividad=\"";
+            // line 144
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["entity"], "idActividad", array()), "nombre", array()), "html", null, true);
+            echo "\" data-id=\"";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "id", array()), "html", null, true);
+            echo "\"/>
+
                             <figcaption>
                                 <h3>";
-            // line 73
+            // line 147
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "nombre", array()), "html", null, true);
             echo "</h3>
-                                <span>TODO</span>
+                                <span>";
+            // line 148
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["entity"], "IdProvincia", array()), "nombre", array()), "html", null, true);
+            echo "</span><br>
+                                
                             </figcaption>
                         </figure>
                     </div>
@@ -116,26 +224,22 @@ class __TwigTemplate_9771e1f6e8693d087a776da8ae10077e30ac0b5d43d77d3f843e24c977b
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 79
+        // line 154
         echo "            </ul>
         </div>
-        <ul class=\"pager\">
-            <li><a href=\"#\">Previous</a></li>
-            <li><a href=\"#\">Next</a></li>
-        </ul>
 
     </div>
 </div>
 
 ";
-        // line 90
+        // line 161
         echo "\t
 ";
-        // line 91
+        // line 162
         $this->env->loadTemplate("RutasBundle:Base:footer.html.twig")->display($context);
         echo " \t
 ";
-        // line 92
+        // line 163
         echo " \t\t
 
 </body>
@@ -155,6 +259,6 @@ class __TwigTemplate_9771e1f6e8693d087a776da8ae10077e30ac0b5d43d77d3f843e24c977b
 
     public function getDebugInfo()
     {
-        return array (  139 => 92,  135 => 91,  132 => 90,  120 => 79,  108 => 73,  103 => 71,  98 => 69,  94 => 67,  90 => 66,  58 => 37,  21 => 2,  19 => 1,);
+        return array (  243 => 163,  239 => 162,  236 => 161,  228 => 154,  216 => 148,  212 => 147,  204 => 144,  196 => 143,  190 => 142,  185 => 140,  181 => 138,  177 => 137,  65 => 28,  62 => 27,  50 => 21,  46 => 20,  43 => 19,  39 => 18,  21 => 2,  19 => 1,);
     }
 }

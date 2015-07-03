@@ -1,5 +1,42 @@
 {% include 'RutasBundle:Base:header.html.twig' %}
 
+<script>
+    $(document).ready(function (e) {
+
+
+        $('#ventanaModalDescripcionSitio').on('show.bs.modal', function (e) {
+            var imagen = $(e.relatedTarget).data().test;
+            var desc = $(e.relatedTarget).data().desc;
+            var nombre = $(e.relatedTarget).data().nombre;
+            var actividad = $(e.relatedTarget).data().actividad;
+            var provincia = $(e.relatedTarget).data().provincia;
+            var id = $(e.relatedTarget).data().id;
+
+            document.getElementById('rutasSug').textContent = 'NO';
+
+
+    {% for entitySR in sitiosRutaSugerida %}
+
+                if ({{entitySR.idsitio.id}} == id) {
+                    document.getElementById('rutasSug').textContent = '{{ entitySR.idrutasugerida.nombre }}';
+                }
+
+
+
+    {% endfor %}
+
+                document.getElementById('imagen').src = "{{asset('bundles/templateboostrap/img/sitios/')}}";
+                document.getElementById('imagen').src += imagen;
+                document.getElementById('desc').value = desc;
+                document.getElementById('nombreSitio').textContent = nombre;
+                document.getElementById('provincia').textContent = provincia;
+                document.getElementById('actividad').textContent = actividad;
+            });
+        });
+
+</script>
+
+
 <!-- Título de página -->
 <div class="section section-breadcrumbs">
     <div class="container">
@@ -30,20 +67,54 @@
                 <!--Header del modal-->
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title ">Bosque nuboso Monteverde</h4>   
+                    <h4 id="nombreSitio" class="modal-title "></h4>   
                 </div>
                 <!--Contenido de la ventana-->
                 <div class="modal-body" align="center">
-                    <img src="{{asset('bundles/templateboostrap/img/sitios/1.jpg')}}" width="550" height="350" title="Destino" alt="" />
+                    <img id="imagen" src="" width="550" height="350" title="Destino" alt="" />
                 </div>
-                <div>
-                    <p>Provincia: Puntarenas</p>
-                    <p>Actividad: Aventura</p>
-                    <p>Descrición: Con un bosque tropical nuboso mundialmente famoso la Reserva Biológica Monteverde 
-                        es una de las áreas protegidas privadas más importantes de Costa Rica. Con un 90% de selva 
-                        virgen su biodiversidad de ecosistemas reúne a unos 70.000 amantes de la naturaleza al año 
-                        provenientes de diversos países. </p>
-                </div>
+                <center>
+                    <table>
+                        <tr>
+                        <thead>
+                        <th style="width: 120px;">Provincia</th>
+                        <th style="width: 120px;">Actividad</th>
+                        <th style="width: 120px;">Rutas</th>
+
+                        </thead>
+                        </tr> 
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p id="provincia"></p>  
+                                </td>
+
+                                <td>
+                                    <p id="actividad"></p>  
+                                </td>
+                                <td>
+                                    <p id="rutasSug"></p>  
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </center><br>
+
+                <center>
+                    <table>
+                        <tr>
+                        <thead>
+                        <th style="width: 570px;">Descripción</th>
+                        </tr>    
+                        </thead>
+                    </table>      
+
+
+                    <textarea id="desc" disabled="true" rows="6" cols="76" al="center"></textarea>
+                </center>
+
+
 
                 <!--Footer de la ventana-->
                 <div class="modal-footer">
@@ -57,31 +128,31 @@
 
 </div>
 
+
 <div class="section">
     <div class="container">
         <div class="row">
 
-            <ul class="grid cs-style-2">
-
+            <ul class="grid cs-style-2"> 
                 {% for entity in entities %}
                     <div class="col-md-4 col-sm-6">
                         <figure>
                             {% set foo ='bundles/templateboostrap/img/sitios/' ~ entity.imagen %}   
 
-                            <img src="{{asset(foo)}}" alt="" height="250px" width="400px" href="#ventanaModalDescripcionSitio" class="btn btn-primary" data-toggle="modal"/>
+                            <img src="{{asset(foo)}}" alt="" height="250px" width="400px" href="#ventanaModalDescripcionSitio" class="btn btn-primary" data-toggle="modal" data-test="{{ entity.imagen }}" 
+                                 data-desc="{{ entity.descripcion }}" data-nombre="{{ entity.nombre }}" data-provincia="{{ entity.IdProvincia.nombre }}"
+                                 data-actividad="{{ entity.idActividad.nombre }}" data-id="{{ entity.id }}"/>
+
                             <figcaption>
                                 <h3>{{ entity.nombre }}</h3>
-                                <span>TODO</span>
+                                <span>{{entity.IdProvincia.nombre}}</span><br>
+                                
                             </figcaption>
                         </figure>
                     </div>
                 {% endfor %}
             </ul>
         </div>
-        <ul class="pager">
-            <li><a href="#">Previous</a></li>
-            <li><a href="#">Next</a></li>
-        </ul>
 
     </div>
 </div>
