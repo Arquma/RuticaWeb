@@ -139,7 +139,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         // home
         if ($pathinfo === '/home') {
-            return array (  '_controller' => 'Rutica\\RutasBundle\\Controller\\PrincipalController::mostrarAction',  '_route' => 'home',);
+            return array (  '_controller' => 'Rutica\\RutasBundle\\Controller\\SitiosController::obtenerUltimosSeisAction',  '_route' => 'home',);
         }
 
         // contactenos

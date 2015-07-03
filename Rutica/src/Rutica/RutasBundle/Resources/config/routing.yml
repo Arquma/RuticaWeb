@@ -8,7 +8,7 @@ crea_tus_rutas:
     
 home:
     path:     /home
-    defaults: { _controller: RutasBundle:Principal:mostrar }
+    defaults: { _controller: RutasBundle:Sitios:obtenerUltimosSeis }
 
 contactenos:
     path:     /contactenos

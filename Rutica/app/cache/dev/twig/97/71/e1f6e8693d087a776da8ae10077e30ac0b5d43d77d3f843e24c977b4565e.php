@@ -143,7 +143,7 @@ class __TwigTemplate_9771e1f6e8693d087a776da8ae10077e30ac0b5d43d77d3f843e24c977b
                     <table>
                         <tr>
                         <thead>
-                        <th style=\"width: 570px;\">DescripciÃ³n</th>
+                        <th style=\"width: 570px;\">Descripción</th>
                         </tr>    
                         </thead>
                     </table>      
@@ -151,9 +151,6 @@ class __TwigTemplate_9771e1f6e8693d087a776da8ae10077e30ac0b5d43d77d3f843e24c977b
 
                     <textarea id=\"desc\" disabled=\"true\" rows=\"6\" cols=\"76\" al=\"center\"></textarea>
                 </center>
-
-
-
                 <!--Footer de la ventana-->
                 <div class=\"modal-footer\">
                     <button type=\"button\" class=\"btn btn-primary\" data-dismiss=\"modal\">Cerrar</button>
@@ -173,26 +170,26 @@ class __TwigTemplate_9771e1f6e8693d087a776da8ae10077e30ac0b5d43d77d3f843e24c977b
 
             <ul class=\"grid cs-style-2\"> 
                 ";
-        // line 137
+        // line 134
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["entities"]) ? $context["entities"] : $this->getContext($context, "entities")));
         foreach ($context['_seq'] as $context["_key"] => $context["entity"]) {
-            // line 138
+            // line 135
             echo "                    <div class=\"col-md-4 col-sm-6\">
                         <figure>
                             ";
-            // line 140
+            // line 137
             $context["foo"] = ("imagenes_sitios/" . $this->getAttribute($context["entity"], "imagen", array()));
             echo "   
 
                             <img src=\"";
-            // line 142
+            // line 139
             echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl((isset($context["foo"]) ? $context["foo"] : $this->getContext($context, "foo"))), "html", null, true);
             echo "\" alt=\"\" height=\"250px\" width=\"400px\" href=\"#ventanaModalDescripcionSitio\" class=\"btn btn-primary\" data-toggle=\"modal\" data-test=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "imagen", array()), "html", null, true);
             echo "\" 
                                  data-desc=\"";
-            // line 143
+            // line 140
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "descripcion", array()), "html", null, true);
             echo "\" data-nombre=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "nombre", array()), "html", null, true);
@@ -200,7 +197,7 @@ class __TwigTemplate_9771e1f6e8693d087a776da8ae10077e30ac0b5d43d77d3f843e24c977b
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["entity"], "IdProvincia", array()), "nombre", array()), "html", null, true);
             echo "\"
                                  data-actividad=\"";
-            // line 144
+            // line 141
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["entity"], "idActividad", array()), "nombre", array()), "html", null, true);
             echo "\" data-id=\"";
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "id", array()), "html", null, true);
@@ -208,11 +205,11 @@ class __TwigTemplate_9771e1f6e8693d087a776da8ae10077e30ac0b5d43d77d3f843e24c977b
 
                             <figcaption>
                                 <h3>";
-            // line 147
+            // line 144
             echo twig_escape_filter($this->env, $this->getAttribute($context["entity"], "nombre", array()), "html", null, true);
             echo "</h3>
                                 <span>";
-            // line 148
+            // line 145
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["entity"], "IdProvincia", array()), "nombre", array()), "html", null, true);
             echo "</span><br>
                                 
@@ -224,7 +221,7 @@ class __TwigTemplate_9771e1f6e8693d087a776da8ae10077e30ac0b5d43d77d3f843e24c977b
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['entity'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 154
+        // line 151
         echo "            </ul>
         </div>
 
@@ -232,14 +229,14 @@ class __TwigTemplate_9771e1f6e8693d087a776da8ae10077e30ac0b5d43d77d3f843e24c977b
 </div>
 
 ";
-        // line 161
+        // line 158
         echo "\t
 ";
-        // line 162
+        // line 159
         $this->env->loadTemplate("RutasBundle:Base:footer.html.twig")->display($context);
         echo " \t
 ";
-        // line 163
+        // line 160
         echo " \t\t
 
 </body>
@@ -259,6 +256,6 @@ class __TwigTemplate_9771e1f6e8693d087a776da8ae10077e30ac0b5d43d77d3f843e24c977b
 
     public function getDebugInfo()
     {
-        return array (  243 => 163,  239 => 162,  236 => 161,  228 => 154,  216 => 148,  212 => 147,  204 => 144,  196 => 143,  190 => 142,  185 => 140,  181 => 138,  177 => 137,  65 => 28,  62 => 27,  50 => 21,  46 => 20,  43 => 19,  39 => 18,  21 => 2,  19 => 1,);
+        return array (  240 => 160,  236 => 159,  233 => 158,  225 => 151,  213 => 145,  209 => 144,  201 => 141,  193 => 140,  187 => 139,  182 => 137,  178 => 135,  174 => 134,  65 => 28,  62 => 27,  50 => 21,  46 => 20,  43 => 19,  39 => 18,  21 => 2,  19 => 1,);
     }
 }
