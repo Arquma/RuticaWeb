@@ -2122,3 +2122,8 @@ cc4e44,::1,POST,http://localhost/RuticaWeb/Rutica/web/app_dev.php/rutasugerida/n
 cf2fbc,::1,POST,http://localhost/RuticaWeb/Rutica/web/app_dev.php/rutasugerida/nueva_rutasugerida,1435885627,
 6b7218,::1,POST,http://localhost/RuticaWeb/Rutica/web/app_dev.php/rutasugerida/nueva_rutasugerida,1435886097,
 f596b2,::1,POST,http://localhost/RuticaWeb/Rutica/web/app_dev.php/rutasugerida/nueva_rutasugerida,1435887185,
+74d668,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/home,1435891541,
+5e3aad,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/sitios,1435891575,
+181402,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/sitios,1435892252,
+0b6b02,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/sitios,1435892310,
+cbdef8,::1,GET,http://localhost/RuticaWeb/Rutica/web/app_dev.php/sitios,1435892380,
