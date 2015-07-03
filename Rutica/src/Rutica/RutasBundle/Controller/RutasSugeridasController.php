@@ -3,28 +3,41 @@
 namespace Rutica\RutasBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Rutica\DataBaseBundle\Entity\Sitio;
+use Rutica\DataBaseBundle\Entity\RutaSugerida;
+use Rutica\DataBaseBundle\Entity\SitioRutaSugerida;
 
 class RutasSugeridasController extends Controller
 {
-	//-- Muestra la vista principal de las rutas sugeridas
-    public function mostrarAction()
-    {
+    //-- Muestra la vista principal de las rutas sugeridas
+    public function mostrarAction(Request $request)
+    {    
+         //-- use the entity manager to serach the places
+        $em = $this->getDoctrine()->getManager();
 
-    	$ruta1 = array('id' => 1 ,
-    	               'nombre' => "Ciudad de San José" ,
-    	               'distancia' => "10 km" ,
-    	               'precio' => "$100",
-    	               'provincia' => "San José" ,
-    	               'tiempo' => "5 horas");
+        $sugeridas = $em->getRepository('DataBaseBundle:RutaSugerida')->findAll();
 
-    	$ruta2 = array('id' => "2" ,
-    	               'nombre' => "Ciudad de Cartago" ,
-    	               'distancia' => "20 km" ,
-    	               'precio' => "$50",
-    	               'provincia' => "Cartago" ,
-    	               'tiempo' => "8 horas");
+          //-- to vailidate the form
+        if($request->getMethod() == 'POST')
+        {
+            //-- get the request values
+            $idrutasugerida = $request->get('nombre');           
 
-        return $this->render('RutasBundle:Rutas:sugeridas.html.twig', array('ruta1' => $ruta1, 'ruta2' => $ruta2));
+            //-- create a DQL Query
+            $query = $em->createQuery(
+                'SELECT s
+                FROM DataBaseBundle:Sitio s, DataBaseBundle:SitioRutaSugerida r
+                WHERE r.idrutasugerida = :id AND s.id = r.idsitio'                
+            )->setParameters(array('id'=> $idrutasugerida));
+
+            //-- get the DQL Query results
+            $sitios = $query->getResult();
+
+            return $this->render('RutasBundle:Rutas:sugeridas.html.twig', array('sugeridas' => $sugeridas, 'sitios' => $sitios));        
+        }
+
+        return $this->render('RutasBundle:Rutas:sugeridas.html.twig', array('sugeridas' => $sugeridas ));   
     }
 }

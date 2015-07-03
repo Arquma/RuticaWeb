@@ -10,7 +10,7 @@ function showMap() {
   directionsDisplay = new google.maps.DirectionsRenderer();
 
   var mapOptions = { 
-  	zoom: 7,
+    zoom: 7,
     center: new google.maps.LatLng(9.6301892, -84.2541843),//-- Costa Rica location
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
@@ -67,4 +67,32 @@ function generateRoute(){
     alert('El punto de inicio y el punto final deben ser diferentes');
   }
 
+}
+
+function showRoute(){
+  
+  var start = document.getElementById('inicio').value;
+  var end = document.getElementById('final').value;  
+  var sites = document.getElementById('sitios'); 
+  var routeSites = [];//-- all the middle sites betwen the start and final point
+
+  for (var i = 0; i < sites.length; i++) {                     
+        routeSites.push({
+            location:sites[i].value,
+            stopover:true});   
+  }//-- end for
+
+  var request = {
+    origin: start,
+    destination: end,
+    waypoints: routeSites,
+    optimizeWaypoints: true,
+    travelMode: google.maps.TravelMode.DRIVING
+  };
+
+  directionsService.route(request, function(response, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response);      
+    }
+  });
 }

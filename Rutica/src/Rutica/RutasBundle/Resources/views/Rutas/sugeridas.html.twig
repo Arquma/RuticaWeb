@@ -3,7 +3,7 @@
 
 {# Se edita el bloque del título de la plantilla base #}
 {% block title %}
-	Rutica - Rutas Sugeridas
+    Rutica - Rutas Sugeridas
 {% endblock %}
 
 {# Se edita el body manteniendo la estructura heredada #}
@@ -11,78 +11,142 @@
 
   {{ parent() }}{# conserva lo que se heredó #}
 
-	{# Título de página #} 
-		<div class="section section-breadcrumbs">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<h1>Rutas sugeridas</h1>
-					</div>
-				</div>
-			</div>
-		</div>
-	{# Título de página #} 
+    {# Título de página #} 
+        <div class="section section-breadcrumbs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Rutas sugeridas</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {# Título de página #} 
 
-	<div class="section">
-	    <div class="container">
-			<div class="row">
-				<div class="col-sm-6">
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
 
-					{# Tabla de rutas sugeridas #}
-					
-						<table class="table table-hover" data-toggle="table" data-search="true" style="width:100%">
+                    <div class="section-title">
+                         <h2><i class="glyphicon glyphicon-map-marker"></i>Ve las rutas que hemos elegido para ti</h2>
+                        <br>
+                    </div>
 
-   							<thead>
-   								<tr>
-        							<th data-field="id">Id</th>
-        							<th data-field="nombre">Nombre</th>
-        							<th data-field="distancia">Distancia</th>
-        							<th data-field="precio">Precio</th>
-       								<th data-field="provincia">Provincia</th>
-       								<th data-field="tiempo">tiempo</th>
-    							</tr>
-    						</thead>
+                    <ul>
+                        <li>Selecciona el nombre de la ruta </li>
+                        <li>Da click en el botón de ver detalles del sitio </li>
+                        <li>Selecciona el botón de ver ruta </li>                       
+                        <li> Listo ya tienes tu ruta, ya puedes empezar a turistear </li>
+                    </ul>
+                </div>
 
-    						<tbody>
-    							
-    							<tr>
-    								<td>{{ ruta1.id }}</td>
-    								<td>{{ ruta1.nombre }}</td>
-    								<td>{{ ruta1.distancia }}</td>
-    								<td>{{ ruta1.precio }}</td>
-    								<td>{{ ruta1.provincia }}</td>
-    								<td>{{ ruta1.tiempo }}</td>
-    							</tr>
-    							
-    							<tr>
-    								<td>{{ ruta2.id }}</td>
-    								<td>{{ ruta2.nombre }}</td>
-    								<td>{{ ruta2.distancia }}</td>
-    								<td>{{ ruta2.precio }}</td>
-    								<td>{{ ruta2.provincia }}</td>
-    								<td>{{ ruta2.tiempo }}</td>
-    							</tr>
-    							    							
-    						</tbody>
-						</table>					
-					
-					{# Tabla de rutas sugeridas #}
+                <div class="col-sm-4">
 
-				</div>
+                    <br>
+                    <br>
+                    <div class="section-title" >
+                        <h3>Estas rutas te sugerimos para vacacionar!!!</h3>
+                        <br>
+                    </div>
 
-				<div class="col-sm-4">
-                    <!-- Mapa -->
-						<iframe src="https://www.google.com/maps/embed?pb=!1m34!1m12!1m3!1d7859.933826055709!2d-84.07980560988867!3d9.936710986346734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m19!3e0!4m5!1s0x8fa0e366d24d3d1b%3A0x86bd02c7707db21e!2sTeatro+Nacional+de+Costa+Rica%2C+San+Jos%C3%A9!3m2!1d9.933129!2d-84.076942!4m5!1s0x8fa0e4aabcf16c1f%3A0x9968a5c10a33d6eb!2sMuseo+Nacional+de+Costa+Rica%2C+Cuesta+de+Moras%2C+San+Jos%C3%A9!3m2!1d9.932602!2d-84.071015!4m5!1s0x8fa0e4a028084f77%3A0xe474e090ba7dc78f!2sMuseo+de+los+ni%C3%B1os+de+costa+rica%2C+San+Jos%C3%A9!3m2!1d9.941272!2d-84.080326!5e0!3m2!1ses!2scr!4v1432659181123" width="600" height="450" frameborder="0" style="border:0"></iframe>
-                    <!-- Mapa -->							
-				</div>
-			</div>
-		</div>
-	</div>
+                    {# Formulario de las preferencias de la ruta #}
+                        <form class="form-horizontal" action="{{ path('rutas_sugeridas') }}" method="post">
 
-	{# Footer #}
-		{# se hace un include del archivo donde se encuentra el footer #}	
-		{% include 'RutasBundle:Base:footer.html.twig' %} 	
-	{# Footer #}
+                            {# Select de Provincia #}
+                            <div class="form-group">
+                                <label style="text-align: center;" for="nombre" class="col-sm-4 control-label">Nombre:</label>
+                                <div class="col-sm-8">
+                                    <select id="nombre" name="nombre" class="form-control" onchange="test();">
+
+                                        {% for sugerida in sugeridas %}
+                                            <option value="{{ sugerida.id }}">{{ sugerida.nombre }}</option>
+                                        {% endfor %}                   
+                                                   
+                                    </select>
+                                </div>
+                            </div>
+                            {# Select de Provincia #}
+
+                            {# Botón de Buscar #}
+                            <div class="form-group">
+                                <label for="buscar" class="col-sm-1 control-label"></label>
+                                <div class"col-sm-6">                 
+                                    <input value ="Buscar ruta" type="submit" class="btn btn-primary" data-toggle="modal"></input>
+                                </div>
+                            </div>              
+                            {# Botón de Buscar #}
+
+                        </form> 
+                    {# Formulario de las preferencias de la ruta #} 
+
+                </div>
+            </div>
+
+            <hr>
+            {% if sitios is defined %}
+            <div class="row">
+
+                <div class="col-md-8" id="main-map" style="width: 600px; height: 300px"></div>
+
+                <div class="col-md-4">
+
+                    <div class="section-title" >
+                        <h3>Información de la ruta</h3>
+                        <br>
+                    </div>            
+
+                    {# Inicio #}
+                    <div class="form-group">
+                        <label style="text-align: center;" for="inicio" class="col-sm-4 control-label">Inicio:</label>
+                        <div class="col-sm-6">
+                            <input  style="width: 320px" type="text" id = "inicio" name="inicio" value="{{ sitios|first.nombre }}" disabled>
+                        </div>                    
+                    </div>
+                    {# Inicio #}
+
+                    {# Waypoints #}
+                    <div class="form-group">
+                        <label style="text-align: center;" for="sitios" class="col-sm-4 control-label">Sitios:</label>        
+                        <div class="col-sm-6">
+                            <select multiple style="width: 320px" id="sitios" name="sitios" class="form-control" disabled>
+                            {% for sitio in sitios %}
+                                {% if not (loop.first) and not (loop.last) %}
+                                    <option value="{{ sitio.nombre }}">{{ sitio.nombre }}</option>
+                                {% endif %}                                              
+                            {% endfor %}                                          
+                            </select>                      
+                        </div>                    
+                    </div>
+                    {# Waypoints #}
+
+                    {# Final #}
+                    <div class="form-group">
+                    <label style="text-align: center;" for="final" class="col-sm-4 control-label">Final:</label>
+                        <div class="col-sm-6">                      
+                            <input  style="width: 320px" type="text" id = "final" name="final" value="{{ sitios|last.nombre }}" disabled>
+                        </div>                    
+                    </div>
+                    {# Final #}
+
+                    {# Botón de Buscar #}
+                                    
+                    <input value = "Ver ruta" type="submit" class="btn btn-primary" data-toggle="modal" onclick="showRoute();"></input>
+                                    
+                    {# Botón de Buscar #}  
+
+                </div>                
+
+            </div>
+            {% endif %}            
+
+        </div>
+    </div>
+
+    {# Footer #}
+        {# se hace un include del archivo donde se encuentra el footer #}   
+        {% include 'RutasBundle:Base:footer.html.twig' %}   
+    {# Footer #}
 
 {% endblock %}
 
