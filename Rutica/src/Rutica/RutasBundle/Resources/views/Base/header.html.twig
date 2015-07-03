@@ -3,36 +3,36 @@
 
 {# Se edita el bloque del título de la plantilla base #}
 {% block title %}
-	Rutica
+    Rutica
 {% endblock %}
 
 {# Se edita el bloque de estilos de la plantilla base y se le agregar el CSS ubicado en la direccion /web/bundles/templateboostrap #}
 {% block stylesheets %}
 
-	{# Bootstrap Core CSS #}
+    {# Bootstrap Core CSS #}
     <link rel="stylesheet" href="{{ asset('bundles/templateboostrap/css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('bundles/templateboostrap/css/bootstrap.min.css') }}">    
     <link rel="stylesheet" href="{{ asset('bundles/templateboostrap/css/bootstrap-table.css') }}">
 
     {# Custom CSS #}
-	<link rel="stylesheet" href="{{ asset('bundles/templateboostrap/css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/templateboostrap/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('bundles/templateboostrap/css/custom.css') }}" >
 
     <script src="//use.edgefonts.net/bebas-neue.js"></script>
 
     {# Custom Fonts & Icons #}
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="{{ asset('bundles/templateboostrap/css/icomoon-social.css') }}">
-	<link rel="stylesheet" href="{{ asset('bundles/templateboostrap/css/font-awesome.min.css') }}">
-	
-	<script src="{{ asset('bundles/templateboostrap/js/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
-    
+    <link rel="stylesheet" href="{{ asset('bundles/templateboostrap/css/icomoon-social.css') }}">
+    <link rel="stylesheet" href="{{ asset('bundles/templateboostrap/css/font-awesome.min.css') }}">
+
+    <script src="{{ asset('bundles/templateboostrap/js/modernizr-2.6.2-respond-1.1.0.min.js') }}"></script>
+
 {% endblock %}
 
 {# Se edita el cuerpo de la página #}  
 {% block body %}
 
-{# menú principal #}
+    {# menú principal #}
     <header class="navbar navbar-inverse navbar-fixed-top" role="banner">
         <div class="container">
             <div class="navbar-header">
@@ -56,17 +56,31 @@
                     <li><a href="{{ path('crea_tus_rutas') }}">Crea tus rutas</a></li> 
                     <li><a href="{{ path('mapa_del_sitio') }}">Mapa del sitio</a></li>
                     <li><a href="{{ path('quienes_somos') }}">¿Quienes somos?</a></li>
+                    <li>
+                        <div class="btn-group pull-right">
+                            <button  class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"></span>
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:void(document.body.style.fontSize='20px')">Letra Grande</a></li>
+                                <li><a href="javascript:void(document.body.style.fontSize='14px')">Letra Normal</a></li>
+                                <li><a href="javascript:void(document.body.style.backgroundColor='yellow')">Contraste Alto</a></li>
+                                <li><a href="javascript:void(document.body.style.backgroundColor='white')">Contraste Normal</a></li>
+                            </ul>
+                        </div>
+                    </li> 
                 </ul>
             </div>
         </div>
     </header>
-{# fin del menú principal #}
+    {# fin del menú principal #}
 
 {% endblock %} 
 
 {# se agregan los javascripts que se van a usar #}
 {% block javascripts %}
-    
+
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="{{ asset('bundles/templateboostrap/js/jquery-1.9.1.min.js') }}"><\/script>')</script>
     <script src="{{ asset('bundles/templateboostrap/js/bootstrap.min.js') }}"></script>
