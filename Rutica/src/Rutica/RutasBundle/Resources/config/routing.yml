@@ -29,7 +29,3 @@ enviar_correo:
 mapa_del_sitio:
     path:     /mapa_del_sitio
     defaults: { _controller: RutasBundle:MapaDelSitio:mostrar }  
-    
-obtener_sitio:
-    path:     /{id}/obtener_sitio
-    defaults: { _controller: RutasBundle:Sitios:obtener } 
