@@ -225,6 +225,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
             not_rutasugerida_delete:
 
+            // nueva_rutasugerida
+            if ($pathinfo === '/rutasugerida/nueva_rutasugerida') {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_nueva_rutasugerida;
+                }
+
+                return array (  '_controller' => 'Rutica\\DataBaseBundle\\Controller\\RutaSugeridaController::mostrarAction',  '_route' => 'nueva_rutasugerida',);
+            }
+            not_nueva_rutasugerida:
+
         }
 
         if (0 === strpos($pathinfo, '/sitio')) {

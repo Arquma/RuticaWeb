@@ -1,167 +1,336 @@
 
 {% include 'AdministradorBundle:Default:adminHeader.html.twig' %}
 {% block body -%}
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script>
+
+
+//-- Variables
+        var map;
+        var directionsDisplay;
+        var directionsService = new google.maps.DirectionsService();
+
+//-- show the map in the application
+        function showMap() {
+
+            directionsDisplay = new google.maps.DirectionsRenderer();
+
+            var mapOptions = {
+                zoom: 7,
+                center: new google.maps.LatLng(9.6301892, -84.2541843), //-- Costa Rica location
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            map = new google.maps.Map(document.getElementById('main-map'),
+                    mapOptions);
+
+            directionsDisplay.setMap(map);
+
+        }
+
+        function generateRoute() {
+
+            var start = document.getElementById('inicio').value;
+            var end = document.getElementById('final').value;
+            var routeSites = [];//-- all the middle sites betwen the start and final point
+            var allSites = document.getElementById('sitios');
+            var validRouteSites = true;
+
+            if (start != end) {//-- validate the start and the end of the route
+
+                for (var i = 0; i < allSites.length; i++) {
+                    if (allSites.options[i].selected == true) {
+                        if ((allSites.options[i].value == start) || (allSites.options[i].value == end)) {
+                            validRouteSites = false;
+                        }
+                        routeSites.push({
+                            location: allSites[i].value,
+                            stopover: true});
+                    }
+                }//-- end for
+
+                if (validRouteSites) {
+
+                    var request = {
+                        origin: start,
+                        destination: end,
+                        waypoints: routeSites,
+                        optimizeWaypoints: true,
+                        travelMode: google.maps.TravelMode.DRIVING
+                    };
+
+                    directionsService.route(request, function (response, status) {
+                        if (status == google.maps.DirectionsStatus.OK) {
+                            directionsDisplay.setDirections(response);
+                        }
+                    });
+
+                } else {
+                    alert('El punto de inicio y el punto final no deben incluirse en los sitios intermedios');
+                }
+
+            } else {
+                alert('El punto de inicio y el punto final deben ser diferentes');
+            }
+
+        }
+        google.maps.event.addDomListener(window, 'load', showMap);
+
+    </script>
+
     <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                   <li ><a href="{{url('ainicio')}}">Inicio</a></li>
-                    
-                    <li ><a href="{{url('sitio')}}">Sitios turísticos</a></li>
-                    <li class="active"><a href="{{url('rutasugerida')}}">Rutas</a></li>
-                    
-                    <li><a href="contactenos.html">Salir</a></li>                    
-                </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li ><a href="{{url('ainicio')}}">Inicio</a></li>
+
+            <li ><a href="{{url('sitio')}}">Sitios turísticos</a></li>
+            <li class="active"><a href="{{url('rutasugerida')}}">Rutas</a></li>
+
+            <li><a href="contactenos.html">Salir</a></li>                    
+        </ul>
+    </div>
+
+</div>
+</header><!--/header-->
+<!-- Título de página -->
+<div class="section section-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Nueva Ruta</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fin Título de página --> 
+<div class="section">
+	    <div class="container">
+
+			<div class="row">
+
+				<div class="col-md-8">
+
+                	<div class="section-title" >
+                        <h2>Elije las preferencias de su ruta</h2>
+                        <br>
+                    </div>
+
+                    {# Formulario de las preferencias de la ruta #}
+                	<form class="form-horizontal">
+
+                		{# Select de Provincia #}
+     					<div class="form-group">
+        					<label for="provincia" class="col-sm-2 control-label">Provincia</label>
+         					<div class="col-sm-6">
+            					<select id="provincia" class="form-control">
+            						<option></option>
+            						<option>San José</option>
+  									<option>Alajuela</option>
+  									<option>Heredia</option>
+  									<option>Cartago</option>
+  									<option>Puntarenas</option>
+  									<option>Guanacaste</option>
+  									<option>Limón</option>                       					
+                    			</select>
+         					</div>
+     					</div>
+     					{# Select de Provincia #}
+
+     					{# Select de Actividad #}
+     					<div class="form-group">
+     						<label for="actividad" class="col-sm-2 control-label">Actividad</label>
+         					<div class="col-sm-6">
+            					<select id="actividad" class="form-control">
+            						<option></option>
+            						<option>Montaña</option>
+  									<option>Playa</option>
+  									<option>Extremo</option>
+  									<option>Ciudad</option>
+  									<option>Rural</option>						                       					
+                    			</select>
+         					</div>         						
+     					</div>
+     					{# Select de Actividad #}
+
+     					{# Select de Precio #}
+     					<div class="form-group">
+     						<label for="precio" class="col-sm-2 control-label">Precio</label>
+         					<div class="col-sm-6">
+            					<select id="precio" class="form-control">
+            						<option></option>
+            						<option>Económico</option>
+  									<option>Medio</option>
+  									<option>Pura Vida</option>					                       					
+                    			</select>
+         					</div>         						
+     					</div>
+     					{# Select de Precio #} 
+
+     					{# Botón de Buscar #}
+     					<div class="form-group">
+     						<label for="buscar" class="col-sm-1 control-label"></label>
+                                                <div class="col-sm-6">     						
+                                                    <button id="buscar" type="button" class="btn btn-primary" data-toggle="modal">Buscar</button>
+                                                </div>
+                                        </div>   						
+   						{# Botón de Buscar #}
+   							 
+					</form>
+					{# Formulario de las preferencias de la ruta #}
+
+                </div>				
+
+               
+
+          <div class = "col-md-4">
+
+            <div class="section-title" >
+              <h3>Elije las preferencias de su ruta</h3>
+              <br>
             </div>
 
+            {# Formulario de las preferencias de la ruta #}
+            <form class="form-horizontal" action="{{ path('nueva_rutasugerida') }}" method="post">
+
+              {# Select de Provincia #}
+              <div class="form-group">
+                <label style="text-align: center;" for="provincia" class="col-sm-4 control-label">Provincia:</label>
+                <div class="col-sm-6">
+                  <select id="provincia" name="provincia" class="form-control">                    
+                    <option>San José</option>
+                    <option>Alajuela</option>
+                    <option>Heredia</option>
+                    <option>Cartago</option>
+                    <option>Puntarenas</option>
+                    <option>Guanacaste</option>
+                    <option>Limón</option>                                
+                  </select>
+                </div>
+              </div>
+              {# Select de Provincia #}
+
+              {# Select de Actividad #}
+              <div class="form-group">
+                <label style="text-align: center;" for="actividad" class="col-sm-4 control-label">Actividad:</label>
+                <div class="col-sm-6">
+                  <select id="actividad" name="actividad" class="form-control">                    
+                    <option>Ciudad</option>
+                    <option>Rural</option>
+                    <option>Aventura</option>
+                    <option>Extremo</option>                    
+                    <option>Ecológico</option>
+                    <option>Familiar</option>                                            
+                  </select>
+                </div>                    
+              </div>
+              {# Select de Actividad #}
+
+              {# Select de Precio #}
+              <div class="form-group">
+                <label style="text-align: center;" for="precio" class="col-sm-4 control-label">Precio:</label>
+                  <div class="col-sm-6">
+                    <select id="precio" name="precio" class="form-control">                      
+                      <option>Económico</option>
+                      <option>Medio</option>
+                      <option>Pura Vida</option>                                          
+                    </select>
+                  </div>                    
+              </div>
+              {# Select de Precio #} 
+
+              {# Botón de Buscar #}
+              <div class="form-group">
+                <label for="buscar" class="col-sm-1 control-label"></label>
+                <div class="col-sm-6">                 
+                  <button id="buscar" type="submit" class="btn btn-primary" data-toggle="modal">Buscar</button>
+                </div>
+              </div>              
+              {# Botón de Buscar #}
+                 
+            </form>
+            {# Formulario de las preferencias de la ruta #}
+          </div>
+
         </div>
-    </header><!--/header-->
-     <!-- Título de página -->
-		<div class="section section-breadcrumbs">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<h1>Nueva Ruta</h1>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Fin Título de página --> 
 
-    <div class="container">
-     <div class="col-md-6">
-       
-           <table class="table table-bordered table-striped table-condensed" >
+        {% if sitios is defined %}
+        <hr>{# Separador #}
 
-                        {{ form_start(form)}}
-                        {{form_errors(form)}}
-                        <tbody>
-                         
-                            <tr>
-                                <th style="width: 100px;"> {{ form_label(form.nombre) }}</th>
-                                <td>{{form_widget(form.nombre)}}
-                                    {{ form_errors(form.nombre) }}</td>
-                            </tr>
-                          <tr>
-                                <th style="width: 100px;"> {{ form_label(form.distancia) }}</th>
-                                <td>{{form_widget(form.distancia)}}
-                                    {{ form_errors(form.distancia) }}</td>
-                            </tr>
-                            <tr>
-                                <th style="width: 100px;"> {{ form_label(form.precioTotal) }}</th>
-                                <td>{{form_widget(form.precioTotal)}}
-                                    {{ form_errors(form.precioTotal) }}</td>
-                            </tr>
-                             <tr>
-                                <th style="width: 100px;"> {{ form_label(form.tiempo) }}</th>
-                                <td>{{form_widget(form.tiempo)}}
-                                    {{ form_errors(form.tiempo) }}</td>
-                            </tr>
-                               <tr>
-                                <th style="width: 100px;"> {{ form_label(form.idProvincia) }}</th>
-                                <td>{{form_widget(form.idProvincia)}}
-                                    {{ form_errors(form.idProvincia) }}</td>
-                            </tr>
-                            
-                        </tbody> 
-                       
-           </table> 
-                              <!-- Tabla de sitio en la ruta -->
-                            <label for="sitiosenruta" class="col-sm-4 control-label" >Sitios en la ruta</label>
+        <div class="row">                    
 
-                                    <table data-toggle="table" data-search="true">
+            <div class="col-md-6" id="main-map" style="width: 700px; height: 400px"></div> 
 
-                                        <thead>
-                                            <tr>
+            <div class="col-md-4">
 
-                                                <th>Nombre</th>
-                                                <th>Provincia</th>
-                                                <th>Precio</th>
-                                               
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                         
-                                                <tr>
-                                                    <td><a href=""></a>Teatro Nacional</td>
+              <div class="section-title" >
+                <h3>Sitios de la ruta</h3>
+                <br>
+              </div>            
 
-                                                    <td>San Jose</td>
-                                                    <td>120</td>
-                                                    
-                                                    <td>
-                                                        <ul>
+                {# nombree ruta #}
+                <div class="form-group">
+                  <label style="text-align: center;" for="nombre" class="col-sm-4 control-label">Nombre:</label>
+                    <div class="col-sm-6">
+                        <input type="text" name="nombre" value="" style="width: 250px;">
+                    </div>                    
+                </div><br>
+                {# Select de Inicio #}
+                
+                {# Select de Inicio #}
+                <div class="form-group">
+                  <label style="text-align: center;" for="inicio" class="col-sm-4 control-label">Inicio:</label>
+                    <div class="col-sm-6">
+                        <select id="inicio" name="inicio" style="width: 250px;" class="form-control">
+                        {% for sitio in sitios %}                      
+                          <option value="{{ sitio.nombre }}">{{ sitio.nombre }}</option>                         
+                        {% endfor %}                                          
+                      </select>
+                    </div>                    
+                </div><br>
+                {# Select de Inicio #}
 
+                {# Select de Sitios #}
+                <div class="form-group">
+                  <label style="text-align: center;" for="sitios" class="col-sm-4 control-label">Sitios:</label>             
+                    <div class="col-sm-6">
+                      <select multiple id="sitios" style="width: 250px;" name="sitios" class="form-control">
+                        {% for sitio in sitios %}                      
+                          <option value="{{ sitio.nombre }}">{{ sitio.nombre }}</option>                         
+                        {% endfor %}                                          
+                      </select>
+                      <i style="width: 250px;">(Ctrl-Click para selección múltiple)</i> <br>
+                    </div>                    
+                </div><br>
+                {# Select de Sitios #}
 
-                                                            <a href="">Quitar</a>
+                {# Select de Final #}
+                <div class="form-group">
+                  <label style="text-align: center;" for="final" class="col-sm-4 control-label">Final:</label>
+                    <div class="col-sm-6">
+                      <select id="final" name="final" style="width: 250px;" class="form-control">
+                        {% for sitio in sitios %}                      
+                          <option value="{{ sitio.nombre }}">{{ sitio.nombre }}</option>                         
+                        {% endfor %}                                          
+                      </select>
+                    </div>                    
+                </div><br>
+                {# Select de Final #}
 
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                         
-                                        </tbody>
-                                    </table>
-                             <!--Fin tabla de sitio en la ruta -->
-                             <br>
-                             <!-- Tabla de sitios posible para la ruta -->
-                            <label for="sitiosnoenruta" class="col-sm-5 control-label" >Sitios posible para la ruta</label>
+                {# Botón de Buscar #}
+                <div class="form-group">
+                  <label for="buscar" class="col-sm-1 control-label"></label>
+                  <div class="col-sm-6">                 
+                    <input value ="Crear ruta" type="submit" class="btn btn-primary" data-toggle="modal" onclick="generateRoute();"></input>
+                  </div>
+                </div>              
+                {# Botón de Buscar #}             
 
-                                    <table class="table table-bordered table-striped table-condensed" data-search="true">
+            </div>    
 
-                                        <thead>
-                                            <tr>
+        </div>
+        {% endif %}
 
-                                                <th>Nombre</th>
-                                                <th>Provincia</th>
-                                                <th>Precio</th>
-                                               
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                         
-                                                <tr>
-                                                    <td><a href=""></a>Museo de los Niños</td>
-
-                                                    <td>San Jose</td>
-                                                    <td>150</td>
-                                                    
-                                                    <td>
-                                                        <ul>
-
-
-                                                            <a href="">Agregar</a>
-
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                         
-                                        </tbody>
-                                    </table>
-                             <!--Fin tabla de sitios posibles para la ruta -->
-                            
-                            <!-- Botones -->
-                                    <center>
-                                        <table>
-                                            <tr>
-
-                                                <td style="width: 60px;"> {{form_widget(form.submit)}}
-                                                </td>
-                                                <td>  <a href="{{ path('rutasugerida') }}" class="btn btn-primary btn-sm">
-                                                        Volver
-                                                    </a>
-                                                </td>
-
-                                            </tr>
-                                        </table>
-                                    </center>
-                           
-                                                          {{ form_end(form)}}
-     </div>
-                <!-- Mapa -->                                 
-     <div class ="col-md-5">
-         <iframe src="https://www.google.com/maps/embed?pb=!1m34!1m12!1m3!1d7859.933826055709!2d-84.07980560988867!3d9.936710986346734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m19!3e0!4m5!1s0x8fa0e366d24d3d1b%3A0x86bd02c7707db21e!2sTeatro+Nacional+de+Costa+Rica%2C+San+Jos%C3%A9!3m2!1d9.933129!2d-84.076942!4m5!1s0x8fa0e4aabcf16c1f%3A0x9968a5c10a33d6eb!2sMuseo+Nacional+de+Costa+Rica%2C+Cuesta+de+Moras%2C+San+Jos%C3%A9!3m2!1d9.932602!2d-84.071015!4m5!1s0x8fa0e4a028084f77%3A0xe474e090ba7dc78f!2sMuseo+de+los+ni%C3%B1os+de+costa+rica%2C+San+Jos%C3%A9!3m2!1d9.941272!2d-84.080326!5e0!3m2!1ses!2scr!4v1432659181123" width="600" height="450" frameborder="0" style="border:0"></iframe>
-     </div>
-                 <!-- Fin mapa -->
-   </div>
-    
+      </div>      
+  </div>
+        </div>
 {% endblock %}
 {% include 'AdministradorBundle:Default:adminFooter.html.twig' %}
