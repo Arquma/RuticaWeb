@@ -1,20 +1,25 @@
 {# empty Twig template #}
 {% include 'AdministradorBundle:Default:adminHeader.html.twig' %}
- <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="{{url('ainicio')}}">Inicio</a></li>
-                    
-                    <li ><a href="{{url('sitio')}}">Sitios turísticos</a></li>
-                    <li ><a href="{{url('rutasugerida')}}">Rutas</a></li>
-                    
-                    <li><a href="contactenos.html">Salir</a></li>                    
-                </ul>
-            </div>
 
-        </div>
-    </header><!--/header-->
-    <br><br>
-    
+
+<div class="collapse navbar-collapse">
+    <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="{{url('ainicio')}}">Inicio</a></li>
+
+        <li ><a href="{{url('sitio')}}">Sitios turísticos</a></li>
+        <li ><a href="{{url('rutasugerida')}}">Rutas</a></li>
+
+        <li><a href="contactenos.html">Salir</a></li>                    
+    </ul>
+</div>
+
+</div>
+</header><!--/header-->
+<br><br>
+
+
+
+
 <!-- Sección de los nuevos sitios turísticos -->	
 
 <div class="section section-white">
@@ -26,75 +31,47 @@
             </div>
 
 
-            <ul class="grid cs-style-3">
-                <div class="col-md-4 col-sm-6">
-                    <figure>
-                        <img src="{{asset('bundles/templateboostrap/img/sitios/1.jpg')}}" alt="" />
-                        <figcaption>
-                            <h3>Bosque nuboso</h3>
-                            <h3>monteverde</h3>
-                            <span>Puntarenas</span>							
-                            <a href="#ventanaModalDescripcionSitio" class="btn btn-primary" data-toggle="modal">Visítalo</a>
-                        </figcaption>
-                    </figure>
-                </div>	
-                <div class="col-md-4 col-sm-6">
-                    <figure>
-                        <img src="{{asset('bundles/templateboostrap/img/sitios/2.jpg')}}" alt="" />
-                        <figcaption>
-                            <h3>Playa Nosara</h3>
-                            <span>Guanacaste</span>
-                            <a href="#ventanaModalDescripcionSitio" class="btn btn-primary" data-toggle="modal">Visítalo</a>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <figure>
-                        <img src="{{asset('bundles/templateboostrap/img/sitios/3.jpg')}}" alt="" />
-                        <figcaption>
-                            <h3>Parque Nacional</h3>
-                            <h3>Marino Ballena</h3>
-                            <span>Puntarenas</span>
-                            <a href="#ventanaModalDescripcionSitio" class="btn btn-primary" data-toggle="modal">Visítalo</a>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <figure>
-                        <img src="{{asset('bundles/templateboostrap/img/sitios/4.jpg')}}" alt="" />
-                        <figcaption>
-                            <h3>Parque Recreativo</h3>
-                            <h3>Los Chorros</h3>
-                            <span>Alajuela</span>
-                            <a href="#ventanaModalDescripcionSitio" class="btn btn-primary" data-toggle="modal">Visítalo</a>
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <figure>
-                        <img src="{{asset('bundles/templateboostrap/img/sitios/5.jpg')}}" alt="" />
-                        <figcaption>
-                            <h3>Parque Nacional Tortuguero</h3>
-                            <span>Limón</span>
-                            <a href="#ventanaModalDescripcionSitio" class="btn btn-primary" data-toggle="modal">Visítalo</a>
+            <ul class="grid cs-style-2"> 
+                {% for entity in ultimoSitios %}
+                    <div class="col-md-4 col-sm-6">
+                        <figure>
+                            {% set foo ='imagenes_sitios/' ~ entity.imagen %}   
 
-                        </figcaption>
-                    </figure>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <figure>
-                        <img src="{{asset('bundles/templateboostrap/img/sitios/6.jpg')}}" alt="" />
-                        <figcaption>
-                            <h3>Playa Cocal</h3>
-                            <span>Puntarenas</span>
-                            <a href="#ventanaModalDescripcionSitio" class="btn btn-primary" data-toggle="modal">Visítalo</a>
-                        </figcaption>
-                    </figure>
-                </div>
+                            <img src="{{asset(foo)}}" alt="" height="250px" width="400px" href="#ventanaModalDescripcionSitio" data-toggle="modal" data-test="{{ entity.imagen }}" 
+                                 data-desc="{{ entity.descripcion }}" data-nombre="{{ entity.nombre }}" data-provincia="{{ entity.id_provincia }}"
+                                 data-actividad="{{ entity.id_actividad }}" data-id="{{ entity.id }}"/>
+
+                            <figcaption>
+                                <h3>{{ entity.nombre }}</h3>
+                                {% if entity.id_provincia==1 %}
+                                    <span>San José</span><br>
+                                {% endif %}
+                                {% if entity.id_provincia==2 %}
+                                    <span>Alajuela</span><br>
+                                {% endif %}
+                                {% if entity.id_provincia==3 %}
+                                    <span>Cartago</span><br>
+                                {% endif %}
+                                {% if entity.id_provincia==4 %}
+                                    <span>Heredia</span><br>
+                                {% endif %}
+                                {% if entity.id_provincia==5 %}
+                                    <span>Puntarenas</span><br>
+                                {% endif %}
+                                {% if entity.id_provincia==6 %}
+                                    <span>Guanacaste</span><br>
+                                {% endif %}
+                                {% if entity.id_provincia==7 %}
+                                    <span>Limón</span><br>
+                                {% endif %}
+                            </figcaption>
+                        </figure>
+                    </div>
+                {% endfor %}
             </ul>
         </div>
     </div>
 </div>
 
-    
+
 {% include 'AdministradorBundle:Default:adminFooter.html.twig' %}
